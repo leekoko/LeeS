@@ -71,8 +71,9 @@ public class MDUtil {
 		if(StringUtils.isNotEmpty(sign)){
 			String signStr = "\r\n"+sign+" ";
 			content.append(signStr + str);
+		}else{
+			content.append(str);
 		}
-		content.append(str);
 	}
 	
 	

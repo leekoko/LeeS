@@ -13,7 +13,7 @@ import org.junit.Test;
 public class OutputMDUtilTest {
 	
 	/**
-	 * Êä³ömdÎÄ¼ş·½·¨
+	 * è¾“å‡ºmdæ–‡ä»¶æ–¹æ³•
 	 * @throws IOException 
 	 */
 	@Test
@@ -22,10 +22,10 @@ public class OutputMDUtilTest {
 		FileReader fr = null;
 		try {
 			String sign = "#";
-			mdUtil.textAppend("±êÌâ",sign);
+			mdUtil.textAppend("æ ‡é¢˜",sign);
         	mdUtil.outPut("D:\\a.md");
-        	File f = new File("D:\\a.md");//ÎÄ¼şÔÚsrcÃûÎªtest1.txtÖĞ
-            fr = new FileReader(f);//½«ÎÄ¼ş¶ÁÈ¡µ½ÄÚÈİÖĞ
+        	File f = new File("D:\\a.md");//æ–‡ä»¶åœ¨srcåä¸ºtest1.txtä¸­
+            fr = new FileReader(f);//å°†æ–‡ä»¶è¯»å–åˆ°å†…å®¹ä¸­
             Assert.assertNotNull(fr);
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
@@ -37,7 +37,7 @@ public class OutputMDUtilTest {
 	}
 	
 	/**
-	 * ²âÊÔÎÄ¼şÊäÈë
+	 * æµ‹è¯•æ–‡ä»¶è¾“å…¥
 	 * @throws IOException 
 	 */
 	@Test
@@ -49,7 +49,7 @@ public class OutputMDUtilTest {
 	}
 	
 	/**
-	 * ²âÊÔÎÄ¼şÎÄ±¾×·¼Ó
+	 * æµ‹è¯•æ–‡ä»¶æ–‡æœ¬è¿½åŠ 
 	 * @throws IOException 
 	 */
 	@Test
@@ -57,14 +57,10 @@ public class OutputMDUtilTest {
 		MDUtil mdUtil = new MDUtil();
 		String path = "D:\\b.md"; 
 		mdUtil.getFile(path); 
-		String sign = "#";
-		mdUtil.textAppend("×·¼ÓµÄÄÚÈİ1",sign);  
-		String signStr = "\r\n"+sign+" ";
-		Assert.assertEquals(mdUtil.getContent(),"test"+signStr+"×·¼ÓµÄÄÚÈİ1");
-		sign = "D:";
-		mdUtil.textAppend("×·¼ÓµÄÄÚÈİ2",sign);  
-		sign = "###";
-		mdUtil.textAppend("×·¼ÓµÄÄÚÈİ3",sign);  
+		mdUtil.textAppend("è¿½åŠ çš„å†…å®¹1","#");  
+		Assert.assertEquals(mdUtil.getContent().replaceAll("\\s*", ""),"test#è¿½åŠ çš„å†…å®¹1");
+		mdUtil.textAppend("è¿½åŠ çš„å†…å®¹2","D:");  
+		mdUtil.textAppend("è¿½åŠ çš„å†…å®¹3","###");  
     	mdUtil.outPut("D:\\c.md");
 	}
 	

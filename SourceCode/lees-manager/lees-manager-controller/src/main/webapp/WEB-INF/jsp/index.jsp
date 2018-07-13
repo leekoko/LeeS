@@ -11,7 +11,7 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- 包括所有已编译的插件 -->
 <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/TableDnD/0.9.1/jquery.tablednd.js" integrity="sha256-d3rtug+Hg1GZPB7Y/yTcRixO/wlI78+2m08tosoRn7A=" crossorigin="anonymous"></script>
 
 <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
 <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
@@ -70,9 +70,9 @@
 
 				<div class="form-group">
 					<span class="glyphicon glyphicon-user form-control-feedback"></span>
-					<input type="text" class="form-control" id="content" autofocus style="height:200px;margin-left: 20px;"/>
+					<textarea style="height:200px;width:450px;margin-left: 20px;" class="form-control" id="content" autofocus></textarea>
 				</div>
-				<button type="submit" class="btn btn-default">提交</button>
+				<button type="button" class="btn btn-default" id="sendWord">提交</button>
 				<div class="form-group">
 					<p class="help-block">
 						快捷键：ctrl + D、Z、M选择角色，+1、2、3选择标题类型，+a进入通用代码块，+j进入java代码块
@@ -87,26 +87,34 @@
 		<!-- 左边区 -->
 		<!-- 右边区 -->
 		<div class="col-md-6 column" style="height:600px;overflow:scroll;">
-			<ul class="list-group">
-				<li class="list-group-item">D：免费域名注册免费域名注册免费域名注册<button type="button" class="btn btn-link btn-xs" style="float:right;">修改</button></li>
-				<li class="list-group-item">图像的数量</li>
-				<li class="list-group-item">24*7 支持</li>
-				<li class="list-group-item">D：每年更新成本</li>
-				<li class="list-group-item">免费域名注册免费域名注册免费域名注册</li>
-				<li class="list-group-item">免费 Window 空间托管</li>
-				<li class="list-group-item">D：图像的数量</li>
-				<li class="list-group-item">24*7 支持</li>
-				<li class="list-group-item">D：每年更新成本</li>
-				<li class="list-group-item">D：免费域名注册免费域名注册免费域名注册</li>
-				<li class="list-group-item">免费 Window 空间托管</li>
-				<li class="list-group-item">图像的数量</li>
-				<li class="list-group-item">24*7 支持</li>
-				<li class="list-group-item">每年更新成本</li>
-			</ul>
+			<table id="table-1" cellspacing="0" style="overflow:scroll;width:100%;">
+			    <tr class="list-group-item"><td>1D：免费域名注册免费域名注册免费域名注册<button type="button" class="btn btn-link btn-xs" style="float:right;">修改</button></td></tr>
+			    <tr class="list-group-item"><td>2图像的数量</td></tr>
+			    <tr class="list-group-item"><td>324*7 支持</td></tr>
+			    <tr class="list-group-item"><td>4免费域名注册免费域名注册免费域名注册</td></tr>
+			    <tr class="list-group-item"><td>5免费域名注册免费域名注册免费域名注册</td></tr>
+			    <tr class="list-group-item"><td>6免费域名注册免费域名注册免费域名注册</td></tr>
+			</table>
 		</div>
 		<!-- 右边区 -->
 	</div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // Initialise the table
+    $("#table-1").tableDnD();
+});
+
+
+$("#sendWord").click(function() {
+	var content = $("#content").val();
+	var sign = $("input[name='optionsRadios']:checked").val();
+	$("#table-1").prepend("<tr class='list-group-item'><td>" + sign + content + "</td></tr>");
+	$("#content").val("");
+});
+
+</script>
 
 
 </body>
