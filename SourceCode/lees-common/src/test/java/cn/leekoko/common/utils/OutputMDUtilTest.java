@@ -23,7 +23,7 @@ public class OutputMDUtilTest {
 		try {
 			String sign = "#";
 			mdUtil.textAppend("标题",sign);
-        	mdUtil.outPut("D:\\a.md");
+//        	mdUtil.outPut("D:\\a.md");
         	File f = new File("D:\\a.md");//文件在src名为test1.txt中
             fr = new FileReader(f);//将文件读取到内容中
             Assert.assertNotNull(fr);
@@ -61,7 +61,7 @@ public class OutputMDUtilTest {
 		Assert.assertEquals(mdUtil.getContent().replaceAll("\\s*", ""),"test#追加的内容1");
 		mdUtil.textAppend("追加的内容2","D:");  
 		mdUtil.textAppend("追加的内容3","###");  
-    	mdUtil.outPut("D:\\c.md");
+//    	mdUtil.outPut("D:\\c.md");
 	}
 	
 
