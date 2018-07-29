@@ -59,7 +59,7 @@
 							<input type="radio" name="optionsRadios" id="radios6" value="### "/>###
 						</label>
 						<label>
-							<input type="radio" name="optionsRadios" id="radios7" value="```java"/>java
+							<input type="radio" name="optionsRadios" id="radios7" value="```java<br />"/>java
 						</label>
 						<label>
 							<input type="radio" name="optionsRadios" id="radios8" value="```"/>代码块						
@@ -112,10 +112,11 @@ $(document).keyup(function(event){
 		var aNum = $("input[name='optionsRadios']:checked").attr('id').substring(6);
 		$("input[name='optionsRadios']:checked").removeAttr('checked');
 		var bNum = parseInt(aNum)-1;   //右加1
-		if(aNum < 1){
+		if(bNum < 1){
 			bNum = 8;
 		}
-		$("input[name='optionsRadios'][id='radios"+bNum+"']").attr('checked',true);
+//		$("input[name='optionsRadios'][id='radios"+bNum+"']").attr('checked',true);
+		$("input[name='optionsRadios'][id='radios"+bNum+"']").click();
 	} 
 	//向右
 	if (event.ctrlKey && event.which == 39){
@@ -123,10 +124,11 @@ $(document).keyup(function(event){
 		var cNum = $("input[name='optionsRadios']:checked").attr('id').substring(6);
 		$("input[name='optionsRadios']:checked").removeAttr('checked');
 		var dNum = parseInt(cNum)+1;   //右加1
-		if(cNum > 8){
+		if(dNum > 8){
 			dNum = 1;
 		}
-		$("input[name='optionsRadios'][id='radios"+dNum+"']").attr('checked',true);
+//		$("input[name='optionsRadios'][id='radios"+dNum+"']").attr('checked',true);
+		$("input[name='optionsRadios'][id='radios"+dNum+"']").click();
 	} 
 
 	
