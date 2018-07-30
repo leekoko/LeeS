@@ -1,4 +1,5 @@
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,6 +20,8 @@
    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 <![endif]-->
+
+<script type="text/javascript" src="../js/plupload.full.min.js"></script>
 <style type="text/css">
 .form-control-feedback{
 	left:0;
@@ -41,29 +44,33 @@
 				<div class="form-group">
 					<div class="radio">
 						<label>
-							<input type="radio" name="optionsRadios" id="radios1" value="D：" checked/>D
+							<input type="radio" name="optionsRadios" id="radios1" value="" checked/>空
+							&nbsp;&nbsp;|&nbsp;&nbsp;
 						</label>
 						<label>
-							<input type="radio" name="optionsRadios" id="radios2" value="Z："/>Z
+							<input type="radio" name="optionsRadios" id="radios2" value="D："/>D
+							&nbsp;&nbsp;|&nbsp;&nbsp;
 						</label>
 						<label>
-							<input type="radio" name="optionsRadios" id="radios3" value="M："/>M
+							<input type="radio" name="optionsRadios" id="radios3" value="Z："/>Z
+							&nbsp;&nbsp;|&nbsp;&nbsp;
 						</label>
 						<label>
-							<input type="radio" name="optionsRadios" id="radios4" value="# "/>#
+							<input type="radio" name="optionsRadios" id="radios4" value="M："/>M
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</label>
 						<label>
-							<input type="radio" name="optionsRadios" id="radios5" value="## "/>##
+							<input type="radio" name="optionsRadios" id="radios5" value="# "/>#
+							&nbsp;&nbsp;|&nbsp;&nbsp;
 						</label>
 						<label>
-							<input type="radio" name="optionsRadios" id="radios6" value="### "/>###
+							<input type="radio" name="optionsRadios" id="radios6" value="## "/>##
+								&nbsp;&nbsp;|&nbsp;&nbsp;
 						</label>
 						<label>
-							<input type="radio" name="optionsRadios" id="radios7" value="```java<br />"/>java
+							<input type="radio" name="optionsRadios" id="radios7" value="### "/>###
 						</label>
-						<label>
-							<input type="radio" name="optionsRadios" id="radios8" value="```"/>代码块						
-						</label>
+
 					</div>
 				</div>	
 				<div class="form-group">
@@ -74,11 +81,23 @@
 			<div class="form-group">
 				<button type="button" class="btn btn-default" id="sendWord" onclick="sendWord()">提交</button>
 				<button type="button" class="btn btn-default btn-success" id="exportFile" onclick="exportFile()">导出文件</button>
-				<button type="button" class="btn btn-default btn-primary">导入文件</button>
+				<!-- 上传控件 -->
+			<br/><br/>
+ 			<input id="lefile" type="file" style="display:none"/>
+<!-- 				<div class="input-append">
+					<input id="photoCover" class="input-large" type="text" style="height:30px;">
+					<a onclick="$('input[id=lefile]').click();" class="btn btn-default btn-primary">上传</a>
+					<button type="button" class="btn btn-default btn-primary" name="inputMD" id="uploadfiles">导入</button>
+				</div> -->
+				<div id="container">
+				    <a id="pickfiles" href="javascript:;">[Select files]</a> 
+				    <a id="uploadfiles" href="javascript:;">[Upload files]</a>
+				</div>
+				<br/>
 			</div>
 			<div class="form-group">
 				<p class="help-block">
-					快捷键：ctrl + D、Z、M选择角色，+1、2、3选择标题类型，+a进入通用代码块，+j进入java代码块
+					快捷键：ctrl + ←/→ 可以调整单选按钮位置。
 				</p>
 			</div>
 		</div>
@@ -86,9 +105,11 @@
 		<!-- 右边区 -->
 		<div class="col-md-6 column" style="height:500px;overflow-y:scroll;">
 			<table id="contentList" cellspacing="0" style="width:100%;">
-				<tr class="list-group-item"><td class="cont">D：1111</td></tr>
-				<tr class="list-group-item"><td class="cont">D：2222</td></tr>
-				<tr class="list-group-item"><td class="cont">D：3333</td></tr>
+				<c:if test="${not empty list}">
+					<c:forEach items="${list}" var="item" varStatus="status">
+						<tr class='list-group-item'><td class='cont'>${item}</td></tr>
+					</c:forEach>
+				</c:if>
 			</table>
 		</div>
 		<!-- 右边区 -->
@@ -98,7 +119,6 @@
 </body>
 <script type="text/javascript">
 $(document).ready(function() {
-    // Initialise the table
     $("#table-1").tableDnD();
 });
 /*鼠标触发事件*/
@@ -113,7 +133,7 @@ $(document).keyup(function(event){
 		$("input[name='optionsRadios']:checked").removeAttr('checked');
 		var bNum = parseInt(aNum)-1;   //右加1
 		if(bNum < 1){
-			bNum = 8;
+			bNum = 7;
 		}
 //		$("input[name='optionsRadios'][id='radios"+bNum+"']").attr('checked',true);
 		$("input[name='optionsRadios'][id='radios"+bNum+"']").click();
@@ -124,13 +144,11 @@ $(document).keyup(function(event){
 		var cNum = $("input[name='optionsRadios']:checked").attr('id').substring(6);
 		$("input[name='optionsRadios']:checked").removeAttr('checked');
 		var dNum = parseInt(cNum)+1;   //右加1
-		if(dNum > 8){
+		if(dNum > 7){
 			dNum = 1;
 		}
-//		$("input[name='optionsRadios'][id='radios"+dNum+"']").attr('checked',true);
 		$("input[name='optionsRadios'][id='radios"+dNum+"']").click();
 	} 
-
 	
 });
 
@@ -139,7 +157,7 @@ function sendWord(){
 	var content = $.trim($("#content").val());
 	if(content.length > 1){
 		var sign = $("input[name='optionsRadios']:checked").val();
-		$("#contentList").prepend("<tr class='list-group-item'><td>" + sign + content + "</td></tr>");
+		$("#contentList").prepend("<tr class='list-group-item'><td class='cont'>" + sign + content + "</td></tr>");
 		$("#content").val("");
 	}
 }
@@ -148,14 +166,6 @@ function sendWord(){
 
 /*导出md文件 */
 function exportFile(){
-/* 	var strArr = $("#contentList").children();
-	var str = strArr[0].innerText;
-	exportList(str); */
-/* 	$('#contentList tr').each(function(i){                   // 遍历 tr
-	    $(this).children('td').each(function(j){  // 遍历 tr 的各个 td
-	       alert("第"+(i+1)+"行，第"+(j+1)+"个td的值："+$(this).text()+"。");
-	    });
-	}); */
 	var arr = [];
 	var contObject = $(".cont");
 	for (var i = 0; i < contObject.length; i++) {
@@ -163,6 +173,9 @@ function exportFile(){
 	}
  	var reverArr = arr.reverse();
 	var str = reverArr.toString();
+	if($.trim(str).length < 1){
+		return;
+	}
 	exportList(str);      //str格式   A,B,C
 }
 
@@ -190,5 +203,66 @@ function downLoadFile(options){
     $iframe.remove();
 }
 
+/* function go(){
+	$('#photoCover').val($(this).val());
+} */
+/*上传文件*/
+/* $('input[id=lefile]').change(function() {
+	$('#photoCover').val($(this).val());
+});
+ */
 </script>
+
+<!-- 上传文件 -->
+<script type="text/javascript">
+
+var uploader = new plupload.Uploader({
+	runtimes : 'html5,flash,silverlight,html4',
+	browse_button : 'pickfiles', // you can pass an id...
+	container: document.getElementById('container'), // ... or DOM Element itself
+	url : "${pageContext.request.contextPath}" +"/content/uploadMD",
+	flash_swf_url : '../js/Moxie.swf',
+	silverlight_xap_url : '../js/Moxie.xap',
+	
+	filters : {
+		max_file_size : '10mb',
+		mime_types: [
+			{title : "doc files", extensions : "md"},
+		]
+	},
+
+	init: {
+		PostInit: function() {
+
+			document.getElementById('uploadfiles').onclick = function() {
+				uploader.start();
+				return false;
+			};
+		},
+
+		FilesAdded: function(up, files) {      //上传完毕触发
+
+			plupload.each(files, function(file) {
+				document.getElementById('filelist').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
+			});
+			alert("上传完毕");
+			window.location.reload();   //刷新当前页
+		},
+
+		UploadProgress: function(up, file) {
+			document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
+		},
+
+		Error: function(up, err) {
+			document.getElementById('console').appendChild(document.createTextNode("\nError #" + err.code + ": " + err.message));
+		}
+	}
+});
+
+uploader.init();
+
+</script>
+
+
+
 </html>

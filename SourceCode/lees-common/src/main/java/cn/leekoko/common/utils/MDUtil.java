@@ -1,16 +1,19 @@
 package cn.leekoko.common.utils;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.lang3.StringUtils;
 /**
  * 操作MD文件工具类
  * @author liyb
@@ -20,12 +23,6 @@ public class MDUtil {
 	
 
 	private static final int SIZE = 4096;
-	
-	private static StringBuilder content = new StringBuilder();
-	
-	public String getContent() {
-		return content.toString();
-	}
 	
 	/**
 	 * 输出md文件
@@ -51,42 +48,57 @@ public class MDUtil {
 	 * @param path
 	 * @throws IOException 
 	 */
-	public void getFile(String path) throws IOException {
+	public static List<String> getFile(String path){
 		// TODO Auto-generated method stub
 		File file = new File(path);
+		List<String> list = new ArrayList<String>();
 		if(!file.exists()){
 			throw new RuntimeException("要读取的文件不存在");
 		}
-		
-		FileInputStream fis = new FileInputStream(file);
-		int len = 0;
-		byte[] buf = new byte[SIZE];
-		while((len=fis.read(buf))!=-1){
-			this.textAppend(new String(buf,0,len),"");
+		StringBuffer content = new StringBuffer();
+		try {
+//			fis = new FileInputStream(file);
+			BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(file),"UTF-8"));
+			int len = 0;
+			byte[] buf = new byte[SIZE];
+//			while((len=fis.read(buf))!=-1){
+			String s;
+			while((s = in.readLine()) != null){
+				//content.append(new String(buf,0,len,"utf-8"));    //处理中文乱码问题
+				if(s.trim().length() > 0){
+					if(addEnter(s.substring(0,2))){
+						list.add("/n/r"+s);
+					}else{
+						list.add(s);
+					}
+				}
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
 		}
 		//关资源
-		fis.close();
+		return list;
 	}
-	
-	public static void text(String str){
-		textAppend(str, null);
-	}
-	
 	/**
-	 * 文本追加内容
-	 * 20180708
-	 * @param str
-	 * @param sign   前缀标记
-	 * @throws IOException
+	 * 判断是否加回车
+	 * @param substring
+	 * @return
 	 */
-	public static void textAppend(String str,String sign){
-		if(StringUtils.isNotEmpty(sign)){
-			String signStr = "\r\n"+sign+" ";
-			content.append(signStr + str);
-		}else{
-			content.append(str);
+	private static boolean addEnter(String str) {
+		if(str.equals("D：") || str.equals("Z：") || str.equals("M：") ||  str.equals("# ") ||  str.equals("##")){
+			return true;
 		}
+		return false;
 	}
+
 	/**
 	 * 获取文件名
 	 * @param nameFormat
