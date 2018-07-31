@@ -82,19 +82,67 @@
 				<button type="button" class="btn btn-default" id="sendWord" onclick="sendWord()">提交</button>
 				<button type="button" class="btn btn-default btn-success" id="exportFile" onclick="exportFile()">导出文件</button>
 				<!-- 上传控件 -->
+				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">导入文件</button>
+				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">清空</button>
 			<br/><br/>
- 			<input id="lefile" type="file" style="display:none"/>
-<!-- 				<div class="input-append">
-					<input id="photoCover" class="input-large" type="text" style="height:30px;">
-					<a onclick="$('input[id=lefile]').click();" class="btn btn-default btn-primary">上传</a>
-					<button type="button" class="btn btn-default btn-primary" name="inputMD" id="uploadfiles">导入</button>
-				</div> -->
-				<div id="container">
-				    <a id="pickfiles" href="javascript:;">[Select files]</a> 
-				    <a id="uploadfiles" href="javascript:;">[Upload files]</a>
-				</div>
-				<br/>
 			</div>
+			<!-- 按钮触发模态框 -->
+
+			<!-- 模态框（Modal） -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								MD文件导入
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div id="container">
+			    				<a id="pickfiles" href="javascript:;">[Select files]</a> 
+			    				<a id="uploadfiles" href="javascript:;">[Upload files]</a>
+							</div>
+							<div id="filelist">Your browser doesn't have Flash, Silverlight or HTML5 support.</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+							</button>
+							<button type="button" class="btn btn-primary" onclick="ConfirmImport();">
+								确认
+							</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal -->
+			</div>
+
+			
+ 
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+			        <h4 class="modal-title" id="exampleModalLabel">确认框</h4>
+			      </div>
+			      <div class="modal-body">
+			        <form>
+			       	<div class="form-group">
+			            <label for="message-text" class="control-label">确定要清空内容吗？</label>
+			          </div>
+			        </form>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+			        <button type="button" class="btn btn-primary" onclick="del();">确认</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>			
+			
+			
 			<div class="form-group">
 				<p class="help-block">
 					快捷键：ctrl + ←/→ 可以调整单选按钮位置。
@@ -156,9 +204,18 @@ $(document).keyup(function(event){
 function sendWord(){
 	var content = $.trim($("#content").val());
 	if(content.length > 1){
-		var sign = $("input[name='optionsRadios']:checked").val();
-		$("#contentList").prepend("<tr class='list-group-item'><td class='cont'>" + sign + content + "</td></tr>");
+ 		var sign = $("input[name='optionsRadios']:checked").val();
+		$("#contentList").prepend("<tr class='list-group-item'><td class='cont'>" + sign + content + "</td></tr>"); 
 		$("#content").val("");
+		$.ajax({
+			url : "${pageContext.request.contextPath}" +"/content/insert",
+			type : "POST",
+			data : {"content":sign + content},
+			async : false,
+			success:function(data){
+				//window.location.reload();
+			}
+		});
 	}
 }
 
@@ -203,14 +260,25 @@ function downLoadFile(options){
     $iframe.remove();
 }
 
-/* function go(){
-	$('#photoCover').val($(this).val());
-} */
-/*上传文件*/
-/* $('input[id=lefile]').change(function() {
-	$('#photoCover').val($(this).val());
-});
- */
+function ConfirmImport(){
+	//刷新页面
+	window.location.reload();
+}
+
+function del(){
+	//刷新页面
+	$.ajax({
+		url : "${pageContext.request.contextPath}" +"/content/delete",
+		type : "POST",
+		async : false,
+		success:function(data){
+			window.location.reload();
+		}
+	});
+}
+	
+
+
 </script>
 
 <!-- 上传文件 -->
@@ -233,28 +301,23 @@ var uploader = new plupload.Uploader({
 
 	init: {
 		PostInit: function() {
-
+			document.getElementById('filelist').innerHTML = '';
+			
 			document.getElementById('uploadfiles').onclick = function() {
 				uploader.start();
 				return false;
 			};
 		},
-
 		FilesAdded: function(up, files) {      //上传完毕触发
-
 			plupload.each(files, function(file) {
 				document.getElementById('filelist').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
 			});
-			alert("上传完毕");
-			window.location.reload();   //刷新当前页
 		},
-
 		UploadProgress: function(up, file) {
 			document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
 		},
-
 		Error: function(up, err) {
-			document.getElementById('console').appendChild(document.createTextNode("\nError #" + err.code + ": " + err.message));
+			
 		}
 	}
 });

@@ -67,7 +67,7 @@ public class MDUtil {
 				//content.append(new String(buf,0,len,"utf-8"));    //处理中文乱码问题
 				if(s.trim().length() > 0){
 					if(addEnter(s.substring(0,2))){
-						list.add("/n/r"+s);
+						list.add("\r\n"+s);
 					}else{
 						list.add(s);
 					}

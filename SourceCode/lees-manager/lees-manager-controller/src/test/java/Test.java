@@ -1,4 +1,5 @@
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -20,6 +21,13 @@ public class Test {
 		String str = "D£º1111,D£º2222,D£º3333";
 		str = str.replace(",", "\r\n");
 		System.out.println(str);
+	}
+	
+	@org.junit.Test
+	public void TimeTest() throws ParseException{
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println(formatter.format(new Date()));
+		
 	}
 
 
