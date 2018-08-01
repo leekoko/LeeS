@@ -63,13 +63,16 @@ public class MDUtil {
 			byte[] buf = new byte[SIZE];
 //			while((len=fis.read(buf))!=-1){
 			String s;
+			String str = "";
 			while((s = in.readLine()) != null){
 				//content.append(new String(buf,0,len,"utf-8"));    //处理中文乱码问题
-				if(s.trim().length() > 0){
+				if(s.trim().length() > 2){
 					if(addEnter(s.substring(0,2))){
-						list.add("\r\n"+s);
+						str = str + "\r\n";
+						list.add(str);
+						str = s;
 					}else{
-						list.add(s);
+						str = str + s;
 					}
 				}
 			}

@@ -289,8 +289,8 @@ var uploader = new plupload.Uploader({
 	browse_button : 'pickfiles', // you can pass an id...
 	container: document.getElementById('container'), // ... or DOM Element itself
 	url : "${pageContext.request.contextPath}" +"/content/uploadMD",
-	flash_swf_url : '../js/Moxie.swf',
-	silverlight_xap_url : '../js/Moxie.xap',
+ 	flash_swf_url : '../js/Moxie.swf',
+	silverlight_xap_url : '../js/Moxie.xap', 
 	
 	filters : {
 		max_file_size : '10mb',
