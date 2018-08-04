@@ -30,5 +30,12 @@ public class Test {
 		
 	}
 
+	
+	@org.junit.Test
+	public void testSub(){
+		String path = "111111//22222222//33333333//44444444444//5555555";
+		String str = path.substring(path.lastIndexOf("//"));
+		System.out.println(str);
+	}
 
 }

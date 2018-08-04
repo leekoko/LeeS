@@ -40,9 +40,10 @@ public class ContentController {
 	 */
 	@RequestMapping("/uploadMD")
 	public void uploadMD(HttpServletRequest request, HttpServletResponse response,Model model){
-		attachmentController attachmentController = new attachmentController();
+		AttachmentController attachmentController = new AttachmentController();
 		try {
-			String path = attachmentController.uploadFile(request, response);
+			String filePath = "\\LeesAttach";
+			String path = attachmentController.uploadFile(request, response, filePath);
 			List<String> list = MDUtil.getFile(path);
 			//将数据存入到数据库中
 			Onlinecontent onlinecontent = new Onlinecontent();

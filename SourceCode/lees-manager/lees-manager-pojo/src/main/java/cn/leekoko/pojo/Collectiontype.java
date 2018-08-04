@@ -1,13 +1,11 @@
 package cn.leekoko.pojo;
 
-import java.util.Date;
-
-public class Onlinecontent {
+public class Collectiontype {
     private Integer id;
 
-    private String content;
+    private String typename;
 
-    private Date createtime;
+    private Integer delflag;
 
     private String tsm1;
 
@@ -21,11 +19,9 @@ public class Onlinecontent {
 
     private String tsm6;
 
-    private String tsm7;
+    private String createdate;
 
-    private String tsm8;
-
-    private String tsm9;
+    private String modifydate;
 
     public Integer getId() {
         return id;
@@ -35,20 +31,20 @@ public class Onlinecontent {
         this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public String getTypename() {
+        return typename;
     }
 
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
+    public void setTypename(String typename) {
+        this.typename = typename == null ? null : typename.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Integer getDelflag() {
+        return delflag;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setDelflag(Integer delflag) {
+        this.delflag = delflag;
     }
 
     public String getTsm1() {
@@ -99,27 +95,19 @@ public class Onlinecontent {
         this.tsm6 = tsm6 == null ? null : tsm6.trim();
     }
 
-    public String getTsm7() {
-        return tsm7;
+    public String getCreatedate() {
+        return createdate;
     }
 
-    public void setTsm7(String tsm7) {
-        this.tsm7 = tsm7 == null ? null : tsm7.trim();
+    public void setCreatedate(String createdate) {
+        this.createdate = createdate == null ? null : createdate.trim();
     }
 
-    public String getTsm8() {
-        return tsm8;
+    public String getModifydate() {
+        return modifydate;
     }
 
-    public void setTsm8(String tsm8) {
-        this.tsm8 = tsm8 == null ? null : tsm8.trim();
-    }
-
-    public String getTsm9() {
-        return tsm9;
-    }
-
-    public void setTsm9(String tsm9) {
-        this.tsm9 = tsm9 == null ? null : tsm9.trim();
+    public void setModifydate(String modifydate) {
+        this.modifydate = modifydate == null ? null : modifydate.trim();
     }
 }
