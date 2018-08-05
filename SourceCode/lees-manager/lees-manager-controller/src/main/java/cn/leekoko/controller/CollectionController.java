@@ -1,6 +1,7 @@
 package cn.leekoko.controller;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -87,4 +88,31 @@ public class CollectionController {
 		return map;
 	}
 
+	@RequestMapping("/addType")
+	@ResponseBody
+	public Object addType(String typeName){
+		HashMap<String, Boolean> map = new HashMap<String, Boolean>();
+		boolean result = false;
+		Collectiontype collectiontype = new Collectiontype();
+		collectiontype.setTypename(typeName);
+		int resultNum = collectionTypeService.insertSelective(collectiontype);
+		if(resultNum > 0){
+			result = true;
+		}
+		map.put("result", result);
+		return map;
+	}
+	/**
+	 * 更新点击时间
+	 * @param id
+	 */
+	@RequestMapping("/updateClickDate")
+	public void updateClickDate(String id){
+		CollectioncontentExample example = new CollectioncontentExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andIdEqualTo(id);
+		Collectioncontent collectioncontent = new Collectioncontent();
+		collectioncontent.setClickdate(new Date());
+		collectioncontentService.updateByExampleSelective(collectioncontent,example);
+	}
 }

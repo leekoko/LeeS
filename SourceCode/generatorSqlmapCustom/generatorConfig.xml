@@ -42,7 +42,7 @@
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 		<!-- 指定数据库表 -->
-		<table schema="" tableName="collectionContent"></table>
+		<table schema="" tableName="collectioncontent"></table>
 <!-- 		<table schema="" tableName="tb_content_category"></table>
 		<table schema="" tableName="tb_item"></table>
 		<table schema="" tableName="tb_item_cat"></table>

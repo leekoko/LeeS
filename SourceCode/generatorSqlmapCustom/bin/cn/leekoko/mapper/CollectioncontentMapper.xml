@@ -8,6 +8,7 @@
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="intro" property="intro" jdbcType="VARCHAR" />
     <result column="pageUrl" property="pageurl" jdbcType="VARCHAR" />
+    <result column="clickDate" property="clickdate" jdbcType="TIMESTAMP" />
     <result column="delFlag" property="delflag" jdbcType="INTEGER" />
     <result column="tsm1" property="tsm1" jdbcType="VARCHAR" />
     <result column="tsm2" property="tsm2" jdbcType="VARCHAR" />
@@ -49,8 +50,8 @@
   </sql>
   <sql id="Update_By_Example_Where_Clause" >
     <where >
-        <if test="criteria.valid" >
       <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
           <trim prefix="(" suffix=")" prefixOverrides="and" >
             <foreach collection="criteria.criteria" item="criterion" >
               <choose >
@@ -77,8 +78,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    ID, parentId, imgUrl, title, intro, pageUrl, delFlag, tsm1, tsm2, tsm3, tsm4, tsm5, 
-    tsm6, createDate, modifyDate
+    ID, parentId, imgUrl, title, intro, pageUrl, clickDate, delFlag, tsm1, tsm2, tsm3, 
+    tsm4, tsm5, tsm6, createDate, modifyDate
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.leekoko.pojo.CollectioncontentExample" >
     select
@@ -113,14 +114,16 @@
   <insert id="insert" parameterType="cn.leekoko.pojo.Collectioncontent" >
     insert into collectioncontent (ID, parentId, imgUrl, 
       title, intro, pageUrl, 
-      delFlag, tsm1, tsm2, 
-      tsm3, tsm4, tsm5, tsm6, 
-      createDate, modifyDate)
+      clickDate, delFlag, tsm1, 
+      tsm2, tsm3, tsm4, tsm5, 
+      tsm6, createDate, modifyDate
+      )
     values (#{id,jdbcType=VARCHAR}, #{parentid,jdbcType=INTEGER}, #{imgurl,jdbcType=VARCHAR}, 
       #{title,jdbcType=VARCHAR}, #{intro,jdbcType=VARCHAR}, #{pageurl,jdbcType=VARCHAR}, 
-      #{delflag,jdbcType=INTEGER}, #{tsm1,jdbcType=VARCHAR}, #{tsm2,jdbcType=VARCHAR}, 
-      #{tsm3,jdbcType=VARCHAR}, #{tsm4,jdbcType=VARCHAR}, #{tsm5,jdbcType=VARCHAR}, #{tsm6,jdbcType=VARCHAR}, 
-      #{createdate,jdbcType=VARCHAR}, #{modifydate,jdbcType=VARCHAR})
+      #{clickdate,jdbcType=TIMESTAMP}, #{delflag,jdbcType=INTEGER}, #{tsm1,jdbcType=VARCHAR}, 
+      #{tsm2,jdbcType=VARCHAR}, #{tsm3,jdbcType=VARCHAR}, #{tsm4,jdbcType=VARCHAR}, #{tsm5,jdbcType=VARCHAR}, 
+      #{tsm6,jdbcType=VARCHAR}, #{createdate,jdbcType=VARCHAR}, #{modifydate,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.leekoko.pojo.Collectioncontent" >
     insert into collectioncontent
@@ -142,6 +145,9 @@
       </if>
       <if test="pageurl != null" >
         pageUrl,
+      </if>
+      <if test="clickdate != null" >
+        clickDate,
       </if>
       <if test="delflag != null" >
         delFlag,
@@ -189,6 +195,9 @@
       </if>
       <if test="pageurl != null" >
         #{pageurl,jdbcType=VARCHAR},
+      </if>
+      <if test="clickdate != null" >
+        #{clickdate,jdbcType=TIMESTAMP},
       </if>
       <if test="delflag != null" >
         #{delflag,jdbcType=INTEGER},
@@ -246,6 +255,9 @@
       <if test="record.pageurl != null" >
         pageUrl = #{record.pageurl,jdbcType=VARCHAR},
       </if>
+      <if test="record.clickdate != null" >
+        clickDate = #{record.clickdate,jdbcType=TIMESTAMP},
+      </if>
       <if test="record.delflag != null" >
         delFlag = #{record.delflag,jdbcType=INTEGER},
       </if>
@@ -286,6 +298,7 @@
       title = #{record.title,jdbcType=VARCHAR},
       intro = #{record.intro,jdbcType=VARCHAR},
       pageUrl = #{record.pageurl,jdbcType=VARCHAR},
+      clickDate = #{record.clickdate,jdbcType=TIMESTAMP},
       delFlag = #{record.delflag,jdbcType=INTEGER},
       tsm1 = #{record.tsm1,jdbcType=VARCHAR},
       tsm2 = #{record.tsm2,jdbcType=VARCHAR},
@@ -316,6 +329,9 @@
       </if>
       <if test="pageurl != null" >
         pageUrl = #{pageurl,jdbcType=VARCHAR},
+      </if>
+      <if test="clickdate != null" >
+        clickDate = #{clickdate,jdbcType=TIMESTAMP},
       </if>
       <if test="delflag != null" >
         delFlag = #{delflag,jdbcType=INTEGER},
@@ -354,6 +370,7 @@
       title = #{title,jdbcType=VARCHAR},
       intro = #{intro,jdbcType=VARCHAR},
       pageUrl = #{pageurl,jdbcType=VARCHAR},
+      clickDate = #{clickdate,jdbcType=TIMESTAMP},
       delFlag = #{delflag,jdbcType=INTEGER},
       tsm1 = #{tsm1,jdbcType=VARCHAR},
       tsm2 = #{tsm2,jdbcType=VARCHAR},

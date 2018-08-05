@@ -1,5 +1,6 @@
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="/WEB-INF/jsp/taglib.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,7 +22,7 @@
    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 <![endif]-->
 
-<script type="text/javascript" src="../js/plupload.full.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/plupload.full.min.js"></script>
 <style type="text/css">
 .form-control-feedback{
 	left:0;
@@ -289,8 +290,8 @@ var uploader = new plupload.Uploader({
 	browse_button : 'pickfiles', // you can pass an id...
 	container: document.getElementById('container'), // ... or DOM Element itself
 	url : "${pageContext.request.contextPath}" +"/content/uploadMD",
- 	flash_swf_url : '../js/Moxie.swf',
-	silverlight_xap_url : '../js/Moxie.xap', 
+ 	flash_swf_url : '${ctx}/js/Moxie.swf',
+	silverlight_xap_url : '${ctx}/js/Moxie.xap', 
 	
 	filters : {
 		max_file_size : '10mb',

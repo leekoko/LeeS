@@ -20,4 +20,8 @@ public class CollectionTypeServiceImpl implements CollectionTypeService {
 		return collectiontypeMapper.selectByExample(example);
 	}
 
+	public int insertSelective(Collectiontype record) {
+		return collectiontypeMapper.insertSelective(record);
+	}
+
 }

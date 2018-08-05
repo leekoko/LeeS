@@ -30,7 +30,7 @@ import cn.leekoko.service.AttachmentService;
 public class AttachmentServiceImpl implements AttachmentService {
 	
 	@Value("${uploadPath}")
-	public String uploadPath;
+	public String pathHeard;
 	
 	public String uploadFile(HttpServletRequest request, HttpServletResponse response, String path) {
         response.setCharacterEncoding( "UTF-8" );
@@ -39,9 +39,9 @@ public class AttachmentServiceImpl implements AttachmentService {
         String tempFileName = null; /* 临时文件名 */
         String newFileName = null; /* 最后合并后的新文件名 */
         BufferedOutputStream outputStream = null;
-        
-        if(StringUtils.isNoneEmpty(uploadPath)){    //有配置好
-        	uploadPath = uploadPath + path; 
+        String uploadPath = "";
+        if(StringUtils.isNoneEmpty(pathHeard)){    //有配置好
+        	uploadPath = pathHeard + path; 
         }else{
         	uploadPath = request.getServletContext().getRealPath(path);
         }

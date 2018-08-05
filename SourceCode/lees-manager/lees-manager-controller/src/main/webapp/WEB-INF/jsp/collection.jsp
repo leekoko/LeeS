@@ -1,5 +1,6 @@
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="/WEB-INF/jsp/taglib.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +8,7 @@
 <title>干货</title>
 <!-- 引入 Bootstrap -->
 <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${ctx}/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- 包括所有已编译的插件 -->
@@ -20,7 +21,7 @@
    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../js/plupload.full.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/plupload.full.min.js"></script>
 <style type="text/css">
 	a:link {
 	 font-size: 12px;
@@ -51,13 +52,14 @@
 	</div>
 	<!-- 按钮组 -->
 	<div class="form-group pull-right">
-		<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">添加页面</button>
+		<button class="btn btn-primary btn-success" data-toggle="modal" data-target="#myModal">添加页面</button>
+		<button class="btn btn-primary" data-toggle="modal" data-target="#myModal2">添加类别</button>
 	</div>
 	<!-- 按钮组 -->
 	<!-- 内容区域 -->
 	<div class="col-md-12 column " id="content"></div>
 	<!-- 内容区域 -->
-	<!-- 模态框 -->
+	<!-- 模态框1 -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -99,7 +101,39 @@
 			</div>
 		</div>
 	</div>
-	<!-- 模态框 -->
+	<!-- 模态框1 -->
+	<!-- 模态框2 -->
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						添加类别
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div id="container">
+ 						<div class="form-group">
+							 <label>类别名称</label><input type="text" class="form-control" id="typeName"/>
+						</div>
+						<c:forEach items="${typeList}" varStatus="i" var="item" >  
+							<label>
+								${item.typename} &nbsp;&nbsp;|&nbsp;&nbsp;
+							</label>
+						</c:forEach>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary" onclick="confirmTypeName();">确认</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 模态框2 -->
 </div>
 
 </body>
@@ -112,14 +146,23 @@ $(function(){
 			html += "<div class='panel panel-default'><div class='panel-heading'><h4 class='panel-title'><a data-toggle='collapse' data-parent='#accordion' href='#"+item.id+"'>"+item.typename+"</a></h4></div><div id='"+item.id+"' class='panel-collapse collapse in'><div class='panel-body grid_s'>";
 			$.post("${pageContext.request.contextPath}/collection/getContentList",{'parentId':item.id},function(data2){
 				$.each(data2,function(i,item2){
-					html+="<div class='grid'><a href='"+item2.pageurl+"' target='_blank'><div class='gallery'><img src='"+item2.imgurl+"' title='image-name'></div><h3>"+item2.title+"</h3><div class='grid_p'><p>"+item2.intro+"</p></div></a></div>";
+					html+="<div class='grid' style='width:330px;height:300px;margin-top:20px;'><input type='hidden' class='id' value='"+item2.id+"'/><a href='"+item2.pageurl+"' target='_blank'><div class='gallery'><img src='"+item2.imgurl+"' title='image-name' style='height:180px;'></div><h4 style='font-family:Arial;'>"+item2.title+"</h4><div class='grid_p'><p>"+item2.intro+"</p></div></a></div>";
 				});
 			});
 			html+="</div></div></div>";
 		}); 
 	});
 	$("#content").append(html);
-
+	/*更新点击时间*/
+	$(".grid").click(function(){
+		$.ajax({
+	        type:"post",
+	        async:false,
+	        dataType:"json",
+	        url: "${pageContext.request.contextPath}/collection/updateClickDate",
+	        data:{"id":$(this).children().val()}
+    	});  
+	});
 });
 
 function confirm(){
@@ -141,7 +184,24 @@ function confirm(){
         }
     }); 
 }
-
+/*添加类别名*/
+function confirmTypeName(){
+	var typeName = $("#typeName").val();
+    $.ajax({
+        type:"post",
+        async:false,
+        dataType:"json",
+        url: "${pageContext.request.contextPath}/collection/addType",
+        data:{"typeName":typeName},
+        success : function(data) {
+            if(data.result==true){
+/*              $('#myModal2').modal('hide');
+                $("body").removeClass('modal-open');  */
+            	window.location.reload();
+            }
+        }
+    }); 
+}
 
 
 </script>
