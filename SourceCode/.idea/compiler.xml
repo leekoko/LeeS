@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="lees-common" />
+        <module name="lees-manager-controller" />
+        <module name="lees-manager-mapper" />
+        <module name="lees-manager-pojo" />
+        <module name="lees-manager-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="lees-common" target="1.8" />
+      <module name="lees-manager" target="1.8" />
+      <module name="lees-manager-controller" target="1.8" />
+      <module name="lees-manager-mapper" target="1.8" />
+      <module name="lees-manager-pojo" target="1.8" />
+      <module name="lees-manager-service" target="1.8" />
+      <module name="lees-parent" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

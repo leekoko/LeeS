@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.leekoko.common.utils.MDUtil;
 import cn.leekoko.pojo.Onlinecontent;
+import cn.leekoko.service.AttachmentService;
 import cn.leekoko.service.OnlinecontentService;
 
 @Controller
@@ -22,6 +23,9 @@ public class ContentController {
 	
 	@Autowired
 	OnlinecontentService onlinecontentService;
+	
+	@Autowired
+	AttachmentService attachmentService;
 	
 	@RequestMapping("/exportMD")
 	public void exportMD(String content,HttpServletResponse response){
@@ -40,20 +44,14 @@ public class ContentController {
 	 */
 	@RequestMapping("/uploadMD")
 	public void uploadMD(HttpServletRequest request, HttpServletResponse response,Model model){
-		AttachmentController attachmentController = new AttachmentController();
-		try {
-			String filePath = "\\LeesAttach";
-			String path = attachmentController.uploadFile(request, response, filePath);
-			List<String> list = MDUtil.getFile(path);
-			//将数据存入到数据库中
-			Onlinecontent onlinecontent = new Onlinecontent();
-			for (int i = list.size()-1; i >= 0 ; i--) {
-				onlinecontent.setContent(list.get(i));
-				onlinecontentService.insertSelective(onlinecontent);
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String filePath = "\\LeesAttach";
+		String path = attachmentService.uploadFile(request, response, filePath);
+		List<String> list = MDUtil.getFile(path);
+		//将数据存入到数据库中
+		Onlinecontent onlinecontent = new Onlinecontent();
+		for (int i = list.size()-1; i >= 0 ; i--) {
+			onlinecontent.setContent(list.get(i));
+			onlinecontentService.insertSelective(onlinecontent);
 		}
 	}
 	

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lees-common/lees-common.iml" filepath="$PROJECT_DIR$/lees-common/lees-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lees-manager/lees-manager.iml" filepath="$PROJECT_DIR$/lees-manager/lees-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/lees-manager-controller.iml" filepath="$PROJECT_DIR$/lees-manager/lees-manager-controller/lees-manager-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lees-manager/lees-manager-mapper/lees-manager-mapper.iml" filepath="$PROJECT_DIR$/lees-manager/lees-manager-mapper/lees-manager-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lees-manager/lees-manager-pojo/lees-manager-pojo.iml" filepath="$PROJECT_DIR$/lees-manager/lees-manager-pojo/lees-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lees-manager/lees-manager-service/lees-manager-service.iml" filepath="$PROJECT_DIR$/lees-manager/lees-manager-service/lees-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lees-parent/lees-parent.iml" filepath="$PROJECT_DIR$/lees-parent/lees-parent.iml" />
+    </modules>
+  </component>
+</project>
