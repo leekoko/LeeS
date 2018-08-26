@@ -7,6 +7,9 @@
 <title>DZM页面</title>
 <link href="${ctx}/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" type="text/css" href="${ctx}/css/demo.css" />
+
+
+
 </head>
 <body>
 <div class="container">
@@ -39,6 +42,7 @@
 			<nav class="codrops-demos">
 				<a class="current-demo" href="${pageContext.request.contextPath}/login">登录</a>
 				<a class="current-demo" href="${pageContext.request.contextPath}/camera">相机</a>
+				<a class="current-demo" href="${pageContext.request.contextPath}/mainFrame">主页面</a>
 			</nav>
 		</header>
 	</div>

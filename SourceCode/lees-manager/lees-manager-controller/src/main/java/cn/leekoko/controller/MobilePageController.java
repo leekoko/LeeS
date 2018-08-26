@@ -23,4 +23,12 @@ public class MobilePageController {
         return "/mobile/camera";
     }
 
+    /**
+     * 主界面
+     */
+    @RequestMapping("/mainFrame")
+    public String mainFrame(){
+        return "/mobile/mainFrame";
+    }
+
 }
