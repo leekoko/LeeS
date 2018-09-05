@@ -72,20 +72,15 @@
     <!-- 内容区域s -->
     <div id="content" class="page-content">
 
-
-
         <div class="page-header" style="margin-top: 0px;">
             <a href="#" class="deploy-sidebar"></a>
             <p class="bread-crumb">welcome</p>
             <!-- <a href="contact.html" class="deploy-contact"></a> -->
         </div>
 
-        <div class="content" style="height:641px;">      <!--需改成动态获取高度 -->
-            <iframe id="homecontentDiv" name="homecontentDiv" src="${pageContext.request.contextPath}/collection/updateClickDate" width="99%" frameborder="0" scrolling="yes">
+        <div class="content">      <!--需改成动态获取高度 -->
+            <iframe id="homecontentDiv" name="homecontentDiv" src="${pageContext.request.contextPath}/mobile/mainPage" width="99%" height="850px;" frameborder="0" scrolling="no">
             </iframe>
-
-
-
         </div>
     </div>
     <!-- 内容区域e -->

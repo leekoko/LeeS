@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/mobile")
 public class MobilePageController {
 
     /**
@@ -30,5 +31,20 @@ public class MobilePageController {
     public String mainFrame(){
         return "/mobile/mainFrame";
     }
+    /**
+     * 首页
+     */
+    @RequestMapping("/mainPage")
+    public String mainPage(){
+        return "/mobile/mainPage";
+    }
 
+    /**
+     * 后台管理页面
+     * @return
+     */
+    @RequestMapping("/backStagePage")
+    public String backStagePage(){
+        return "/mobile/backStagePage";
+    }
 }

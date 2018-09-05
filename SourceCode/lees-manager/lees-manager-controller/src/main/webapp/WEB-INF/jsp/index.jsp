@@ -40,13 +40,20 @@
 		<header class="codrops-header">
 			<h1>手机端页面Test</h1>
 			<nav class="codrops-demos">
-				<a class="current-demo" href="${pageContext.request.contextPath}/login">登录</a>
-				<a class="current-demo" href="${pageContext.request.contextPath}/camera">相机</a>
-				<a class="current-demo" href="${pageContext.request.contextPath}/mainFrame">主页面</a>
+				<a class="current-demo" href="${pageContext.request.contextPath}/mobile/login">登录</a>
+				<a class="current-demo" href="${pageContext.request.contextPath}/mobile/camera">相机</a>
+				<a class="current-demo" href="${pageContext.request.contextPath}/mobile/mainFrame">主页面</a>
 			</nav>
 		</header>
 	</div>
-
+	<div class="col-md-12 column ">
+		<header class="codrops-header">
+			<h1>手机平台</h1>
+			<nav class="codrops-demos">
+				<a class="current-demo" href="${pageContext.request.contextPath}/selectColumnPage">选择列页面</a>
+			</nav>
+		</header>
+	</div>
 </div>
 
 </body>
