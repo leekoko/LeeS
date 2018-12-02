@@ -11,9 +11,6 @@
             LeeS
         </h1>
     </div>
-    <a  href="https://jx.888dyy.com/mdparse/index.php?type=toutiao&id=v02030ef0000beagsa3c86dgjifajok0">
-        <button class="btn btn-primary btn-success">爱情公寓</button>
-    </a>
     <div class="row clearfix" style="margin-top: 30px;">
         <div class="col-md-12  col-lg-12 col-sm-12 column ">
             <img alt="120x160" src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2977281036,4171015983&fm=179&app=42&f=JPEG?w=115&h=161" class="img-thumbnail" />
@@ -41,6 +38,15 @@
             <button class="btn btn-primary btn-success">76</button>
         </a>
 
+    </div>
+    <div class="row clearfix" style="margin-top: 30px;">
+        <div class="col-md-12  col-lg-12 col-sm-12 column ">
+            <img alt="120x160" src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2977281036,4171015983&fm=179&app=42&f=JPEG?w=115&h=161" class="img-thumbnail" />
+            <h3>【我是大哥大】</h3>
+        </div>
+        <a  href="https://jx.888dyy.com/mdparse/index.php?type=toutiao&amp;id=v02030470000berl200697aknheo1e70">
+            <button class="btn btn-primary btn-success">76</button>
+        </a>
     </div>
 </div>
 
