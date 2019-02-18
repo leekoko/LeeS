@@ -45,6 +45,7 @@ public class PageController {
 		model.addAttribute("list", list);
 		return "contentDB";
 	}
+
 	/**
 	 * 打开图书馆页面
 	 */
@@ -82,6 +83,14 @@ public class PageController {
 		return "video";
 	}
 
+	/**
+	 * 跳转到模板生成页面
+	 * @return
+	 */
+	@RequestMapping("/modelPage")
+	public String modelPage(){
+		return "modelPage";
+	}
 
 
 }

@@ -29,9 +29,5 @@
 		<artifactId>jsp-api</artifactId>
 		<scope>provided</scope>
 	</dependency>
-	<dependency>
-	  <groupId>com.github.abel533</groupId>
-	  <artifactId>mapper</artifactId>
-	</dependency>
   </dependencies>
 </project>
