@@ -18,6 +18,9 @@
 	overflow-y:scroll;
 	overflow-x:scroll;
 }
+.mt10{
+	margin-top: 10px;
+}
 </style>
 
 </head>
@@ -29,21 +32,27 @@
 		</h2>
 	</div>
 	<div>
-		<button type="button" class="btn btn-info" onclick="addOne();">新增行</button>
+		<button type="button" class="btn btn-info" onclick="addOnePrepend();">前面新增行</button>
+		<button type="button" class="btn btn-info" onclick="addOneAppend();">后面新增行</button>
 	</div>
 	<table class="table">
 		<thead>
 		<tr>
-			<th width="10%">操作</th>
+			<th width="20%">操作</th>
 			<th width="20%">模板(~m~作为占位符)</th>
-			<th width="70%">信息(|分割，$多个换行)</th>
+			<th width="60%">信息(|分割，$多个换行)</th>
 		</tr>
 		</thead>
 		<tbody id="tableContent">
 		<tr>
 			<td>
-				<h2>1</h2>
-				<button type="button" class="btn btn-success" style="margin-top: 5px;">选择模板</button>
+				<span>【1】</span>
+				<button type="button" class="btn btn-success btn-sm" style="margin-top: 5px;">选择模板</button>
+				<button type="button" class="btn btn-warning btn-sm" style="margin-top: 5px;" onclick="saveModel(this)">保存模板</button>
+				<div class="input-group">
+					<input type="text" id="title" name="title" class="form-control mt10"  placeholder="输入名称">
+					<textarea type="text" id="summary" name="summary" class="form-control mt10" style="height: 170px;" placeholder="输入简介"></textarea>
+				</div>
 				<button type="button" class="btn btn-success" style="margin-top: 5px;" onclick="getThisModel(this)">生成代码</button>
 			</td>
 			<td>
@@ -68,9 +77,35 @@
 </body>
 <script type="text/javascript">
 var modelCount = 1;
-/*新增一行*/
-function addOne(){
+/*新增一行前面*/
+function addOnePrepend(){
 	$("#tableContent").prepend("<tr><td><h2>"+(++modelCount)+"</h2><button type='button' class='btn btn-success' style='margin-top: 5px;'>选择模板</button><button type='button' class='btn btn-success' style='margin-top: 5px;' onclick='getThisModel(this)'>生成代码</button></td><td><textarea class='textareStyle' name='modelCode'></textarea></td><td><textarea class='textareStyle' name='dataCode'></textarea></td></tr>");
+}
+/*新增一行后面*/
+function addOneAppend(){
+	$("#tableContent").append("<tr><td><h2>"+(++modelCount)+"</h2><button type='button' class='btn btn-success' style='margin-top: 5px;'>选择模板</button><button type='button' class='btn btn-success' style='margin-top: 5px;' onclick='getThisModel(this)'>生成代码</button></td><td><textarea class='textareStyle' name='modelCode'></textarea></td><td><textarea class='textareStyle' name='dataCode'></textarea></td></tr>");
+}
+
+/*保存模板信息到数据库*/
+function saveModel(el) {
+	var tr = el.parentNode.parentNode;
+	var content = $(tr).find("textarea[name='modelCode']").val();
+	var title = $(tr).find("input[name='title']").val();
+	var summary = $(tr).find("textarea[name='summary']").val();
+	//保存模板信息
+	$.ajax({
+		url : "${pageContext.request.contextPath}/modelController/save",
+		type : "POST",
+		async : false,
+		data : {"content":content,"title":title,"summary":summary},
+		success:function(data){
+			if(data){
+				alert("保存成功");
+			}
+		}
+	});
+
+
 }
 
 
@@ -97,9 +132,10 @@ function createOut(content,replaceContent) {
 	content = content.replaceAll("&gt;", ">");
 	content = content.replaceAll("&lt;", "<");
 	for (var i = 0; i < replaceArr.length; i++) {
-		content = content.replace("~m~", replaceArr[i]);
+		var replace = $.trim(replaceArr[i]);
+		content = content.replace("~m~", replace);
 	}
-	$("#showCode").val($("#showCode").val() + content );
+	$("#showCode").val($("#showCode").val()+"\r\n" + content );
 }
 
 
