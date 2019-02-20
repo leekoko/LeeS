@@ -91,6 +91,17 @@ public class PageController {
 	public String modelPage(){
 		return "modelPage";
 	}
+	/**
+	 * 跳转到模板选择页面
+	 * @return
+	 */
+	@RequestMapping("/modelChosePage")
+	public String modelChosePage(Model model){
+
+
+		return "modelChosePage";
+	}
+
 
 
 }

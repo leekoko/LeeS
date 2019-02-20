@@ -47,7 +47,7 @@
 		<tr>
 			<td>
 				<span>【1】</span>
-				<button type="button" class="btn btn-success btn-sm" style="margin-top: 5px;">选择模板</button>
+				<button type="button" class="btn btn-success btn-sm" style="margin-top: 5px;" data-toggle="modal" data-target="#myModal">选择模板</button>
 				<button type="button" class="btn btn-warning btn-sm" style="margin-top: 5px;" onclick="saveModel(this)">保存模板</button>
 				<div class="input-group">
 					<input type="text" id="title" name="title" class="form-control mt10"  placeholder="输入名称">
@@ -72,6 +72,27 @@
 	<textarea id="showCode" class="col-md-12 column" style="height:500px;overflow-y:scroll;"></textarea>
 	<%--下边区域--%>
 
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">模板选择页面</h4>
+			</div>
+			<div class="modal-body">
+				<iframe src="http://www.qq.com" height="80%" width="100%"></iframe>
+
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				<button type="button" class="btn btn-primary">选择</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
 </div>
 
 </body>
