@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import cn.leekoko.service.*;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.leekoko.pojo.Collectiontype;
 import cn.leekoko.pojo.Library;
-import cn.leekoko.service.CollectionTypeService;
-import cn.leekoko.service.LibraryService;
-import cn.leekoko.service.OnlinecontentService;
 
 @Controller
 public class PageController {
@@ -27,7 +25,11 @@ public class PageController {
 	private CollectionTypeService collectionTypeService;
 	@Autowired
 	private LibraryService libraryService;
-	
+	@Autowired
+	private TemplateService templateService;
+	@Autowired
+	private TemplateFlowService templateFlowService;
+
 	/**
 	 * 打开首页
 	 */
@@ -97,9 +99,17 @@ public class PageController {
 	 */
 	@RequestMapping("/modelChosePage")
 	public String modelChosePage(Model model){
-
-
+		model.addAttribute("templateList",templateService.getList());
 		return "modelChosePage";
+	}
+	/**
+	 * 跳转到流程模板选择页面
+	 * @return
+	 */
+	@RequestMapping("/flowChosePage")
+	public String flowChosePage(Model model){
+		model.addAttribute("templateFlowList", templateFlowService.getList());
+		return "modelFlowChosePage";
 	}
 
 
