@@ -6,20 +6,23 @@
 <table class="table">
     <thead>
     <tr>
-        <th width="40%">标题</th>
-        <th width="40%">简介</th>
+        <th width="20%">标题</th>
+        <th width="30%">简介</th>
+        <th width="30%">模块</th>
         <th width="20%">按钮</th>
     </tr>
     </thead>
     <tbody>
-    <c:if test="${not empty templateList}">
-        <c:forEach items="${templateList}" var="item" varStatus="status">
+    <c:if test="${not empty templateFlowList}">
+        <c:forEach items="${templateFlowList}" var="item" varStatus="status">
 
             <tr>
-                <td>${item.title}</td>
-                <td>${item.summary}</td>
+                <td>${item.flowname}</td>
+                <td>${item.flowsummary}</td>
+                <td>${item.titlearr}</td>
                 <td>
-                    <input type="hidden" id="code" name="code" value="${item.code}"></input>
+                    <input type="hidden" name="modelCode" value="${item.codearr}"/>
+                    <input type="hidden" name="code" value="${item.code}"/>
                     <button type="button" class="btn btn-primary" onclick="chose(this);">选择</button>
                     <button type="button" class="btn btn-danger" onclick="del(this);">删除</button>
                 </td>
@@ -32,38 +35,18 @@
 
 </body>
 <script type="text/javascript">
-var curContent = "";
-var curSummary = "";
-var curTitle = "";
-var curCode = "";
+var modelCodes = "";
 function chose(el){
     var td = el.parentNode;
-    var code = $(td).find("input[name='code']").val();
-    var content = getContentByCode(code);
-    $("#result").val(content);
-    parent.hideModal();
+    modelCodes = $(td).find("input[name='modelCode']").val();
+    parent.showFlowModel();
 }
-function getContentByCode(code){
-    //获取模板内容
-    $.ajax({
-        url : "${pageContext.request.contextPath}/template/getContentByCode",
-        type : "POST",
-        async : false,
-        data : {"code":code},
-        success:function(data){
-            curContent = data.content;
-            curSummary = data.summary;
-            curTitle = data.title;
-            curCode = data.code;
-        }
-    });
-}
-/*删除模板*/
+/*删除流程*/
 function del(el){
     var td = el.parentNode;
     code = $(td).find("input[name='code']").val();
     $.ajax({
-        url : "${pageContext.request.contextPath}/template/delete",
+        url : "${pageContext.request.contextPath}/templateFlow/delete",
         type : "POST",
         async : false,
         data : {"code":code},
@@ -75,9 +58,11 @@ function del(el){
         }
     });
 }
+
 function refresh(){
     window.location.reload();
 }
+
 </script>
 
 </html>

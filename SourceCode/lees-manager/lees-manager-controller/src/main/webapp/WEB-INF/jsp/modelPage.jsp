@@ -334,12 +334,14 @@ function fillContentByCode(modelCode) {
 		async : false,
 		data : {"code":modelCode},
 		success:function(data){
-			curContent = data.content;
-			curSummary = data.summary;
-			curTitle = data.title;
-			curCode = data.code;
-			//填充元素内容
-			fillContent(curContent,curTitle,curSummary,curCode);
+			if(data.flag){
+				curContent = data.content;
+				curSummary = data.summary;
+				curTitle = data.title;
+				curCode = data.code;
+				//填充元素内容
+				fillContent(curContent,curTitle,curSummary,curCode);
+			}
 		}
 	});
 }

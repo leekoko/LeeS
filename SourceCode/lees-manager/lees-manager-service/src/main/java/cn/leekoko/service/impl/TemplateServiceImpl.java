@@ -69,4 +69,20 @@ public class TemplateServiceImpl implements TemplateService {
     public Template getTemplateByCode(String code) {
         return templateMapper.selectByPrimaryKey(code);
     }
+
+    /**
+     * 删除模板
+     * @param code
+     * @return
+     */
+    @Override
+    public boolean delete(String code) {
+        boolean flag = false;
+        int delNum = templateMapper.deleteByPrimaryKey(code);
+        if(delNum > 0){
+            flag = true;
+        }
+        return flag;
+    }
+
 }
