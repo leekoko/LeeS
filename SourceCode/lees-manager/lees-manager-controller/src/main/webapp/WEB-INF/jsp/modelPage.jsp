@@ -57,15 +57,18 @@
 		<tbody id="tableContent">
 		<tr>
 			<td>
-				<span>【1】</span>
+				<span style="float: left;">【1】</span>
 				<input type="hidden" name="code" value=""/>
-				<button type="button" class="btn btn-warning btn-sm" style="margin-top: 5px;" onclick="saveModel(this)">保存模板</button>
-				<button type="button" class="btn btn-danger btn-sm" style="margin-top: 5px;" onclick="delCol(this)">移除</button>
-				<div class="input-group">
+				<button type="button" class="btn btn-warning btn-sm" style="margin-top: 5px;float: left;" onclick="saveModel(this)">保存模板</button>
+				<button type="button" class="btn btn-danger btn-sm" style="margin-top: 5px;float: left;" onclick="delCol(this)">移除</button>
+				<div style="width: 10px;height: 20px;background: #ff9c97;float: left;text-align: center;float: left;" onclick="up(this);">↑</div>
+				<br/>
+				<div style="width: 10px;height: 20px;background: #b2c3ff;float: left;text-align: center;float: left;" onclick="down(this);">↓</div>
+				<div class="input-group" style="float: left;">
 					<input type="text" name="title" class="form-control mt10"  placeholder="输入名称">
-					<textarea type="text" name="summary" class="form-control mt10" style="height: 170px;" placeholder="输入简介"></textarea>
+					<textarea type="text" name="summary" class="form-control mt10" style="height: 163px;" placeholder="输入简介"></textarea>
 				</div>
-				<button type="button" class="btn btn-success" style="margin-top: 5px;" onclick="getThisModel(this)">生成代码</button>
+				<button type="button" class="btn btn-success" style="margin-top: 5px;float: left;" onclick="getThisModel(this)">生成代码</button>
 				<b class="status0" name="status" value="0">未保存</b>
 			</td>
 			<td>
@@ -80,18 +83,19 @@
 	</table>
 	<div style="margin-bottom: 10px;">
 		<button type="button" class="btn btn-danger" onclick="delOut();">清空</button>
+		<button type="button" class="btn btn-success" onclick="cutOut();">剪切</button>
 	</div>
 	<%--下边区域--%>
-	<textarea id="showCode" class="col-md-12 column" style="height:500px;overflow-y:scroll;"></textarea>
+	<textarea id="showCode" class="col-md-12 column" style="height:500px;overflow-y:scroll;margin-bottom: 20px;"></textarea>
 	<%--下边区域--%>
 
 </div>
 
 <!-- 模态框：选择模板列表 -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-	<div class="modal-dialog modal-lg">
+	<div class="modal-dialog" style="width: 90%;">
 		<div class="modal-content">
-			<div class="modal-header">
+			<div class="modal-header" >
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				<h4 class="modal-title" id="myModalLabel">模板选择页面</h4>
 			</div>
@@ -138,7 +142,7 @@
 </div>
 <!-- 模态框：选择模板流程列表 -->
 <div class="modal fade" id="modelFlowList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true" >
-	<div class="modal-dialog modal-lg">
+	<div class="modal-dialog" style="width: 90%;">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -156,11 +160,29 @@
 var modelCount = 1;	 //模板序号
 /*新增一行前面*/
 function addOnePrepend(){
-	$("#tableContent").prepend("<tr><td><span>【"+ (++modelCount) +"】</span><input type='hidden'  name='code' value=''/><button type='button' class='btn btn-warning btn-sm' style='margin-top: 5px;' onclick='saveModel(this)'>保存模板</button><button type='button' class='btn btn-danger btn-sm' style='margin-top: 5px;' onclick='delCol(this)'>移除</button><div class='input-group'><input type='text'  name='title' class='form-control mt10'  placeholder='输入名称'><textarea type='text'  name='summary' class='form-control mt10' style='height: 170px;' placeholder='输入简介'></textarea></div><button type='button' class='btn btn-success' style='margin-top: 5px;' onclick='getThisModel(this)'>生成代码</button><b class='status0' name='status' value='0'>未保存</b></td><td><textarea class='textareStyle' name='modelCode'></textarea></td><td><textarea class='textareStyle' name='dataCode'></textarea></td></tr>");
+	$("#tableContent").prepend("<tr><td><span style='float: left;'>【"+ (++modelCount) +"】</span><input type='hidden'  name='code' value=''/>" +
+			"<button type='button' class='btn btn-warning btn-sm' style='margin-top: 5px;float: left;' onclick='saveModel(this)'>保存模板</button>" +
+			"<button type='button' class='btn btn-danger btn-sm' style='margin-top: 5px;float: left;' onclick='delCol(this)'>移除</button>" +
+			"<div style='width: 10px;height: 20px;background: #ff9c97;float: left;text-align: center;float: left;' onclick='up(this);'>↑</div><br/>" +
+			"<div style='width: 10px;height: 20px;background: #b2c3ff;float: left;text-align: center;float: left;' onclick='down(this);'>↓</div>" +
+			"<div class='input-group' style='float: left;'><input type='text'  name='title' class='form-control mt10'  placeholder='输入名称'>" +
+			"<textarea type='text'  name='summary' class='form-control mt10' style='height: 163px;' placeholder='输入简介'></textarea></div>" +
+			"<button type='button' class='btn btn-success' style='margin-top: 5px;float: left;' onclick='getThisModel(this)'>生成代码</button>" +
+			"<b class='status0' name='status' value='0'>未保存</b></td><td><textarea class='textareStyle' name='modelCode'></textarea></td><td>" +
+			"<textarea class='textareStyle' name='dataCode'></textarea></td></tr>");
 }
 /*新增一行后面*/
 function addOneAppend(){
-	$("#tableContent").append("<tr><td><span>【"+ (++modelCount) +"】</span><input type='hidden'  name='code' value=''/><button type='button' class='btn btn-warning btn-sm' style='margin-top: 5px;' onclick='saveModel(this)'>保存模板</button><button type='button' class='btn btn-danger btn-sm' style='margin-top: 5px;' onclick='delCol(this)'>移除</button><div class='input-group'><input type='text'  name='title' class='form-control mt10'  placeholder='输入名称'><textarea type='text'  name='summary' class='form-control mt10' style='height: 170px;' placeholder='输入简介'></textarea></div><button type='button' class='btn btn-success' style='margin-top: 5px;' onclick='getThisModel(this)'>生成代码</button><b class='status0' name='status' value='0'>未保存</b></td><td><textarea class='textareStyle' name='modelCode'></textarea></td><td><textarea class='textareStyle' name='dataCode'></textarea></td></tr>");
+	$("#tableContent").append("<tr><td><span style='float: left;'>【"+ (++modelCount) +"】</span><input type='hidden'  name='code' value=''/>" +
+			"<button type='button' class='btn btn-warning btn-sm' style='margin-top: 5px;float: left;' onclick='saveModel(this)'>保存模板</button>" +
+			"<button type='button' class='btn btn-danger btn-sm' style='margin-top: 5px;float: left;' onclick='delCol(this)'>移除</button>" +
+			"<div style='width: 10px;height: 20px;background: #ff9c97;float: left;text-align: center;float: left;' onclick='up(this);'>↑</div><br/>" +
+			"<div style='width: 10px;height: 20px;background: #b2c3ff;float: left;text-align: center;float: left;' onclick='down(this);'>↓</div>" +
+			"<div class='input-group' style='float: left;'><input type='text'  name='title' class='form-control mt10'  placeholder='输入名称'>" +
+			"<textarea type='text'  name='summary' class='form-control mt10' style='height: 163px;' placeholder='输入简介'></textarea></div>" +
+			"<button type='button' class='btn btn-success' style='margin-top: 5px;float: left;' onclick='getThisModel(this)'>生成代码</button>" +
+			"<b class='status0' name='status' value='0'>未保存</b></td><td><textarea class='textareStyle' name='modelCode'></textarea></td>" +
+			"<td><textarea class='textareStyle' name='dataCode'></textarea></td></tr>");
 }
 
 /*移除当前模板*/
@@ -208,14 +230,21 @@ function saveModel(el) {
 function getThisModel(el){
 	var tr = el.parentNode.parentNode;
 	var content = $(tr).find("textarea[name='modelCode']").val();
-	var replaceContent =  $(tr).find("textarea[name='dataCode']").val();
-	//清空输入框内容
-    $("textarea[name='dataCode']").val("")
-	console.log(replaceContent);
-	//获取文本输入框数目
-	// var num = patch(content);
+	var replaceContentEl = $(tr).find("textarea[name='dataCode']");
+	var replaceContent =  replaceContentEl.val();
+	//清空当前输入框内容
+	replaceContentEl.val("");
+	//空的情况不替换
+	if($.trim(replaceContent).length == 0){
+		return;
+	}
 	//多个生成
 	var replaceArr = replaceContent.split("$");
+	//获取文本输入框数目
+	var mNum = patch(content);
+	if(replaceArr.length != mNum){
+		alert("输入内容与模板替换数量不对应，请检查！")
+	}
 	for(var i =0 ; i < replaceArr.length; i++){
 		createOut(content,replaceArr[i]);
 	}
@@ -250,6 +279,11 @@ String.prototype.replaceAll = function (FindText, RepText) {
 function delOut(){
 	$("#showCode").val("");
 }
+/**剪切输出窗口内容**/
+function cutOut(){
+	$("#showCode").select();
+	document.execCommand("Cut");
+}
 
 /*隐藏模态框*/
 function hideModal() {
@@ -272,7 +306,16 @@ function showContent() {
 }
 /*填充元素内容*/
 function fillContent(content,title,summary,code){
-	$("#tableContent").append("<tr><td><span>【"+ (++modelCount) +"】</span><input type='hidden'  name='code' value='"+code+"'/><button type='button' class='btn btn-warning btn-sm' style='margin-top: 5px;' onclick='saveModel(this)'>保存模板</button><button type='button' class='btn btn-danger btn-sm' style='margin-top: 5px;' onclick='delCol(this)'>移除</button><div class='input-group'><input type='text'  name='title' class='form-control mt10'  placeholder='输入名称' value='"+title+"' readonly><textarea type='text'  name='summary' class='form-control mt10' style='height: 170px;' placeholder='输入简介'>"+summary+"</textarea></div><button type='button' class='btn btn-success' style='margin-top: 5px;' onclick='getThisModel(this)'>生成代码</button><b class='status1' name='status' value='1'>已保存</b></td><td><textarea class='textareStyle' name='modelCode'>"+content+"</textarea></td><td><textarea class='textareStyle' name='dataCode'></textarea></td></tr>");
+	$("#tableContent").append("<tr><td><span style='float: left;'>【"+ (++modelCount) +"】</span><input type='hidden'  name='code' value='"+code+"'/>" +
+			"<button type='button' class='btn btn-warning btn-sm' style='margin-top: 5px;float: left;' onclick='saveModel(this)'>保存模板</button>" +
+			"<button type='button' class='btn btn-danger btn-sm' style='margin-top: 5px;float: left;' onclick='delCol(this)'>移除</button>" +
+			"<div style='width: 10px;height: 20px;background: #ff9c97;float: left;text-align: center;float: left;' onclick='up(this);'>↑</div><br/>" +
+			"<div style='width: 10px;height: 20px;background: #b2c3ff;float: left;text-align: center;float: left;' onclick='down(this);'>↓</div>" +
+			"<div class='input-group' style='float: left;'><input type='text'  name='title' class='form-control mt10'  placeholder='输入名称' value='"+title+"' readonly>" +
+			"<textarea type='text'  name='summary' class='form-control mt10' style='height: 170px;' placeholder='输入简介'>"+summary+"</textarea></div>" +
+			"<button type='button' class='btn btn-success' style='margin-top: 5px;float: left;' onclick='getThisModel(this)'>生成代码</button>" +
+			"<b class='status1' name='status' value='1'>已保存</b></td><td><textarea class='textareStyle' name='modelCode'>"+content+"</textarea></td>" +
+			"<td><textarea class='textareStyle' name='dataCode'></textarea></td></tr>");
 }
 
 /*保存流程*/
@@ -316,6 +359,7 @@ function showFlowModel() {
 	var modelCodeArr = modelCodes.split(",");
 	//清空内容
 	$("#tableContent").empty();
+	--modelCount;   //模板序号减一
 	for (var i = 0; i < modelCodeArr.length; i++){
 		//根据modelCode填充元素
 		fillContentByCode(modelCodeArr[i]);
@@ -344,6 +388,22 @@ function fillContentByCode(modelCode) {
 			}
 		}
 	});
+}
+/*上移，下移元素*/
+function up(el) {
+	var tr = el.parentNode.parentNode;
+	var prev = $(tr).prev();
+	if(prev.length != 0){
+		prev.before(tr);
+	}
+}
+
+function down(el) {
+	var tr = el.parentNode.parentNode;
+	var next = $(tr).next();
+	if(next.length != 0){
+		next.after(tr);
+	}
 }
 
 </script>
