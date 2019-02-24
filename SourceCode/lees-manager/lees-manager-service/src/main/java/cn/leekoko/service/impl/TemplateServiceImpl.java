@@ -4,6 +4,7 @@ import cn.leekoko.mapper.TemplateMapper;
 import cn.leekoko.pojo.Template;
 import cn.leekoko.pojo.TemplateExample;
 import cn.leekoko.service.TemplateService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,7 +63,25 @@ public class TemplateServiceImpl implements TemplateService {
     public List<Template> getList() {
         TemplateExample example = new TemplateExample();
         example.setOrderByClause("modifyDate desc");
-        return templateMapper.selectByExample(example);
+        List<Template> templateList = templateMapper.selectByExample(example);
+        simplifySummary(templateList);
+        return templateList;
+    }
+
+    /**
+     * Simplified field for Summary,only get firt line
+     * @param templateList
+     * @return
+     */
+    private void simplifySummary(List<Template> templateList) {
+        for (int i = 0; i < templateList.size(); i++) {
+            Template temp = templateList.get(i);
+            String summary = temp.getSummary();
+            if(StringUtils.isNoneEmpty(summary)){
+                summary = summary.split("\n\n")[0]; //only get first element
+                temp.setSummary(summary);
+            }
+        }
     }
 
     @Override

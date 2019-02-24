@@ -47,6 +47,8 @@
 		<button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#modelFlowList">选择流程</button>
 	</div>
 	<table class="table" name="table">
+        <%--存储要复制到剪贴板的内容--%>
+        <input id="copyBoard" type="hidden" value=""/>
 		<thead>
 		<tr>
 			<th width="20%">操作</th>
@@ -157,6 +159,7 @@
 
 </body>
 <script type="text/javascript">
+
 var modelCount = 1;	 //模板序号
 /*新增一行前面*/
 function addOnePrepend(){
@@ -232,8 +235,10 @@ function getThisModel(el){
 	var content = $(tr).find("textarea[name='modelCode']").val();
 	var replaceContentEl = $(tr).find("textarea[name='dataCode']");
 	var replaceContent =  replaceContentEl.val();
-	//清空当前输入框内容
-	replaceContentEl.val("");
+	//清空当前输入框内容（可ctrl+z回撤）
+    replaceContentEl.select();
+    document.execCommand("delete");
+
 	//空的情况不替换
 	if($.trim(replaceContent).length == 0){
 		return;
@@ -242,22 +247,24 @@ function getThisModel(el){
 	var replaceArr = replaceContent.split("$");
 	//获取文本输入框数目
 	var mNum = patch(content);
-	if(replaceArr.length != mNum){
-		alert("输入内容与模板替换数量不对应，请检查！")
-	}
+
 	for(var i =0 ; i < replaceArr.length; i++){
-		createOut(content,replaceArr[i]);
+		var replaceContentArr = replaceArr[i].split("|");
+		if(replaceContentArr.length != mNum){
+			alert("输入内容与模板替换数量不对应，请检查！")
+		}
+		//内容替换
+		createOut(content,replaceContentArr);
 	}
 }
 
 /*变量内容替换*/
-function createOut(content,replaceContent) {
+function createOut(content,replaceContentArr) {
 //替换内容
-	var replaceArr = replaceContent.split("|");
 	content = content.replaceAll("&gt;", ">");
 	content = content.replaceAll("&lt;", "<");
 	for (var i = 0; i < replaceArr.length; i++) {
-		var replace = $.trim(replaceArr[i]);
+		var replace = $.trim(replaceContentArr[i]);
 		content = content.replace("~m~", replace);
 	}
 	$("#showCode").val($("#showCode").val()+"\r\n" + content );
