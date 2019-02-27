@@ -3,14 +3,14 @@ package cn.leekoko.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TemplateflowExample {
+public class LifegamePlanExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TemplateflowExample() {
+    public LifegamePlanExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -174,283 +174,133 @@ public class TemplateflowExample {
             return (Criteria) this;
         }
 
-        public Criteria andFlownameIsNull() {
-            addCriterion("flowName is null");
+        public Criteria andPlanNameIsNull() {
+            addCriterion("plan_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameIsNotNull() {
-            addCriterion("flowName is not null");
+        public Criteria andPlanNameIsNotNull() {
+            addCriterion("plan_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameEqualTo(String value) {
-            addCriterion("flowName =", value, "flowname");
+        public Criteria andPlanNameEqualTo(String value) {
+            addCriterion("plan_name =", value, "planName");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameNotEqualTo(String value) {
-            addCriterion("flowName <>", value, "flowname");
+        public Criteria andPlanNameNotEqualTo(String value) {
+            addCriterion("plan_name <>", value, "planName");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameGreaterThan(String value) {
-            addCriterion("flowName >", value, "flowname");
+        public Criteria andPlanNameGreaterThan(String value) {
+            addCriterion("plan_name >", value, "planName");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameGreaterThanOrEqualTo(String value) {
-            addCriterion("flowName >=", value, "flowname");
+        public Criteria andPlanNameGreaterThanOrEqualTo(String value) {
+            addCriterion("plan_name >=", value, "planName");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameLessThan(String value) {
-            addCriterion("flowName <", value, "flowname");
+        public Criteria andPlanNameLessThan(String value) {
+            addCriterion("plan_name <", value, "planName");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameLessThanOrEqualTo(String value) {
-            addCriterion("flowName <=", value, "flowname");
+        public Criteria andPlanNameLessThanOrEqualTo(String value) {
+            addCriterion("plan_name <=", value, "planName");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameLike(String value) {
-            addCriterion("flowName like", value, "flowname");
+        public Criteria andPlanNameLike(String value) {
+            addCriterion("plan_name like", value, "planName");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameNotLike(String value) {
-            addCriterion("flowName not like", value, "flowname");
+        public Criteria andPlanNameNotLike(String value) {
+            addCriterion("plan_name not like", value, "planName");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameIn(List<String> values) {
-            addCriterion("flowName in", values, "flowname");
+        public Criteria andPlanNameIn(List<String> values) {
+            addCriterion("plan_name in", values, "planName");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameNotIn(List<String> values) {
-            addCriterion("flowName not in", values, "flowname");
+        public Criteria andPlanNameNotIn(List<String> values) {
+            addCriterion("plan_name not in", values, "planName");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameBetween(String value1, String value2) {
-            addCriterion("flowName between", value1, value2, "flowname");
+        public Criteria andPlanNameBetween(String value1, String value2) {
+            addCriterion("plan_name between", value1, value2, "planName");
             return (Criteria) this;
         }
 
-        public Criteria andFlownameNotBetween(String value1, String value2) {
-            addCriterion("flowName not between", value1, value2, "flowname");
+        public Criteria andPlanNameNotBetween(String value1, String value2) {
+            addCriterion("plan_name not between", value1, value2, "planName");
             return (Criteria) this;
         }
 
-        public Criteria andFlowsummaryIsNull() {
-            addCriterion("flowSummary is null");
+        public Criteria andMoneyIsNull() {
+            addCriterion("money is null");
             return (Criteria) this;
         }
 
-        public Criteria andFlowsummaryIsNotNull() {
-            addCriterion("flowSummary is not null");
+        public Criteria andMoneyIsNotNull() {
+            addCriterion("money is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFlowsummaryEqualTo(String value) {
-            addCriterion("flowSummary =", value, "flowsummary");
+        public Criteria andMoneyEqualTo(Integer value) {
+            addCriterion("money =", value, "money");
             return (Criteria) this;
         }
 
-        public Criteria andFlowsummaryNotEqualTo(String value) {
-            addCriterion("flowSummary <>", value, "flowsummary");
+        public Criteria andMoneyNotEqualTo(Integer value) {
+            addCriterion("money <>", value, "money");
             return (Criteria) this;
         }
 
-        public Criteria andFlowsummaryGreaterThan(String value) {
-            addCriterion("flowSummary >", value, "flowsummary");
+        public Criteria andMoneyGreaterThan(Integer value) {
+            addCriterion("money >", value, "money");
             return (Criteria) this;
         }
 
-        public Criteria andFlowsummaryGreaterThanOrEqualTo(String value) {
-            addCriterion("flowSummary >=", value, "flowsummary");
+        public Criteria andMoneyGreaterThanOrEqualTo(Integer value) {
+            addCriterion("money >=", value, "money");
             return (Criteria) this;
         }
 
-        public Criteria andFlowsummaryLessThan(String value) {
-            addCriterion("flowSummary <", value, "flowsummary");
+        public Criteria andMoneyLessThan(Integer value) {
+            addCriterion("money <", value, "money");
             return (Criteria) this;
         }
 
-        public Criteria andFlowsummaryLessThanOrEqualTo(String value) {
-            addCriterion("flowSummary <=", value, "flowsummary");
+        public Criteria andMoneyLessThanOrEqualTo(Integer value) {
+            addCriterion("money <=", value, "money");
             return (Criteria) this;
         }
 
-        public Criteria andFlowsummaryLike(String value) {
-            addCriterion("flowSummary like", value, "flowsummary");
+        public Criteria andMoneyIn(List<Integer> values) {
+            addCriterion("money in", values, "money");
             return (Criteria) this;
         }
 
-        public Criteria andFlowsummaryNotLike(String value) {
-            addCriterion("flowSummary not like", value, "flowsummary");
+        public Criteria andMoneyNotIn(List<Integer> values) {
+            addCriterion("money not in", values, "money");
             return (Criteria) this;
         }
 
-        public Criteria andFlowsummaryIn(List<String> values) {
-            addCriterion("flowSummary in", values, "flowsummary");
+        public Criteria andMoneyBetween(Integer value1, Integer value2) {
+            addCriterion("money between", value1, value2, "money");
             return (Criteria) this;
         }
 
-        public Criteria andFlowsummaryNotIn(List<String> values) {
-            addCriterion("flowSummary not in", values, "flowsummary");
-            return (Criteria) this;
-        }
-
-        public Criteria andFlowsummaryBetween(String value1, String value2) {
-            addCriterion("flowSummary between", value1, value2, "flowsummary");
-            return (Criteria) this;
-        }
-
-        public Criteria andFlowsummaryNotBetween(String value1, String value2) {
-            addCriterion("flowSummary not between", value1, value2, "flowsummary");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrIsNull() {
-            addCriterion("codeArr is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrIsNotNull() {
-            addCriterion("codeArr is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrEqualTo(String value) {
-            addCriterion("codeArr =", value, "codearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrNotEqualTo(String value) {
-            addCriterion("codeArr <>", value, "codearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrGreaterThan(String value) {
-            addCriterion("codeArr >", value, "codearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrGreaterThanOrEqualTo(String value) {
-            addCriterion("codeArr >=", value, "codearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrLessThan(String value) {
-            addCriterion("codeArr <", value, "codearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrLessThanOrEqualTo(String value) {
-            addCriterion("codeArr <=", value, "codearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrLike(String value) {
-            addCriterion("codeArr like", value, "codearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrNotLike(String value) {
-            addCriterion("codeArr not like", value, "codearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrIn(List<String> values) {
-            addCriterion("codeArr in", values, "codearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrNotIn(List<String> values) {
-            addCriterion("codeArr not in", values, "codearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrBetween(String value1, String value2) {
-            addCriterion("codeArr between", value1, value2, "codearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andCodearrNotBetween(String value1, String value2) {
-            addCriterion("codeArr not between", value1, value2, "codearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrIsNull() {
-            addCriterion("titleArr is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrIsNotNull() {
-            addCriterion("titleArr is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrEqualTo(String value) {
-            addCriterion("titleArr =", value, "titlearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrNotEqualTo(String value) {
-            addCriterion("titleArr <>", value, "titlearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrGreaterThan(String value) {
-            addCriterion("titleArr >", value, "titlearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrGreaterThanOrEqualTo(String value) {
-            addCriterion("titleArr >=", value, "titlearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrLessThan(String value) {
-            addCriterion("titleArr <", value, "titlearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrLessThanOrEqualTo(String value) {
-            addCriterion("titleArr <=", value, "titlearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrLike(String value) {
-            addCriterion("titleArr like", value, "titlearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrNotLike(String value) {
-            addCriterion("titleArr not like", value, "titlearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrIn(List<String> values) {
-            addCriterion("titleArr in", values, "titlearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrNotIn(List<String> values) {
-            addCriterion("titleArr not in", values, "titlearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrBetween(String value1, String value2) {
-            addCriterion("titleArr between", value1, value2, "titlearr");
-            return (Criteria) this;
-        }
-
-        public Criteria andTitlearrNotBetween(String value1, String value2) {
-            addCriterion("titleArr not between", value1, value2, "titlearr");
+        public Criteria andMoneyNotBetween(Integer value1, Integer value2) {
+            addCriterion("money not between", value1, value2, "money");
             return (Criteria) this;
         }
 

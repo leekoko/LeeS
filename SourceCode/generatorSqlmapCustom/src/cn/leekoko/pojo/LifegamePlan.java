@@ -1,15 +1,11 @@
 package cn.leekoko.pojo;
 
-public class Templateflow {
+public class LifegamePlan {
     private String code;
 
-    private String flowname;
+    private String planName;
 
-    private String flowsummary;
-
-    private String codearr;
-
-    private String titlearr;
+    private Integer money;
 
     private String tag;
 
@@ -39,6 +35,8 @@ public class Templateflow {
 
     private String modifydate;
 
+    private String content;
+
     public String getCode() {
         return code;
     }
@@ -47,36 +45,20 @@ public class Templateflow {
         this.code = code == null ? null : code.trim();
     }
 
-    public String getFlowname() {
-        return flowname;
+    public String getPlanName() {
+        return planName;
     }
 
-    public void setFlowname(String flowname) {
-        this.flowname = flowname == null ? null : flowname.trim();
+    public void setPlanName(String planName) {
+        this.planName = planName == null ? null : planName.trim();
     }
 
-    public String getFlowsummary() {
-        return flowsummary;
+    public Integer getMoney() {
+        return money;
     }
 
-    public void setFlowsummary(String flowsummary) {
-        this.flowsummary = flowsummary == null ? null : flowsummary.trim();
-    }
-
-    public String getCodearr() {
-        return codearr;
-    }
-
-    public void setCodearr(String codearr) {
-        this.codearr = codearr == null ? null : codearr.trim();
-    }
-
-    public String getTitlearr() {
-        return titlearr;
-    }
-
-    public void setTitlearr(String titlearr) {
-        this.titlearr = titlearr == null ? null : titlearr.trim();
+    public void setMoney(Integer money) {
+        this.money = money;
     }
 
     public String getTag() {
@@ -189,5 +171,13 @@ public class Templateflow {
 
     public void setModifydate(String modifydate) {
         this.modifydate = modifydate == null ? null : modifydate.trim();
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 }

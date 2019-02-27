@@ -26,6 +26,7 @@
 				<a class="current-demo" href="${pageContext.request.contextPath}/contentDB">ContentMD</a>
 				<a class="current-demo" href="${pageContext.request.contextPath}/modelPage">模板生成</a>
 				<a class="current-demo" href="${pageContext.request.contextPath}/collection">页面收藏</a>
+				<a class="current-demo" href="${pageContext.request.contextPath}/lifeGame/lifeGameIndex">lifeGame</a>
 			</nav>
 		</header>
 	</div>

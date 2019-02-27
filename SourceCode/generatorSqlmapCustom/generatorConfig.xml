@@ -42,7 +42,7 @@
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 		<!-- 指定数据库表 -->
-		<table schema="" tableName="templateflow"></table>
+		<table schema="" tableName="lifegame_plan"></table>
 
 	</context>
 </generatorConfiguration>

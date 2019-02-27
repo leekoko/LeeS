@@ -92,7 +92,7 @@ public class PageController {
 	@RequestMapping("/modelPage")
 	public String modelPage(){
 		return "modelPage";
-	}
+    }
 	/**
 	 * 跳转到模板选择页面
 	 * @return

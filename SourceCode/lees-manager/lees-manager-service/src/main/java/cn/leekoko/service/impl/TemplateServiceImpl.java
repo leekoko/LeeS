@@ -29,7 +29,7 @@ public class TemplateServiceImpl implements TemplateService {
         HashMap<String, Object> result = new HashMap<String, Object>();
         boolean flag = false;
         String templateCode = template.getCode();
-        if(templateCode == ""){
+        if(templateCode == "" || templateCode == null){
             //新增
             String codeUuid = UUID.randomUUID().toString();
 

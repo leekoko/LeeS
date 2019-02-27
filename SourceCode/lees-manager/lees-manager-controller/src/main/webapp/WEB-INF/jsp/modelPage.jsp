@@ -47,8 +47,6 @@
 		<button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#modelFlowList">选择流程</button>
 	</div>
 	<table class="table" name="table">
-        <%--存储要复制到剪贴板的内容--%>
-        <input id="copyBoard" type="hidden" value=""/>
 		<thead>
 		<tr>
 			<th width="20%">操作</th>
@@ -137,7 +135,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-				<button type="button" class="btn btn-primary" onclick="saveFlow(this)">保存</button>
+				<button type="button" class="btn btn-primary" onclick="saveFlow()">保存</button>
 			</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal -->
@@ -263,7 +261,7 @@ function createOut(content,replaceContentArr) {
 //替换内容
 	content = content.replaceAll("&gt;", ">");
 	content = content.replaceAll("&lt;", "<");
-	for (var i = 0; i < replaceArr.length; i++) {
+	for (var i = 0; i < replaceContentArr.length; i++) {
 		var replace = $.trim(replaceContentArr[i]);
 		content = content.replace("~m~", replace);
 	}
@@ -326,7 +324,7 @@ function fillContent(content,title,summary,code){
 }
 
 /*保存流程*/
-function saveFlow(el) {
+function saveFlow() {
 	var flowName = $("#flowName").val();
 	if($.trim(flowName) == ""){
 		alert("流程标题不能为空");
