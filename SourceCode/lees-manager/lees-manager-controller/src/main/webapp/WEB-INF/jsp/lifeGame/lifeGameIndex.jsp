@@ -46,7 +46,7 @@
                 <div class="rowStyle">
                     <strong class="titleStyle">任务列表</strong><br/>
                     <button type="button" class="btn btn-success btn-sm btnStyle" onclick="toDoList()">TO DO LIST</button>
-                    <button type="button" class="btn btn-warning btn-sm btnStyle" onclick="editPlan()">编辑</button>
+                    <button type="button" class="btn btn-warning btn-sm btnStyle" onclick="editPlan()">日常计划</button>
                 </div>
             </td>
         </tr>

@@ -17,8 +17,7 @@
 <table class="table" name="table" id="table">
     <thead>
     <tr>
-        <th width="15%">序号</th>
-        <th width="55%">任务名</th>
+        <th width="70%">任务名</th>
         <th width="15%">金额</th>
         <th width="15%">操作</th>
     </tr>
@@ -26,11 +25,10 @@
 
     <tbody id="tableContent">
         <c:forEach items="${planList}" varStatus="i" var="item" >
-            <tr>
-                <td>${i.index + 1}</td>
+            <tr style="background: #d0c0af">
                 <td><span name="title" >${item.planName}</span></td>
                 <td><span name="content">${item.money}</span></td>
-                <td><input type="checkbox" onchange="planChange(this);"></td>
+                <td><input type="checkbox" onchange="planChange(this);" lang="${item.code}"></td>
             </tr>
         </c:forEach>
 
@@ -111,9 +109,11 @@
         if($(el).is(':checked')){
             title.css("text-decoration","line-through");
             content.css("text-decoration","line-through");
+            changeStatu(el.lang,true); //true选中 false非选中
         }else{
             title.css("text-decoration","none");
             content.css("text-decoration","none");
+            changeStatu(el.lang,false);
         }
     }
 
@@ -131,6 +131,26 @@
                 if(data.flag === true){
                     alert("保存成功");
                     window.location.reload();
+                }
+            }
+        });
+    }
+
+    /*修改指定code状态*/
+    function changeStatu(code,flag) {
+        $.ajax({
+            url : "${pageContext.request.contextPath}/lifeGame/changeStatu",
+            type : "POST",
+            async : false,
+            data : {"code":code,"tsm1":flag},
+            success:function(data){
+                console.log(data)
+                if(data.flag === true){
+                    if(flag){
+                        alert("任务已完成！");
+                    }else {
+                        alert("任务状态已恢复~");
+                    }
                 }
             }
         });

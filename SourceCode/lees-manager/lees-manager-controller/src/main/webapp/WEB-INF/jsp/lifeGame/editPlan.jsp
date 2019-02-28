@@ -113,7 +113,6 @@
             async : false,
             data : {"planName":planName,"money":planMoney},
             success:function(data){
-                console.log(data)
                 if(data.flag === true){
                     alert("保存成功");
                     window.location.reload();

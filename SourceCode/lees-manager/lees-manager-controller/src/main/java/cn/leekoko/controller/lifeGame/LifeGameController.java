@@ -77,4 +77,14 @@ public class LifeGameController {
         return lifeGamePlanService.delete(code);
     }
 
+    /**
+     * 修改plan状态
+     * @return
+     */
+    @RequestMapping("/changeStatu")
+    @ResponseBody
+    public HashMap<String, Object> changeStatu(LifegamePlan lifegamePlan){
+        return lifeGamePlanService.changeStatu(lifegamePlan);
+    }
+
 }

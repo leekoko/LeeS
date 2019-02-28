@@ -9,4 +9,5 @@ public interface LifeGamePlanService {
 	HashMap<String, Object> save(LifegamePlan lifegamePlan);
 	List<LifegamePlan> findList();
 	HashMap<String, Object> delete(String code);
+	HashMap<String, Object> changeStatu(LifegamePlan lifegamePlan);
 }
