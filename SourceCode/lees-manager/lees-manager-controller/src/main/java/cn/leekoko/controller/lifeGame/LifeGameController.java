@@ -35,6 +35,13 @@ public class LifeGameController {
         return "lifeGame/diary";
     }
 
+    @RequestMapping("/chosePlan")
+    public String chosePlan(Model model){
+        model.addAttribute("planList",lifeGamePlanService.findList("0")); //长期类别
+        return "lifeGame/chosePlan";
+    }
+
+
     /**
      * 编辑计划页面
      * @param model
@@ -42,7 +49,8 @@ public class LifeGameController {
      */
     @RequestMapping("/editPlan")
     public String editPlan(Model model){
-        model.addAttribute("planList",lifeGamePlanService.findList());
+        model.addAttribute("planList",lifeGamePlanService.findList("0")); //长期类别
+        model.addAttribute("planList2",lifeGamePlanService.findList("1")); //固定类别
         return "lifeGame/editPlan";
     }
 
@@ -53,7 +61,8 @@ public class LifeGameController {
      */
     @RequestMapping("/toDoList")
     public String toDoList(Model model){
-        model.addAttribute("planList",lifeGamePlanService.findList());
+        model.addAttribute("planList",lifeGamePlanService.findList("0"));
+        model.addAttribute("planList2",lifeGamePlanService.findList("1"));
         return "lifeGame/toDoList";
     }
 

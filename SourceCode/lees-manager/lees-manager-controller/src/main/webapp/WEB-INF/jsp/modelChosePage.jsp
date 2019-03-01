@@ -39,8 +39,7 @@ var curCode = "";
 function chose(el){
     var td = el.parentNode;
     var code = $(td).find("input[name='code']").val();
-    var content = getContentByCode(code);
-    $("#result").val(content);
+    getContentByCode(code);
     parent.hideModal();
 }
 function getContentByCode(code){

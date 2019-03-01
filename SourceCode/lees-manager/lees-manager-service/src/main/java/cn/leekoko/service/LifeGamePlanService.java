@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface LifeGamePlanService {
 	HashMap<String, Object> save(LifegamePlan lifegamePlan);
-	List<LifegamePlan> findList();
+	List<LifegamePlan> findList(String type);
 	HashMap<String, Object> delete(String code);
 	HashMap<String, Object> changeStatu(LifegamePlan lifegamePlan);
 }

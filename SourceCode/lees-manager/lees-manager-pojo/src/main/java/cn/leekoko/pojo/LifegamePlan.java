@@ -13,6 +13,10 @@ public class LifegamePlan {
 
     private Integer delflag;
 
+    private String type;
+
+    private String finish;
+
     private String tsm1;
 
     private String tsm2;
@@ -83,6 +87,22 @@ public class LifegamePlan {
 
     public void setDelflag(Integer delflag) {
         this.delflag = delflag;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type == null ? null : type.trim();
+    }
+
+    public String getFinish() {
+        return finish;
+    }
+
+    public void setFinish(String finish) {
+        this.finish = finish == null ? null : finish.trim();
     }
 
     public String getTsm1() {

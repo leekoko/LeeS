@@ -8,6 +8,8 @@
     <result column="tag" property="tag" jdbcType="VARCHAR" />
     <result column="parentCode" property="parentcode" jdbcType="VARCHAR" />
     <result column="delFlag" property="delflag" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="finish" property="finish" jdbcType="VARCHAR" />
     <result column="tsm1" property="tsm1" jdbcType="VARCHAR" />
     <result column="tsm2" property="tsm2" jdbcType="VARCHAR" />
     <result column="tsm3" property="tsm3" jdbcType="VARCHAR" />
@@ -82,8 +84,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    code, plan_name, money, tag, parentCode, delFlag, tsm1, tsm2, tsm3, tsm4, tsm5, tsm6, 
-    tsm7, tsm8, tsm9, createDate, modifyDate
+    code, plan_name, money, tag, parentCode, delFlag, type, finish, tsm1, tsm2, tsm3, 
+    tsm4, tsm5, tsm6, tsm7, tsm8, tsm9, createDate, modifyDate
   </sql>
   <sql id="Blob_Column_List" >
     content
@@ -139,16 +141,18 @@
   <insert id="insert" parameterType="cn.leekoko.pojo.LifegamePlan" >
     insert into lifegame_plan (code, plan_name, money, 
       tag, parentCode, delFlag, 
-      tsm1, tsm2, tsm3, tsm4, 
-      tsm5, tsm6, tsm7, tsm8, 
-      tsm9, createDate, modifyDate, 
-      content)
+      type, finish, tsm1, 
+      tsm2, tsm3, tsm4, tsm5, 
+      tsm6, tsm7, tsm8, tsm9, 
+      createDate, modifyDate, content
+      )
     values (#{code,jdbcType=VARCHAR}, #{planName,jdbcType=VARCHAR}, #{money,jdbcType=INTEGER}, 
       #{tag,jdbcType=VARCHAR}, #{parentcode,jdbcType=VARCHAR}, #{delflag,jdbcType=INTEGER}, 
-      #{tsm1,jdbcType=VARCHAR}, #{tsm2,jdbcType=VARCHAR}, #{tsm3,jdbcType=VARCHAR}, #{tsm4,jdbcType=VARCHAR}, 
-      #{tsm5,jdbcType=VARCHAR}, #{tsm6,jdbcType=VARCHAR}, #{tsm7,jdbcType=VARCHAR}, #{tsm8,jdbcType=VARCHAR}, 
-      #{tsm9,jdbcType=VARCHAR}, #{createdate,jdbcType=VARCHAR}, #{modifydate,jdbcType=VARCHAR}, 
-      #{content,jdbcType=LONGVARCHAR})
+      #{type,jdbcType=VARCHAR}, #{finish,jdbcType=VARCHAR}, #{tsm1,jdbcType=VARCHAR}, 
+      #{tsm2,jdbcType=VARCHAR}, #{tsm3,jdbcType=VARCHAR}, #{tsm4,jdbcType=VARCHAR}, #{tsm5,jdbcType=VARCHAR}, 
+      #{tsm6,jdbcType=VARCHAR}, #{tsm7,jdbcType=VARCHAR}, #{tsm8,jdbcType=VARCHAR}, #{tsm9,jdbcType=VARCHAR}, 
+      #{createdate,jdbcType=VARCHAR}, #{modifydate,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.leekoko.pojo.LifegamePlan" >
     insert into lifegame_plan
@@ -170,6 +174,12 @@
       </if>
       <if test="delflag != null" >
         delFlag,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="finish != null" >
+        finish,
       </if>
       <if test="tsm1 != null" >
         tsm1,
@@ -226,6 +236,12 @@
       </if>
       <if test="delflag != null" >
         #{delflag,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="finish != null" >
+        #{finish,jdbcType=VARCHAR},
       </if>
       <if test="tsm1 != null" >
         #{tsm1,jdbcType=VARCHAR},
@@ -292,6 +308,12 @@
       <if test="record.delflag != null" >
         delFlag = #{record.delflag,jdbcType=INTEGER},
       </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.finish != null" >
+        finish = #{record.finish,jdbcType=VARCHAR},
+      </if>
       <if test="record.tsm1 != null" >
         tsm1 = #{record.tsm1,jdbcType=VARCHAR},
       </if>
@@ -341,6 +363,8 @@
       tag = #{record.tag,jdbcType=VARCHAR},
       parentCode = #{record.parentcode,jdbcType=VARCHAR},
       delFlag = #{record.delflag,jdbcType=INTEGER},
+      type = #{record.type,jdbcType=VARCHAR},
+      finish = #{record.finish,jdbcType=VARCHAR},
       tsm1 = #{record.tsm1,jdbcType=VARCHAR},
       tsm2 = #{record.tsm2,jdbcType=VARCHAR},
       tsm3 = #{record.tsm3,jdbcType=VARCHAR},
@@ -365,6 +389,8 @@
       tag = #{record.tag,jdbcType=VARCHAR},
       parentCode = #{record.parentcode,jdbcType=VARCHAR},
       delFlag = #{record.delflag,jdbcType=INTEGER},
+      type = #{record.type,jdbcType=VARCHAR},
+      finish = #{record.finish,jdbcType=VARCHAR},
       tsm1 = #{record.tsm1,jdbcType=VARCHAR},
       tsm2 = #{record.tsm2,jdbcType=VARCHAR},
       tsm3 = #{record.tsm3,jdbcType=VARCHAR},
@@ -397,6 +423,12 @@
       </if>
       <if test="delflag != null" >
         delFlag = #{delflag,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="finish != null" >
+        finish = #{finish,jdbcType=VARCHAR},
       </if>
       <if test="tsm1 != null" >
         tsm1 = #{tsm1,jdbcType=VARCHAR},
@@ -444,6 +476,8 @@
       tag = #{tag,jdbcType=VARCHAR},
       parentCode = #{parentcode,jdbcType=VARCHAR},
       delFlag = #{delflag,jdbcType=INTEGER},
+      type = #{type,jdbcType=VARCHAR},
+      finish = #{finish,jdbcType=VARCHAR},
       tsm1 = #{tsm1,jdbcType=VARCHAR},
       tsm2 = #{tsm2,jdbcType=VARCHAR},
       tsm3 = #{tsm3,jdbcType=VARCHAR},
@@ -465,6 +499,8 @@
       tag = #{tag,jdbcType=VARCHAR},
       parentCode = #{parentcode,jdbcType=VARCHAR},
       delFlag = #{delflag,jdbcType=INTEGER},
+      type = #{type,jdbcType=VARCHAR},
+      finish = #{finish,jdbcType=VARCHAR},
       tsm1 = #{tsm1,jdbcType=VARCHAR},
       tsm2 = #{tsm2,jdbcType=VARCHAR},
       tsm3 = #{tsm3,jdbcType=VARCHAR},

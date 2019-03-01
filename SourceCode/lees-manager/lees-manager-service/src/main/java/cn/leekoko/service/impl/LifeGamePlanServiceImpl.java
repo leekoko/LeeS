@@ -29,7 +29,7 @@ public class LifeGamePlanServiceImpl implements LifeGamePlanService {
 
             lifegamePlan.setCode(codeUuid);
             lifegamePlan.setDelflag(0);
-            lifegamePlan.setTsm1("0");  //完成标志 0否 1是
+            lifegamePlan.setFinish("0"); //完成标志 0未完成 1已完成
             lifegamePlan.setCreatedate(new Date().toString());
             lifegamePlan.setModifydate(new Date().toString());
 
@@ -45,8 +45,11 @@ public class LifeGamePlanServiceImpl implements LifeGamePlanService {
     }
 
     @Override
-    public List<LifegamePlan> findList() {
-        return lifegamePlanMapper.selectByExample(new LifegamePlanExample());
+    public List<LifegamePlan> findList(String type) {
+        LifegamePlanExample example = new LifegamePlanExample();
+        LifegamePlanExample.Criteria criteria = example.createCriteria();
+        criteria.andTypeEqualTo(type);
+        return lifegamePlanMapper.selectByExample(example);
     }
 
     @Override
@@ -67,6 +70,7 @@ public class LifeGamePlanServiceImpl implements LifeGamePlanService {
         boolean flag = false;
         //更新
         lifegamePlan.setModifydate(new Date().toString());
+        lifegamePlan.setFinish("false");
         Integer updateNum = lifegamePlanMapper.updateByPrimaryKeySelective(lifegamePlan);
 
         if(updateNum > 0){

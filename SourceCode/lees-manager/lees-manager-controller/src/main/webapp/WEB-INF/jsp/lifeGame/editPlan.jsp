@@ -17,23 +17,27 @@
 <table class="table" name="table" id="table">
     <thead>
     <tr>
-        <th width="15%">序号</th>
-        <th width="55%">任务名</th>
+        <th width="70%">任务名</th>
         <th width="15%">金额</th>
         <th width="15%">操作</th>
     </tr>
     </thead>
 
     <tbody id="tableContent">
-        <c:forEach items="${planList}" varStatus="i" var="item" >
-            <tr>
-                <td>${i.index + 1}</td>
+        <c:forEach items="${planList2}" varStatus="i" var="item" >
+            <tr style="background: #F6EAE1;">
                 <td><span name="title">${item.planName}</span></td>
                 <td><span name="content">${item.money}</span></td>
                 <td><button type="button" class="btn btn-danger btn-xs" style="float: left;"  data-toggle="modal" data-target="#delModal" onclick="delReady(this)" lang="${item.code}">删除</button></td>
             </tr>
         </c:forEach>
-
+        <c:forEach items="${planList}" varStatus="i" var="item" >
+            <tr style="background: #d0c0af">
+                <td><span name="title">${item.planName}</span></td>
+                <td><span name="content">${item.money}</span></td>
+                <td><button type="button" class="btn btn-danger btn-xs" style="float: left;"  data-toggle="modal" data-target="#delModal" onclick="delReady(this)" lang="${item.code}">删除</button></td>
+            </tr>
+        </c:forEach>
 
     </tbody>
 </table>
@@ -63,6 +67,13 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="planMoney"
                                    placeholder="请输入金额">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">类别</label>
+                        <div class="col-sm-10">
+                            <input type="radio" name="type" value="0">长期类别
+                            <input type="radio" name="type" value="1">固定类别
                         </div>
                     </div>
                 </form>
@@ -111,7 +122,7 @@
             url : "${pageContext.request.contextPath}/lifeGame/savePlan",
             type : "POST",
             async : false,
-            data : {"planName":planName,"money":planMoney},
+            data : {"planName":planName,"money":planMoney,"type":$("input[name='type']").val()},
             success:function(data){
                 if(data.flag === true){
                     alert("保存成功");
