@@ -3,14 +3,14 @@ package cn.leekoko.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LifegamePlanExample {
+public class LifegameTempplanExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public LifegamePlanExample() {
+    public LifegameTempplanExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -441,6 +441,76 @@ public class LifegamePlanExample {
 
         public Criteria andParentcodeNotBetween(String value1, String value2) {
             addCriterion("parentCode not between", value1, value2, "parentcode");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeIsNull() {
+            addCriterion("smallTypeCode is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeIsNotNull() {
+            addCriterion("smallTypeCode is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeEqualTo(String value) {
+            addCriterion("smallTypeCode =", value, "smalltypecode");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeNotEqualTo(String value) {
+            addCriterion("smallTypeCode <>", value, "smalltypecode");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeGreaterThan(String value) {
+            addCriterion("smallTypeCode >", value, "smalltypecode");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeGreaterThanOrEqualTo(String value) {
+            addCriterion("smallTypeCode >=", value, "smalltypecode");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeLessThan(String value) {
+            addCriterion("smallTypeCode <", value, "smalltypecode");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeLessThanOrEqualTo(String value) {
+            addCriterion("smallTypeCode <=", value, "smalltypecode");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeLike(String value) {
+            addCriterion("smallTypeCode like", value, "smalltypecode");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeNotLike(String value) {
+            addCriterion("smallTypeCode not like", value, "smalltypecode");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeIn(List<String> values) {
+            addCriterion("smallTypeCode in", values, "smalltypecode");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeNotIn(List<String> values) {
+            addCriterion("smallTypeCode not in", values, "smalltypecode");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeBetween(String value1, String value2) {
+            addCriterion("smallTypeCode between", value1, value2, "smalltypecode");
+            return (Criteria) this;
+        }
+
+        public Criteria andSmalltypecodeNotBetween(String value1, String value2) {
+            addCriterion("smallTypeCode not between", value1, value2, "smalltypecode");
             return (Criteria) this;
         }
 

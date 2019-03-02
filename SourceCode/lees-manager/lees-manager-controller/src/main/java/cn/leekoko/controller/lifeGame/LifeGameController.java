@@ -26,14 +26,7 @@ public class LifeGameController {
         return "lifeGame/lifeGameIndex";
     }
 
-    /**
-     * 跳转到日记页面
-     * @return
-     */
-    @RequestMapping("/diary")
-    public String diaryPage(Model model){
-        return "lifeGame/diary";
-    }
+
 
     @RequestMapping("/chosePlan")
     public String chosePlan(Model model){
@@ -54,17 +47,6 @@ public class LifeGameController {
         return "lifeGame/editPlan";
     }
 
-    /**
-     * 计划列表页面
-     * @param model
-     * @return
-     */
-    @RequestMapping("/toDoList")
-    public String toDoList(Model model){
-        model.addAttribute("planList",lifeGamePlanService.findList("0"));
-        model.addAttribute("planList2",lifeGamePlanService.findList("1"));
-        return "lifeGame/toDoList";
-    }
 
     /**
      * 保存plan内容
@@ -84,16 +66,6 @@ public class LifeGameController {
     @ResponseBody
     public HashMap<String, Object> delPlan(String code){
         return lifeGamePlanService.delete(code);
-    }
-
-    /**
-     * 修改plan状态
-     * @return
-     */
-    @RequestMapping("/changeStatu")
-    @ResponseBody
-    public HashMap<String, Object> changeStatu(LifegamePlan lifegamePlan){
-        return lifeGamePlanService.changeStatu(lifegamePlan);
     }
 
 }

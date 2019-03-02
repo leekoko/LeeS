@@ -25,14 +25,14 @@
 
     <tbody id="tableContent">
         <c:forEach items="${planList2}" varStatus="i" var="item" >
-            <tr style="background: #F6EAE1;">
+            <tr style="background: #d0c0af;">
                 <td><span name="title">${item.planName}</span></td>
                 <td><span name="content">${item.money}</span></td>
                 <td><button type="button" class="btn btn-danger btn-xs" style="float: left;"  data-toggle="modal" data-target="#delModal" onclick="delReady(this)" lang="${item.code}">删除</button></td>
             </tr>
         </c:forEach>
         <c:forEach items="${planList}" varStatus="i" var="item" >
-            <tr style="background: #d0c0af">
+            <tr style="background: #F6EAE1;">
                 <td><span name="title">${item.planName}</span></td>
                 <td><span name="content">${item.money}</span></td>
                 <td><button type="button" class="btn btn-danger btn-xs" style="float: left;"  data-toggle="modal" data-target="#delModal" onclick="delReady(this)" lang="${item.code}">删除</button></td>
@@ -122,7 +122,7 @@
             url : "${pageContext.request.contextPath}/lifeGame/savePlan",
             type : "POST",
             async : false,
-            data : {"planName":planName,"money":planMoney,"type":$("input[name='type']").val()},
+            data : {"planName":planName,"money":planMoney,"type":$("input[name='type']:checked").val()},
             success:function(data){
                 if(data.flag === true){
                     alert("保存成功");

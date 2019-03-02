@@ -92,7 +92,6 @@ public class MDUtil {
 	}
 	/**
 	 * 判断是否加回车
-	 * @param substring
 	 * @return
 	 */
 	private static boolean addEnter(String str) {

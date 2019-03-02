@@ -1,5 +1,6 @@
 package cn.leekoko.service.impl;
 
+import cn.leekoko.common.utils.DateUtil;
 import cn.leekoko.mapper.LifegamePlanMapper;
 import cn.leekoko.pojo.LifegamePlan;
 import cn.leekoko.pojo.LifegamePlanExample;
@@ -29,9 +30,8 @@ public class LifeGamePlanServiceImpl implements LifeGamePlanService {
 
             lifegamePlan.setCode(codeUuid);
             lifegamePlan.setDelflag(0);
-            lifegamePlan.setFinish("0"); //完成标志 0未完成 1已完成
-            lifegamePlan.setCreatedate(new Date().toString());
-            lifegamePlan.setModifydate(new Date().toString());
+            lifegamePlan.setCreatedate(DateUtil.getDateTime());
+            lifegamePlan.setModifydate(DateUtil.getDateTime());
 
             Integer insertNum = lifegamePlanMapper.insert(lifegamePlan);
 
@@ -64,19 +64,4 @@ public class LifeGamePlanServiceImpl implements LifeGamePlanService {
         return result;
     }
 
-    @Override
-    public HashMap<String, Object> changeStatu(LifegamePlan lifegamePlan) {
-        HashMap<String, Object> result = new HashMap<String, Object>();
-        boolean flag = false;
-        //更新
-        lifegamePlan.setModifydate(new Date().toString());
-        lifegamePlan.setFinish("false");
-        Integer updateNum = lifegamePlanMapper.updateByPrimaryKeySelective(lifegamePlan);
-
-        if(updateNum > 0){
-            flag = true;
-        }
-        result.put("flag",flag);
-        return result;
-    }
 }

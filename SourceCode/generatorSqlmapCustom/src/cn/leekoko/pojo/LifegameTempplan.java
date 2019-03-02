@@ -1,6 +1,6 @@
 package cn.leekoko.pojo;
 
-public class LifegamePlan {
+public class LifegameTempplan {
     private String code;
 
     private String planName;
@@ -10,6 +10,8 @@ public class LifegamePlan {
     private String tag;
 
     private String parentcode;
+
+    private String smalltypecode;
 
     private Integer delflag;
 
@@ -79,6 +81,14 @@ public class LifegamePlan {
 
     public void setParentcode(String parentcode) {
         this.parentcode = parentcode == null ? null : parentcode.trim();
+    }
+
+    public String getSmalltypecode() {
+        return smalltypecode;
+    }
+
+    public void setSmalltypecode(String smalltypecode) {
+        this.smalltypecode = smalltypecode == null ? null : smalltypecode.trim();
     }
 
     public Integer getDelflag() {

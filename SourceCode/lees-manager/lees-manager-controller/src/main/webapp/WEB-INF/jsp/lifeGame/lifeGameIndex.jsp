@@ -57,7 +57,7 @@
 <script type="application/javascript">
     /*填写日记*/
     function fillDiary() {
-        window.location.href="${pageContext.request.contextPath}/lifeGame/diary";
+        window.location.href="${pageContext.request.contextPath}/tempPlan/diary";
     }
 
     /*编辑计划*/
@@ -67,7 +67,7 @@
 
     /*计划列表*/
     function toDoList(){
-        window.location.href="${pageContext.request.contextPath}/lifeGame/toDoList";
+        window.location.href="${pageContext.request.contextPath}/tempPlan/toDoList";
     }
     
 </script>
