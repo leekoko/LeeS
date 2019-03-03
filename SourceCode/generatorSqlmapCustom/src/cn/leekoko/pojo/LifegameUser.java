@@ -1,23 +1,21 @@
 package cn.leekoko.pojo;
 
-public class LifegameTempplan {
+public class LifegameUser {
     private String code;
 
-    private String planName;
+    private String userName;
 
-    private Integer money;
+    private Integer allMoney;
 
-    private String tag;
+    private String planDay;
+
+    private String experience;
+
+    private String sign;
 
     private String parentcode;
 
-    private String smalltypecode;
-
     private Integer delflag;
-
-    private String type;
-
-    private String finish;
 
     private String tsm1;
 
@@ -41,8 +39,6 @@ public class LifegameTempplan {
 
     private String modifydate;
 
-    private String content;
-
     public String getCode() {
         return code;
     }
@@ -51,28 +47,44 @@ public class LifegameTempplan {
         this.code = code == null ? null : code.trim();
     }
 
-    public String getPlanName() {
-        return planName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setPlanName(String planName) {
-        this.planName = planName == null ? null : planName.trim();
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
-    public Integer getMoney() {
-        return money;
+    public Integer getAllMoney() {
+        return allMoney;
     }
 
-    public void setMoney(Integer money) {
-        this.money = money;
+    public void setAllMoney(Integer allMoney) {
+        this.allMoney = allMoney;
     }
 
-    public String getTag() {
-        return tag;
+    public String getPlanDay() {
+        return planDay;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag == null ? null : tag.trim();
+    public void setPlanDay(String planDay) {
+        this.planDay = planDay == null ? null : planDay.trim();
+    }
+
+    public String getExperience() {
+        return experience;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience == null ? null : experience.trim();
+    }
+
+    public String getSign() {
+        return sign;
+    }
+
+    public void setSign(String sign) {
+        this.sign = sign == null ? null : sign.trim();
     }
 
     public String getParentcode() {
@@ -83,36 +95,12 @@ public class LifegameTempplan {
         this.parentcode = parentcode == null ? null : parentcode.trim();
     }
 
-    public String getSmalltypecode() {
-        return smalltypecode;
-    }
-
-    public void setSmalltypecode(String smalltypecode) {
-        this.smalltypecode = smalltypecode == null ? null : smalltypecode.trim();
-    }
-
     public Integer getDelflag() {
         return delflag;
     }
 
     public void setDelflag(Integer delflag) {
         this.delflag = delflag;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
-    }
-
-    public String getFinish() {
-        return finish;
-    }
-
-    public void setFinish(String finish) {
-        this.finish = finish == null ? null : finish.trim();
     }
 
     public String getTsm1() {
@@ -201,13 +189,5 @@ public class LifegameTempplan {
 
     public void setModifydate(String modifydate) {
         this.modifydate = modifydate == null ? null : modifydate.trim();
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
     }
 }

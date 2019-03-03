@@ -1,6 +1,5 @@
 package cn.leekoko.service;
 
-import cn.leekoko.pojo.LifegamePlan;
 import cn.leekoko.pojo.LifegameTempplan;
 
 import java.util.HashMap;
@@ -11,5 +10,9 @@ public interface LifeGameTempPlanService {
 	List<LifegameTempplan> getTodayAllPlan();
     HashMap<String, Object> changeStatu(LifegameTempplan lifegameTempplan);
 	List<LifegameTempplan> getTodayChosePlan();
+	//备份旧计划
+	boolean backUpOldPlan();
+	//	插入固定plan到临时计划表中
+	boolean insertNewPlan();
 
 }

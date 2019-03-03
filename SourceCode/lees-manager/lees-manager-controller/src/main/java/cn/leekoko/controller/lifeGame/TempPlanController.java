@@ -1,7 +1,10 @@
 package cn.leekoko.controller.lifeGame;
 
+import cn.leekoko.common.utils.DateUtil;
 import cn.leekoko.pojo.LifegameTempplan;
+import cn.leekoko.pojo.LifegameUser;
 import cn.leekoko.service.LifeGameTempPlanService;
+import cn.leekoko.service.LifeGameUserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -19,6 +26,9 @@ public class TempPlanController {
     @Autowired
     private LifeGameTempPlanService lifeGameTempPlanService;
 
+    @Autowired
+    private LifeGameUserService lifeGameUserService;
+
     /**
      * 计划列表页面
      * @param model
@@ -26,8 +36,14 @@ public class TempPlanController {
      */
     @RequestMapping("/toDoList")
     public String toDoList(Model model){
-        model.addAttribute("planList",lifeGameTempPlanService.getTodayAllPlan());
-        return "lifeGame/toDoList";
+        LifegameUser user = lifeGameUserService.get();
+        if(DateUtil.getDate().equals(user.getPlanDay())){
+            //今日计划匹配才进入该页面
+            return "lifeGame/startDoPage";
+        }else{
+            model.addAttribute("planList",lifeGameTempPlanService.getTodayAllPlan());
+            return "lifeGame/toDoList";
+        }
     }
 
     /**
@@ -78,5 +94,23 @@ public class TempPlanController {
     public List<LifegameTempplan> getTodayChosePlan(){
         return lifeGameTempPlanService.getTodayChosePlan();
     }
+
+    /**
+     * 开始新一天的计划
+     * @return
+     */
+    @RequestMapping("startNewDay")
+    @ResponseBody
+    public boolean startNewDay(){
+        //归档所有旧的计划，设置del_flag为1
+        lifeGameTempPlanService.backUpOldPlan();
+        //插入固定plan到临时计划表中
+        lifeGameTempPlanService.insertNewPlan();
+        //更新计划day +1
+        lifeGameUserService.changePlanDay();
+        return true;
+    }
+
+
 
 }

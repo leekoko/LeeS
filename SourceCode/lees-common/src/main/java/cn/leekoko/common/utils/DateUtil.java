@@ -10,7 +10,7 @@ public class DateUtil {
      * @return
      */
     public static String getDateTime(){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateString = sdf.format(new Date());
         return dateString;
     }
