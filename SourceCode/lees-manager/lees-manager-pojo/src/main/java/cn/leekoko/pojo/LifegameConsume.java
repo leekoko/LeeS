@@ -1,17 +1,13 @@
 package cn.leekoko.pojo;
 
-public class LifegameUser {
+public class LifegameConsume {
     private String code;
 
-    private String userName;
+    private String consumeName;
 
-    private Integer allMoney;
+    private Integer money;
 
-    private String planDay;
-
-    private String experience;
-
-    private String sign;
+    private String tag;
 
     private String parentcode;
 
@@ -47,44 +43,28 @@ public class LifegameUser {
         this.code = code == null ? null : code.trim();
     }
 
-    public String getUserName() {
-        return userName;
+    public String getConsumeName() {
+        return consumeName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+    public void setConsumeName(String consumeName) {
+        this.consumeName = consumeName == null ? null : consumeName.trim();
     }
 
-    public Integer getAllMoney() {
-        return allMoney;
+    public Integer getMoney() {
+        return money;
     }
 
-    public void setAllMoney(Integer allMoney) {
-        this.allMoney = allMoney;
+    public void setMoney(Integer money) {
+        this.money = money;
     }
 
-    public String getPlanDay() {
-        return planDay;
+    public String getTag() {
+        return tag;
     }
 
-    public void setPlanDay(String planDay) {
-        this.planDay = planDay == null ? null : planDay.trim();
-    }
-
-    public String getExperience() {
-        return experience;
-    }
-
-    public void setExperience(String experience) {
-        this.experience = experience == null ? null : experience.trim();
-    }
-
-    public String getSign() {
-        return sign;
-    }
-
-    public void setSign(String sign) {
-        this.sign = sign == null ? null : sign.trim();
+    public void setTag(String tag) {
+        this.tag = tag == null ? null : tag.trim();
     }
 
     public String getParentcode() {

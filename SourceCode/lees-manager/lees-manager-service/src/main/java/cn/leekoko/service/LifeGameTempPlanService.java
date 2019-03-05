@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public interface LifeGameTempPlanService {
-	HashMap<String,Object> save(LifegameTempplan lifegameTempplan);
+	HashMap<String,Object> save(LifegameTempplan lifegameTempplan, boolean isToday);
 	List<LifegameTempplan> getTodayAllPlan();
     HashMap<String, Object> changeStatu(LifegameTempplan lifegameTempplan);
 	List<LifegameTempplan> getTodayChosePlan();

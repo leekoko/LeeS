@@ -12,10 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -71,7 +67,7 @@ public class TempPlanController {
      */
     @RequestMapping("/saveTempPlan")
     @ResponseBody
-    public HashMap<String, Object> saveTempPlan(String plan,String planCode,Integer planMoney){
+    public HashMap<String, Object> saveTempPlan(String plan,String planCode,Integer planMoney,boolean isToday){
         LifegameTempplan lifegameTempplan = new LifegameTempplan();
         lifegameTempplan.setPlanName(plan);
         lifegameTempplan.setMoney(planMoney);
@@ -82,7 +78,11 @@ public class TempPlanController {
         }else {
             lifegameTempplan.setType("2");
         }
-        return lifeGameTempPlanService.save(lifegameTempplan);
+        if(!isToday){
+            //逾期发起，金额-20
+            lifeGameUserService.changeMoney(-10);
+        }
+        return lifeGameTempPlanService.save(lifegameTempplan,isToday);
     }
 
     /**

@@ -72,7 +72,8 @@
     </tbody>
 
 </table>
-<button type="button" class="btn btn-success btn-lg" style="float: left;width: 100%;margin-bottom: 5px;" onclick="createDiary()">生成</button>
+<button type="button" class="btn btn-success btn-lg" style="float: left;width: 100%;margin-bottom: 5px;" data-toggle="modal" data-target="#createModal2">生成</button>
+<button type="button" class="btn btn-danger btn-lg" style="float: left;width: 100%;margin-bottom: 5px;" data-toggle="modal" data-target="#createModal3">隔日生成</button>
 </div>
 
 <div class="modal fade" id="choseModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
@@ -93,6 +94,46 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
+<!-- 模态框：生成询问 -->
+<div class="modal fade" id="createModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" >
+    <div class="modal-dialog" style="width: 90%;">
+        <div class="modal-content">
+            <div class="modal-header" >
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel2">生成询问</h4>
+            </div>
+            <div class="modal-body">
+                <span>是否确认生成明天计划？</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+                <button type="button" class="btn btn-danger" onclick="createDiary(true)">确认</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!-- 模态框：生成询问 -->
+<div class="modal fade" id="createModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" >
+    <div class="modal-dialog" style="width: 90%;">
+        <div class="modal-content">
+            <div class="modal-header" >
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel3">生成询问</h4>
+            </div>
+            <div class="modal-body">
+                <span>是否确认生成今天计划？将扣除30元。</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-danger" onclick="createDiary(false)">确认</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+
 
 </body>
 <script type="application/javascript">
@@ -108,7 +149,7 @@
     }
 
     /*生成日记*/
-    function createDiary() {
+    function createDiary(isToday) { //isToday是否按时发起明天的计划 true是 false否
         var trEl = $("#tableContent tr");
         var date = new Date();
         var result = (date.getMonth()+1)+"."+date.getDate()+"\n";
@@ -131,7 +172,7 @@
         }
         $("#container").append(resultHtml);
         //保存本日计划
-        saveTodayPlan();
+        saveTodayPlan(isToday);
         copyOut();
     }
     /*复制输出内容*/
@@ -158,7 +199,7 @@
     /**
      * 保存今日长期计划
      */
-    function saveTodayPlan(){
+    function saveTodayPlan(isToday){
         for (var index = 1; index < 4; index++) {
             var saveFlag = $("#saveFlag"+index).val();
             if(saveFlag === '0'){ //为0标识不执行保存，下一个
@@ -176,11 +217,18 @@
                 url : "${pageContext.request.contextPath}/tempPlan/saveTempPlan",
                 type : "POST",
                 async : false,
-                data : {"plan":plan, "planCode":planCode, "planMoney":planMoney},
+                data : {"plan":plan, "planCode":planCode, "planMoney":planMoney,"isToday":isToday},
                 success:function(data){
                     if(data){
                         $("#status").css("color","green");
                         $("#status").text("已保存");
+                        if(isToday){
+                            //隐藏创建询问窗口
+                            $('#createModal2').modal('hide');
+                        }else {
+                            //隐藏创建逾期询问窗口
+                            $('#createModal3').modal('hide');
+                        }
                     }else{
                         $("#status").css("color","yellow");
                         $("#status").text("保存失败");

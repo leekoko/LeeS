@@ -48,9 +48,8 @@
             type : "POST",
             async : false,
             success:function(data){
-                alert("请求成功"+data);
                 if(data){
-                    //刷新
+                    //重新进入计划页面
                     window.location.href="/tempPlan/toDoList";
                 }
             }

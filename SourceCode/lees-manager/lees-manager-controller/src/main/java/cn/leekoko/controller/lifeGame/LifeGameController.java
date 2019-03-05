@@ -2,6 +2,7 @@ package cn.leekoko.controller.lifeGame;
 
 import cn.leekoko.pojo.LifegamePlan;
 import cn.leekoko.service.LifeGamePlanService;
+import cn.leekoko.service.LifeGameUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,12 +18,16 @@ public class LifeGameController {
     @Autowired
     private LifeGamePlanService lifeGamePlanService;
 
+    @Autowired
+    private LifeGameUserService lifeGameUserService;
+
     /**
      * 跳转到LifeGame首页
      * @return
      */
     @RequestMapping("/lifeGameIndex")
     public String lifeGameIndexPage(Model model){
+        model.addAttribute("curMoney",lifeGameUserService.getCurMoney());
         return "lifeGame/lifeGameIndex";
     }
 

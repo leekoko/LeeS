@@ -1,17 +1,12 @@
 package cn.leekoko.service.impl;
 
-import cn.leekoko.mapper.LifegameTempplanMapper;
+import cn.leekoko.common.utils.DateUtil;
 import cn.leekoko.mapper.LifegameUserMapper;
 import cn.leekoko.pojo.LifegameUser;
 import cn.leekoko.pojo.LifegameUserExample;
 import cn.leekoko.service.LifeGameUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 @Service
 public class LifeGameUserServiceImpl implements LifeGameUserService {
@@ -35,7 +30,7 @@ public class LifeGameUserServiceImpl implements LifeGameUserService {
     public boolean changePlanDay() {
         boolean flag = false;
         LifegameUser user = this.get();
-        String newDate = this.reduceOneDay(user.getPlanDay());
+        String newDate = DateUtil.addOneDay(user.getPlanDay());
         user.setPlanDay(newDate);
         int inNum = lifegameUserMapper.updateByPrimaryKey(user);
         if(inNum > 0){
@@ -45,22 +40,34 @@ public class LifeGameUserServiceImpl implements LifeGameUserService {
     }
 
     /**
-     * 当前日期加上一天
-     * @throws ParseException
+     * 获取当前总金额
+     * @return
      */
-    private String reduceOneDay(String today){
-        SimpleDateFormat sj = new SimpleDateFormat("yyyy-MM-dd");
-        Date d = null;
-        try {
-            d = sj.parse(today);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(d);
-        calendar.add(Calendar.DATE, 1);
-        return sj.format(calendar.getTime());
+    @Override
+    public Integer getCurMoney() {
+        LifegameUser user = this.get();
+        return user.getAllMoney();
     }
+
+    /**
+     * 改变金额数值
+     * @param changeNum 改变值
+     * @return
+     */
+    @Override
+    public boolean changeMoney(Integer changeNum){
+        boolean flag = false;
+        LifegameUser user = this.get();
+        Integer curMoney = user.getAllMoney();
+        curMoney = curMoney + changeNum;
+        user.setAllMoney(curMoney);
+        int inNum = lifegameUserMapper.updateByPrimaryKey(user);
+        if(inNum > 0){
+            flag = true;
+        }
+        return flag;
+    }
+
 
 
 }
