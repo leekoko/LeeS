@@ -1,8 +1,10 @@
 package cn.leekoko.controller.lifeGame;
 
-
 import cn.leekoko.pojo.LifegameConsume;
+import cn.leekoko.pojo.LifegameConsumeType;
 import cn.leekoko.service.ConsumeService;
+import cn.leekoko.service.ConsumeTypeService;
+import cn.leekoko.service.LifeGameUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,13 +12,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
+import java.util.List;
 
 @Controller
 @RequestMapping("/consume")
 public class ConsumeController {
 
     @Autowired
+    private ConsumeTypeService consumeTypeService;
+
+    @Autowired
     private ConsumeService consumeService;
+
+    @Autowired
+    private LifeGameUserService lifeGameUserService;
 
     /**
      * 编辑计划页面
@@ -25,8 +34,30 @@ public class ConsumeController {
      */
     @RequestMapping("/consumeType")
     public String editPlan(Model model){
-//        model.addAttribute("typeList",lifeGamePlanService.findList("1"));
+        model.addAttribute("typeList",consumeTypeService.findList());
         return "lifeGame/consumeType";
+    }
+    /**
+     * 获取类别列表
+     * @return
+     */
+    @RequestMapping("/getTypeList")
+    @ResponseBody
+    public List<LifegameConsumeType> getTypeList(){
+        return consumeTypeService.findList();
+    }
+
+
+
+    /**
+     * 编辑计划页面
+     * @param model
+     * @return
+     */
+    @RequestMapping("/consumeRecord")
+    public String consumeRecord(Model model){
+        model.addAttribute("curMoney",lifeGameUserService.getCurMoney());
+        return "lifeGame/consumeRecord";
     }
 
     /**
@@ -35,7 +66,28 @@ public class ConsumeController {
      */
     @RequestMapping("/saveType")
     @ResponseBody
-    public HashMap<String, Object> saveType(LifegameConsume lifegameConsume){
-        return consumeService.save(lifegameConsume);
+    public HashMap<String, Object> saveType(LifegameConsumeType lifegameConsumeType){
+        return consumeTypeService.save(lifegameConsumeType);
+    }
+
+    /**
+     * 保存消费内容
+     * @return
+     */
+    @RequestMapping("/saveConsume")
+    @ResponseBody
+    public boolean saveConsume(LifegameConsume lifegameConsume){
+        //减去消费金额
+        boolean flag = lifeGameUserService.changeMoney(-(lifegameConsume.getMoney()));
+        if(flag){
+            flag = consumeService.save(lifegameConsume);
+        }
+        return flag;
+    }
+
+    @RequestMapping("/delType")
+    @ResponseBody
+    public boolean delType(String code){
+        return consumeTypeService.delType(code);
     }
 }

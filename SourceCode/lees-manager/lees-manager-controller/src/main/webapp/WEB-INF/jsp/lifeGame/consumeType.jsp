@@ -24,7 +24,7 @@
 
     <tbody id="tableContent">
         <c:forEach items="${typeList}" varStatus="i" var="item" >
-            <tr style="background: #d0c0af;">
+            <tr>
                 <td><span name="title">${item.typeName}</span></td>
                 <td><button type="button" class="btn btn-danger btn-xs" style="float: left;"  data-toggle="modal" data-target="#delModal" onclick="delReady(this)" lang="${item.code}">删除</button></td>
             </tr>
@@ -97,7 +97,7 @@
             url : "${pageContext.request.contextPath}/consume/saveType",
             type : "POST",
             async : false,
-            data : {"planName":planName},
+            data : {"typeName":typeName},
             success:function(data){
                 if(data.flag === true){
                     alert("保存成功");
@@ -121,7 +121,7 @@
             data : {"code":delCode},
             success:function(data){
                 console.log(data)
-                if(data.flag === true){
+                if(data === true){
                     window.location.reload();
                 }
             }

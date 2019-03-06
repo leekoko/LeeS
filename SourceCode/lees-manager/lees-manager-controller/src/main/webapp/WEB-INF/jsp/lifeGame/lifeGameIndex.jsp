@@ -89,8 +89,12 @@
         window.location.href="${pageContext.request.contextPath}/tempPlan/toDoList";
     }
 
-
     /*消费类别*/
+    function consumeRecord() {
+        window.location.href="${pageContext.request.contextPath}/consume/consumeRecord";
+    }
+
+    /*消费内容*/
     function consumeType() {
         window.location.href="${pageContext.request.contextPath}/consume/consumeType";
     }
