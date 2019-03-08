@@ -50,7 +50,7 @@
             success:function(data){
                 if(data){
                     //重新进入计划页面
-                    window.location.href="/tempPlan/toDoList";
+                    window.location.href="${pageContext.request.contextPath}/tempPlan/toDoList";
                 }
             }
         });

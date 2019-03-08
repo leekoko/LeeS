@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="lees-manager-controller:war" />
+      <artifact name="lees-manager-controller:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
@@ -43,38 +43,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/consumeRecord.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2052">
+            <state relative-caret-position="1617">
               <caret line="108" column="61" selection-start-line="108" selection-start-column="54" selection-end-line="108" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-pojo/src/main/java/cn/leekoko/pojo/LifegameConsume.java">
+        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/diary.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/ConsumeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+            <state relative-caret-position="399">
+              <caret line="222" column="35" selection-start-line="222" selection-start-column="35" selection-end-line="222" selection-end-column="35" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/LifeGameUserService.java">
+        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/ConsumeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            <state relative-caret-position="572">
+              <caret line="79" column="16" lean-forward="true" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,7 +88,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/LifeGameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
+            <state relative-caret-position="-796">
               <caret line="20" selection-start-line="20" selection-end-line="21" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -106,8 +100,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/TempPlanController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1273">
-              <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="49" />
+            <state relative-caret-position="173">
+              <caret line="37" column="40" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/startDoPage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="50" column="25" lean-forward="true" selection-start-line="49" selection-start-column="35" selection-end-line="50" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -225,7 +228,6 @@
         <option value="$PROJECT_DIR$/lees-common/src/main/java/cn/leekoko/common/utils/MDUtil.java" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/editPlan.jsp" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/LifeGamePlanService.java" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/startDoPage.jsp" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/LifeGameController.java" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/toDoList.jsp" />
         <option value="$PROJECT_DIR$/lees-common/src/main/java/cn/leekoko/common/utils/DateUtil.java" />
@@ -245,6 +247,7 @@
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/ConsumeService.java" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/impl/ConsumeServiceImpl.java" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/ConsumeController.java" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/startDoPage.jsp" />
       </list>
     </option>
   </component>
@@ -273,8 +276,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="33" />
-    <option name="y" value="11" />
+    <option name="x" value="32" />
+    <option name="y" value="9" />
     <option name="width" value="1809" />
     <option name="height" value="1072" />
   </component>
@@ -283,8 +286,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -353,6 +356,27 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lees-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="lees-manager-controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lees-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="lees-manager-controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="lifeGame" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
@@ -452,7 +476,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="public" />
-    <property name="last_opened_file_path" value="D:/idea_place/workB01_tech/eda-unify-microservice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -735,11 +759,12 @@
       <workItem from="1551876847868" duration="5362000" />
       <workItem from="1551920977910" duration="1882000" />
       <workItem from="1551926258968" duration="8000" />
+      <workItem from="1552054712240" duration="1212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261055000" />
+    <option name="totallyTimeSpent" value="262267000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -753,7 +778,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1390" height="747" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4918033" visible="true" weight="0.16716641" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4918033" visible="true" weight="0.20164917" />
       <window_info id="Structure" order="1" weight="0.24981245" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" sideWeight="0.5081967" side_tool="true" weight="0.21664168" />
@@ -765,7 +790,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.88605696" weight="0.30522767" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.83583206" weight="0.30860034" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.83583206" weight="0.33052278" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49550226" weight="0.35581788" />
@@ -1077,13 +1102,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/startDoPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="49" column="35" lean-forward="true" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/toDoList.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
@@ -1105,27 +1123,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/diary.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="236" selection-end-column="15" />
-          <folding>
-            <element signature="n#style#0;n#textarea#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/editPlan.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-838">
           <caret line="44" column="149" selection-start-line="44" selection-start-column="105" selection-end-line="44" selection-end-column="149" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/consumeRecord.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2052">
-          <caret line="108" column="61" selection-start-line="108" selection-start-column="54" selection-end-line="108" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -1153,23 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/LifeGameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="20" selection-start-line="20" selection-end-line="21" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/TempPlanController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1273">
-          <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/ConsumeTypeService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -1191,13 +1175,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/consumeRecord.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1617">
+          <caret line="108" column="61" selection-start-line="108" selection-start-column="54" selection-end-line="108" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/diary.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="222" column="35" selection-start-line="222" selection-start-column="35" selection-end-line="222" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/ConsumeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+        <state relative-caret-position="572">
+          <caret line="79" column="16" lean-forward="true" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/LifeGameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-796">
+          <caret line="20" selection-start-line="20" selection-end-line="21" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/TempPlanController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="37" column="40" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/startDoPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="50" column="25" lean-forward="true" selection-start-line="49" selection-start-column="35" selection-end-line="50" selection-end-column="25" />
         </state>
       </provider>
     </entry>
