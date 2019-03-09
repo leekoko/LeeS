@@ -10,6 +10,7 @@ public interface LifeGameTempPlanService {
 	List<LifegameTempplan> getTodayAllPlan();
     HashMap<String, Object> changeStatu(LifegameTempplan lifegameTempplan);
 	List<LifegameTempplan> getTodayChosePlan();
+	List<LifegameTempplan> getTodayOldPlan();
 	//备份旧计划
 	boolean backUpOldPlan();
 	//	插入固定plan到临时计划表中

@@ -79,6 +79,20 @@ public class LifeGameTempPlanServiceImpl implements LifeGameTempPlanService {
     }
 
     /**
+     * 获取今日已完成的计划
+     * @return
+     */
+    @Override
+    public List<LifegameTempplan> getTodayOldPlan() {
+        LifegameTempplanExample example = new LifegameTempplanExample();
+        LifegameTempplanExample.Criteria criteria = example.createCriteria();
+        //回显只显示明天执行的计划
+        criteria.andTsm1EqualTo(DateUtil.getDate());
+        criteria.andFinishEqualTo("1");
+        return lifegameTempPlanMapper.selectByExample(example);
+    }
+
+    /**
      * 备份旧计划
      * @return
      */

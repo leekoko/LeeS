@@ -96,6 +96,16 @@ public class TempPlanController {
     }
 
     /**
+     * 获取今日已完成的计划
+     * @return
+     */
+    @RequestMapping("getTodayOldPlan")
+    @ResponseBody
+    public List<LifegameTempplan> getTodayOldPlan(){
+        return lifeGameTempPlanService.getTodayOldPlan();
+    }
+
+    /**
      * 开始新一天的计划
      * @return
      */

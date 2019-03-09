@@ -41,7 +41,7 @@
         </tr>
         <tr>
             <td><span name="title">昨天安排检查</span></td>
-            <td><textarea type="text" name="content" class="form-control" style="height: 50px;" placeholder="输入内容"></textarea></td>
+            <td><textarea type="text" name="content" id="olaPlan" class="form-control" style="height: 50px;" placeholder="输入内容"></textarea></td>
         </tr>
         <tr>
             <td>
@@ -141,6 +141,8 @@
     $(function () {
         //回显今日计划
         getTodayPlan();
+        //初始化旧计划
+        initOlaPlan();
     });
 
     /*回退上一页*/
@@ -253,6 +255,28 @@
                     //填写内容
                     fillContent(data[i].code, data[i].planName, data[i].money,false);
                 }
+            }
+        });
+    }
+
+    /**
+     * 初始化旧计划
+     */
+    function initOlaPlan() {
+        $.ajax({
+            url : "${pageContext.request.contextPath}/tempPlan/getTodayOldPlan",
+            type : "POST",
+            async : false,
+            success:function(data){
+                var oldPlan = "";
+                for (var i = 0; i < data.length; i++) {
+                    //填写内容
+                    if(i > 0){
+                        oldPlan +=  "\n";
+                    }
+                    oldPlan += data[i].planName;
+                }
+                $("#olaPlan").val(oldPlan)
             }
         });
     }
