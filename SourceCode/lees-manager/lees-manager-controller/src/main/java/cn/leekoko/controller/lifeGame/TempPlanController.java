@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 
@@ -31,8 +32,8 @@ public class TempPlanController {
      * @return
      */
     @RequestMapping("/toDoList")
-    public String toDoList(Model model){
-        LifegameUser user = lifeGameUserService.get();
+    public String toDoList(Model model, HttpServletRequest request){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
         if(DateUtil.getDate().equals(user.getPlanDay())){
             //今日计划匹配才进入该页面
             return "lifeGame/startDoPage";
@@ -67,7 +68,8 @@ public class TempPlanController {
      */
     @RequestMapping("/saveTempPlan")
     @ResponseBody
-    public HashMap<String, Object> saveTempPlan(String plan,String planCode,Integer planMoney,boolean isToday){
+    public HashMap<String, Object> saveTempPlan(HttpServletRequest request, String plan,String planCode,Integer planMoney,boolean isToday){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
         LifegameTempplan lifegameTempplan = new LifegameTempplan();
         lifegameTempplan.setPlanName(plan);
         lifegameTempplan.setMoney(planMoney);
@@ -80,7 +82,7 @@ public class TempPlanController {
         }
         if(!isToday){
             //逾期发起，金额-20
-            lifeGameUserService.changeMoney(-10);
+            lifeGameUserService.changeMoney(-10,user.getUserName());
         }
         return lifeGameTempPlanService.save(lifegameTempplan,isToday);
     }
@@ -111,13 +113,14 @@ public class TempPlanController {
      */
     @RequestMapping("startNewDay")
     @ResponseBody
-    public boolean startNewDay(){
+    public boolean startNewDay(HttpServletRequest request){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
         //归档所有旧的计划，设置del_flag为1
         lifeGameTempPlanService.backUpOldPlan();
         //插入固定plan到临时计划表中
         lifeGameTempPlanService.insertNewPlan();
         //更新计划day +1
-        lifeGameUserService.changePlanDay();
+        lifeGameUserService.changePlanDay(user.getUserName());
         return true;
     }
 

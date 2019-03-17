@@ -8,18 +8,30 @@ import cn.leekoko.service.LifeGameUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LifeGameUserServiceImpl implements LifeGameUserService {
 
     @Autowired
     private LifegameUserMapper lifegameUserMapper;
 
+    /**
+     * 获取指定账号用户
+     * @param userName
+     * @return
+     */
     @Override
-    public LifegameUser get() {
+    public LifegameUser get(String userName) {
         LifegameUserExample example = new LifegameUserExample();
         LifegameUserExample.Criteria criteria = example.createCriteria();
-        criteria.andUserNameEqualTo("leekoko");
-        return lifegameUserMapper.selectByExample(example).get(0);
+        criteria.andUserNameEqualTo(userName);
+        List<LifegameUser> users = lifegameUserMapper.selectByExample(example);
+        LifegameUser user = null;
+        if(users.size() > 0){
+            user = users.get(0);
+        }
+        return user;
     }
 
     /**
@@ -27,9 +39,9 @@ public class LifeGameUserServiceImpl implements LifeGameUserService {
      * @return
      */
     @Override
-    public boolean changePlanDay() {
+    public boolean changePlanDay(String userName) {
         boolean flag = false;
-        LifegameUser user = this.get();
+        LifegameUser user = this.get(userName);
         String newDate = DateUtil.addOneDay(user.getPlanDay());
         user.setPlanDay(newDate);
         int inNum = lifegameUserMapper.updateByPrimaryKey(user);
@@ -44,8 +56,8 @@ public class LifeGameUserServiceImpl implements LifeGameUserService {
      * @return
      */
     @Override
-    public Integer getCurMoney() {
-        LifegameUser user = this.get();
+    public Integer getCurMoney(String userName) {
+        LifegameUser user = this.get(userName);
         return user.getAllMoney();
     }
 
@@ -55,9 +67,9 @@ public class LifeGameUserServiceImpl implements LifeGameUserService {
      * @return
      */
     @Override
-    public boolean changeMoney(Integer changeNum){
+    public boolean changeMoney(Integer changeNum, String userName){
         boolean flag = false;
-        LifegameUser user = this.get();
+        LifegameUser user = this.get(userName);
         Integer curMoney = user.getAllMoney();
         curMoney = curMoney + changeNum;
         user.setAllMoney(curMoney);
@@ -68,6 +80,21 @@ public class LifeGameUserServiceImpl implements LifeGameUserService {
         return flag;
     }
 
+    /**
+     * 用户检查登录
+     * @param lifegameUser
+     * @return
+     */
+    @Override
+    public boolean checkLogin(LifegameUser lifegameUser) {
+        boolean flag = false;
+        LifegameUser user = this.get(lifegameUser.getUserName());
+        if(user != null && lifegameUser.getTsm1().equals(user.getTsm1())){
+            //判断密码正确
+            flag = true;
+        }
+        return flag;
+    }
 
 
 }

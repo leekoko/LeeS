@@ -14,10 +14,19 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	<!--Spring mvc拦截器定义-->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!--拦截所有的请求-->
+			<mvc:mapping path="/*"/>
+			<!--使用bean定义Interceptor-->
+			<bean class="cn.leekoko.controller.lifeGame.AuthorizationInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 	<!-- 资源映射 -->
 	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
 	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
-	<mvc:resources location="/WEB-INF/images/" mapping="/images/**"/>
 
 	<context:property-placeholder location="classpath:resource/*.properties" />
 	

@@ -1,6 +1,7 @@
 package cn.leekoko.controller.lifeGame;
 
 import cn.leekoko.pojo.LifegamePlan;
+import cn.leekoko.pojo.LifegameUser;
 import cn.leekoko.service.LifeGamePlanService;
 import cn.leekoko.service.LifeGameUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 
 @Controller
@@ -26,12 +28,11 @@ public class LifeGameController {
      * @return
      */
     @RequestMapping("/lifeGameIndex")
-    public String lifeGameIndexPage(Model model){
-        model.addAttribute("curMoney",lifeGameUserService.getCurMoney());
+    public String lifeGameIndexPage(Model model, HttpServletRequest request){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
+        model.addAttribute("curMoney",lifeGameUserService.getCurMoney(user.getUserName()));
         return "lifeGame/lifeGameIndex";
     }
-
-
 
     @RequestMapping("/chosePlan")
     public String chosePlan(Model model){

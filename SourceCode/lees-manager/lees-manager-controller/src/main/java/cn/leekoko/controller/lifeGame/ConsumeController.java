@@ -2,6 +2,7 @@ package cn.leekoko.controller.lifeGame;
 
 import cn.leekoko.pojo.LifegameConsume;
 import cn.leekoko.pojo.LifegameConsumeType;
+import cn.leekoko.pojo.LifegameUser;
 import cn.leekoko.service.ConsumeService;
 import cn.leekoko.service.ConsumeTypeService;
 import cn.leekoko.service.LifeGameUserService;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 
@@ -55,8 +57,9 @@ public class ConsumeController {
      * @return
      */
     @RequestMapping("/consumeRecord")
-    public String consumeRecord(Model model){
-        model.addAttribute("curMoney",lifeGameUserService.getCurMoney());
+    public String consumeRecord(Model model, HttpServletRequest request){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
+        model.addAttribute("curMoney",lifeGameUserService.getCurMoney(user.getUserName()));
         return "lifeGame/consumeRecord";
     }
 
@@ -76,9 +79,10 @@ public class ConsumeController {
      */
     @RequestMapping("/saveConsume")
     @ResponseBody
-    public boolean saveConsume(LifegameConsume lifegameConsume){
+    public boolean saveConsume(LifegameConsume lifegameConsume,HttpServletRequest request){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
         //减去消费金额
-        boolean flag = lifeGameUserService.changeMoney(-(lifegameConsume.getMoney()));
+        boolean flag = lifeGameUserService.changeMoney(-(lifegameConsume.getMoney()),user.getUserName());
         if(flag){
             flag = consumeService.save(lifegameConsume);
         }

@@ -48,7 +48,7 @@
             <div class="modal-body">
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label for="planName" class="col-sm-2 control-label">消费类别</label>
+                        <label for="type" class="col-sm-2 control-label">消费类别</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="type">
                             </select>
