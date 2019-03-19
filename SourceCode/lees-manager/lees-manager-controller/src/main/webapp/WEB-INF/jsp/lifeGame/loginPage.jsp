@@ -14,24 +14,24 @@
             LeeS
         </h2>
     </div>
-    <form class="form-horizontal">
+    <form class="form-horizontal" action="${pageContext.request.contextPath}/author/loginUser">
         <div class="form-group">
             <label for="userName" class="col-sm-2 control-label">账号</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="userName"
+                <input type="text" class="form-control" id="userName" name="userName"
                        placeholder="请输入账号">
             </div>
         </div>
         <div class="form-group">
-            <label for="password" class="col-sm-2 control-label">密码</label>
+            <label for="tsm1" class="col-sm-2 control-label">密码</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="password"
+                <input type="password" class="form-control" id="tsm1" name="tsm1"
                        placeholder="请输入密码">
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button class="btn btn-default" onclick="loginUser();">登录</button>
+                <button class="btn btn-default" type="submit">登录</button>
             </div>
             <label style="color: red;margin-left: 20px;">${message}</label>
         </div>
@@ -44,11 +44,11 @@
         window.location.href="${pageContext.request.contextPath}/lifeGame/lifeGameIndex";
     }
     //登录用户
-    function loginUser() {
+/*    function loginUser() {
         var userName = $("#userName").val();
         var password = $("#password").val();
         $.ajax({
-            url : "${pageContext.request.contextPath}/author/loginUser",
+            url : "",
             type : "POST",
             data : {"userName":userName,"tsm1":password},
             async : false,
@@ -62,7 +62,7 @@
             }
         });
         
-    }
+    }*/
 </script>
 
 </html>

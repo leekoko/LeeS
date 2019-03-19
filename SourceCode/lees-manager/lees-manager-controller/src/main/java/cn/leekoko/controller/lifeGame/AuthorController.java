@@ -39,7 +39,7 @@ public class AuthorController {
             mv.setViewName("lifeGame/lifeGameIndex");
         }else{
             mv.addObject("message","账号密码错误，请重新输入");
-            mv.setViewName("author/loginPage");
+            mv.setViewName("lifeGame/loginPage");
         }
         return mv;
     }
