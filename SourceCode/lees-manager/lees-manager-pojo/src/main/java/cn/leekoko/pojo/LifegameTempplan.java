@@ -20,7 +20,7 @@ public class LifegameTempplan {
     private String finish;
 
     private String tsm1;
-
+    //存储用户Code
     private String tsm2;
 
     private String tsm3;

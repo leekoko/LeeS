@@ -91,6 +91,7 @@ public class LifeGameUserServiceImpl implements LifeGameUserService {
         LifegameUser user = this.get(lifegameUser.getUserName());
         if(user != null && lifegameUser.getTsm1().equals(user.getTsm1())){
             //判断密码正确
+            lifegameUser.setCode(user.getCode());
             flag = true;
         }
         return flag;

@@ -18,7 +18,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<!--拦截所有的请求-->
-			<mvc:mapping path="/*"/>
+			<mvc:mapping path="/"/>
 			<!--使用bean定义Interceptor-->
 			<bean class="cn.leekoko.controller.lifeGame.AuthorizationInterceptor"/>
 		</mvc:interceptor>

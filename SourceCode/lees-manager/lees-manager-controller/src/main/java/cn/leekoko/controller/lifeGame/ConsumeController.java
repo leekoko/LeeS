@@ -35,8 +35,9 @@ public class ConsumeController {
      * @return
      */
     @RequestMapping("/consumeType")
-    public String editPlan(Model model){
-        model.addAttribute("typeList",consumeTypeService.findList());
+    public String editPlan(Model model ,HttpServletRequest request){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
+        model.addAttribute("typeList",consumeTypeService.findList(user.getCode()));
         return "lifeGame/consumeType";
     }
     /**
@@ -45,8 +46,9 @@ public class ConsumeController {
      */
     @RequestMapping("/getTypeList")
     @ResponseBody
-    public List<LifegameConsumeType> getTypeList(){
-        return consumeTypeService.findList();
+    public List<LifegameConsumeType> getTypeList(HttpServletRequest request){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
+        return consumeTypeService.findList(user.getCode());
     }
 
 
@@ -84,6 +86,7 @@ public class ConsumeController {
         //减去消费金额
         boolean flag = lifeGameUserService.changeMoney(-(lifegameConsume.getMoney()),user.getUserName());
         if(flag){
+            lifegameConsume.setTsm2(user.getCode());
             flag = consumeService.save(lifegameConsume);
         }
         return flag;

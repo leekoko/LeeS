@@ -30,13 +30,16 @@ public class LifeGameController {
     @RequestMapping("/lifeGameIndex")
     public String lifeGameIndexPage(Model model, HttpServletRequest request){
         LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
-        model.addAttribute("curMoney",lifeGameUserService.getCurMoney(user.getUserName()));
+        if(user != null){
+            model.addAttribute("curMoney",lifeGameUserService.getCurMoney(user.getUserName()));
+        }
         return "lifeGame/lifeGameIndex";
     }
 
     @RequestMapping("/chosePlan")
-    public String chosePlan(Model model){
-        model.addAttribute("planList",lifeGamePlanService.findList("0")); //长期类别
+    public String chosePlan(Model model ,HttpServletRequest request){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
+        model.addAttribute("planList",lifeGamePlanService.findList("0",user.getCode())); //长期类别
         return "lifeGame/chosePlan";
     }
 
@@ -47,9 +50,10 @@ public class LifeGameController {
      * @return
      */
     @RequestMapping("/editPlan")
-    public String editPlan(Model model){
-        model.addAttribute("planList",lifeGamePlanService.findList("0")); //长期类别
-        model.addAttribute("planList2",lifeGamePlanService.findList("1")); //固定类别
+    public String editPlan(Model model ,HttpServletRequest request){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
+        model.addAttribute("planList",lifeGamePlanService.findList("0",user.getCode())); //长期类别
+        model.addAttribute("planList2",lifeGamePlanService.findList("1",user.getCode())); //固定类别
         return "lifeGame/editPlan";
     }
 
@@ -60,7 +64,9 @@ public class LifeGameController {
      */
     @RequestMapping("/savePlan")
     @ResponseBody
-    public HashMap<String, Object> savePlan(LifegamePlan lifegamePlan){
+    public HashMap<String, Object> savePlan(LifegamePlan lifegamePlan ,HttpServletRequest request){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
+        lifegamePlan.setTsm2(user.getCode());
         return lifeGamePlanService.save(lifegamePlan);
     }
 

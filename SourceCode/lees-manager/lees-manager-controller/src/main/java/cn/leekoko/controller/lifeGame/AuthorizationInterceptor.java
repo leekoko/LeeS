@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  * 权限控制
  */
 public class AuthorizationInterceptor implements HandlerInterceptor {
-    //或略拦截页面
+    //忽略拦截页面
     private static final String[] IGNORE_URI = {"author/loginPage","author/loginUser"};
 
     @Override

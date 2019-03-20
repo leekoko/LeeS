@@ -38,7 +38,7 @@ public class TempPlanController {
             //今日计划匹配才进入该页面
             return "lifeGame/startDoPage";
         }else{
-            model.addAttribute("planList",lifeGameTempPlanService.getTodayAllPlan());
+            model.addAttribute("planList",lifeGameTempPlanService.getTodayAllPlan(user.getCode()));
             return "lifeGame/toDoList";
         }
     }
@@ -73,6 +73,8 @@ public class TempPlanController {
         LifegameTempplan lifegameTempplan = new LifegameTempplan();
         lifegameTempplan.setPlanName(plan);
         lifegameTempplan.setMoney(planMoney);
+        //存储用户Code
+        lifegameTempplan.setTsm2(user.getCode());
         if(StringUtils.isNoneEmpty(planCode)){
             //设置plan的Code
             lifegameTempplan.setParentcode(planCode);
@@ -93,8 +95,9 @@ public class TempPlanController {
      */
     @RequestMapping("getTodayChosePlan")
     @ResponseBody
-    public List<LifegameTempplan> getTodayChosePlan(){
-        return lifeGameTempPlanService.getTodayChosePlan();
+    public List<LifegameTempplan> getTodayChosePlan(HttpServletRequest request){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
+        return lifeGameTempPlanService.getTodayChosePlan(user.getCode());
     }
 
     /**
@@ -103,8 +106,9 @@ public class TempPlanController {
      */
     @RequestMapping("getTodayOldPlan")
     @ResponseBody
-    public List<LifegameTempplan> getTodayOldPlan(){
-        return lifeGameTempPlanService.getTodayOldPlan();
+    public List<LifegameTempplan> getTodayOldPlan(HttpServletRequest request){
+        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
+        return lifeGameTempPlanService.getTodayOldPlan(user.getCode());
     }
 
     /**

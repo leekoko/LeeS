@@ -44,10 +44,11 @@ public class LifeGamePlanServiceImpl implements LifeGamePlanService {
     }
 
     @Override
-    public List<LifegamePlan> findList(String type) {
+    public List<LifegamePlan> findList(String type, String userCode) {
         LifegamePlanExample example = new LifegamePlanExample();
         LifegamePlanExample.Criteria criteria = example.createCriteria();
         criteria.andTypeEqualTo(type);
+        criteria.andTsm2EqualTo(userCode);
         return lifegamePlanMapper.selectByExample(example);
     }
 
