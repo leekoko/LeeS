@@ -86,15 +86,13 @@ public class LifeGameUserServiceImpl implements LifeGameUserService {
      * @return
      */
     @Override
-    public boolean checkLogin(LifegameUser lifegameUser) {
-        boolean flag = false;
+    public LifegameUser checkLogin(LifegameUser lifegameUser) {
         LifegameUser user = this.get(lifegameUser.getUserName());
         if(user != null && lifegameUser.getTsm1().equals(user.getTsm1())){
             //判断密码正确
-            lifegameUser.setCode(user.getCode());
-            flag = true;
+            return user;
         }
-        return flag;
+        return null;
     }
 
 

@@ -33,9 +33,10 @@ public class AuthorController {
      */
     @RequestMapping("/loginUser")
     public ModelAndView loginUser(LifegameUser lifegameUser, HttpSession session, ModelAndView mv){
-        if(lifeGameUserService.checkLogin(lifegameUser)){
+        LifegameUser user = lifeGameUserService.checkLogin(lifegameUser);
+        if(user != null){
             lifegameUser.setTsm1("");
-            session.setAttribute("user",lifegameUser);
+            session.setAttribute("user",user);
             mv.setViewName("lifeGame/lifeGameIndex");
         }else{
             mv.addObject("message","账号密码错误，请重新输入");

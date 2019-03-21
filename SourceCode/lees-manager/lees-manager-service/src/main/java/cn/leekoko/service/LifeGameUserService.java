@@ -12,5 +12,5 @@ public interface LifeGameUserService {
 	//改变金额
 	boolean changeMoney(Integer changeNum, String userName);
 	//用户检查登录
-	boolean checkLogin(LifegameUser lifegameUser);
+	LifegameUser checkLogin(LifegameUser lifegameUser);
 }
