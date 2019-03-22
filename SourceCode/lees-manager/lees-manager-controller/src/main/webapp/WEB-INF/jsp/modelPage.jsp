@@ -42,6 +42,8 @@
 		<button type="button" class="btn btn-info" onclick="addOnePrepend();">前面新增行</button>
 		<button type="button" class="btn btn-info" onclick="addOneAppend();">后面新增行</button>
 		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">选择模板</button>
+		<button type="button" class="btn btn-success" onclick="creatVar();">变量框生成</button>
+		<button type="button" class="btn btn-success" onclick="startVar();">变量生成</button>
 
 		<button type="button" class="btn btn-warning pull-right" data-toggle="modal" data-target="#modelFlow">保存流程</button>
 		<button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#modelFlowList">选择流程</button>
@@ -409,6 +411,65 @@ function down(el) {
 	if(next.length != 0){
 		next.after(tr);
 	}
+}
+
+
+
+//变量框生成
+function creatVar() {
+	var map = new Map();
+	var trArrEl = $("#tableContent tr");
+	for (var i = 0; i < trArrEl.length; i++){
+		var curSum = $(trArrEl.get(i)).find("textarea[name='summary']").val();
+		var firstSum = curSum.split('\n')[0];
+		var sumArr = firstSum.split("|");
+		for (var j = 0 ; j < sumArr.length ; j++ ){
+			if(map.has(sumArr[j])){
+				var num = map.get(sumArr[j]);
+				++ num;
+				map.set(sumArr[j],num);
+			}else{
+				map.set(sumArr[j],1);
+			}
+		}
+	}
+	//获取到变量数据
+	console.log(map);
+	var html = "<tr><td colspan='3'>";
+	map.forEach(function(key,value){
+		html += "<input type='text' name='variable' class='form-control mt10' style='width: 150px;display:block;float:left;' lang='"+value+"' placeholder='"+value+":"+key+"'/>"
+	})
+	html += "</td></tr>"
+	$("#tableContent").prepend(html);
+}
+//变量生成
+function startVar() {
+	var map = new Map();
+	var varArr = $("input[name='variable']");
+	for(var i = 0;i< varArr.length; i++ ){
+		var el = $(varArr[i]);
+		if(el.val().length > 0){
+			map.set(el.attr("lang"),el.val());
+		}else{
+			map.set(el.attr("lang"),el.attr("lang"));
+		}
+	}
+	//形成变量map
+	console.log(map);
+	var trArrEl = $("#tableContent tr");
+	for (var k = 1; k < trArrEl.length; k++){
+		var outContent = "";
+		var curSum = $(trArrEl.get(k)).find("textarea[name='summary']").val();
+		var firstSum = curSum.split('\n')[0];
+		var sumArr = firstSum.split("|");
+		for (var j = 0 ; j < sumArr.length ; j++ ){
+			var content = map.get(sumArr[j]);
+			outContent += content + "|";
+		}
+		var dataCode = $(trArrEl.get(k)).find("textarea[name='dataCode']");
+		dataCode.val(outContent.substring(0,outContent.length-1));
+	}
+
 }
 
 </script>
