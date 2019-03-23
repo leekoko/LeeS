@@ -18,10 +18,29 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<!--拦截所有的请求-->
-			<mvc:mapping path="/"/>
+			<mvc:mapping path="/author/*"/>
 			<!--使用bean定义Interceptor-->
 			<bean class="cn.leekoko.controller.lifeGame.AuthorizationInterceptor"/>
 		</mvc:interceptor>
+		<mvc:interceptor>
+			<!--拦截所有的请求-->
+			<mvc:mapping path="/consume/*"/>
+			<!--使用bean定义Interceptor-->
+			<bean class="cn.leekoko.controller.lifeGame.AuthorizationInterceptor"/>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<!--拦截所有的请求-->
+			<mvc:mapping path="/lifeGame/*"/>
+			<!--使用bean定义Interceptor-->
+			<bean class="cn.leekoko.controller.lifeGame.AuthorizationInterceptor"/>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<!--拦截所有的请求-->
+			<mvc:mapping path="/tempPlan/*"/>
+			<!--使用bean定义Interceptor-->
+			<bean class="cn.leekoko.controller.lifeGame.AuthorizationInterceptor"/>
+		</mvc:interceptor>
+
 	</mvc:interceptors>
 
 	<!-- 资源映射 -->
