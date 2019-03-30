@@ -1,12 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="war" name="lees-manager-controller:war">
     <output-path>$PROJECT_DIR$/lees-manager/lees-manager-controller/target</output-path>
-    <properties id="maven-jee-properties">
-      <options>
-        <module>lees-manager-controller</module>
-        <packaging>war</packaging>
-      </options>
-    </properties>
     <root id="archive" name="lees-manager-controller-0.0.1-SNAPSHOT.war">
       <element id="artifact" artifact-name="lees-manager-controller:war exploded" />
     </root>

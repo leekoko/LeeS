@@ -14,13 +14,13 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="lees-common" target="1.8" />
-      <module name="lees-manager" target="1.8" />
-      <module name="lees-manager-controller" target="1.8" />
-      <module name="lees-manager-mapper" target="1.8" />
-      <module name="lees-manager-pojo" target="1.8" />
-      <module name="lees-manager-service" target="1.8" />
-      <module name="lees-parent" target="1.8" />
+      <module name="lees-common" target="1.5" />
+      <module name="lees-manager" target="1.5" />
+      <module name="lees-manager-controller" target="1.5" />
+      <module name="lees-manager-mapper" target="1.5" />
+      <module name="lees-manager-pojo" target="1.5" />
+      <module name="lees-manager-service" target="1.5" />
+      <module name="lees-parent" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
