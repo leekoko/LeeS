@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.leekoko.mapper.TemplateMapper" >
+  <resultMap id="BaseResultMap" type="cn.leekoko.pojo.Template" >
+    <id column="code" property="code" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="summary" property="summary" jdbcType="VARCHAR" />
+    <result column="tag" property="tag" jdbcType="VARCHAR" />
+    <result column="parentCode" property="parentcode" jdbcType="VARCHAR" />
+    <result column="delFlag" property="delflag" jdbcType="INTEGER" />
+    <result column="tsm1" property="tsm1" jdbcType="VARCHAR" />
+    <result column="tsm2" property="tsm2" jdbcType="VARCHAR" />
+    <result column="tsm3" property="tsm3" jdbcType="VARCHAR" />
+    <result column="tsm4" property="tsm4" jdbcType="VARCHAR" />
+    <result column="tsm5" property="tsm5" jdbcType="VARCHAR" />
+    <result column="tsm6" property="tsm6" jdbcType="VARCHAR" />
+    <result column="tsm7" property="tsm7" jdbcType="VARCHAR" />
+    <result column="tsm8" property="tsm8" jdbcType="VARCHAR" />
+    <result column="tsm9" property="tsm9" jdbcType="VARCHAR" />
+    <result column="createDate" property="createdate" jdbcType="VARCHAR" />
+    <result column="modifyDate" property="modifydate" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    code, title, content, summary, tag, parentCode, delFlag, tsm1, tsm2, tsm3, tsm4, 
+    tsm5, tsm6, tsm7, tsm8, tsm9, createDate, modifyDate
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.leekoko.pojo.TemplateExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from template
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from template
+    where code = #{code,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from template
+    where code = #{code,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.leekoko.pojo.TemplateExample" >
+    delete from template
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.leekoko.pojo.Template" >
+    insert into template (code, title, content, 
+      summary, tag, parentCode, 
+      delFlag, tsm1, tsm2, 
+      tsm3, tsm4, tsm5, tsm6, 
+      tsm7, tsm8, tsm9, createDate, 
+      modifyDate)
+    values (#{code,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{summary,jdbcType=VARCHAR}, #{tag,jdbcType=VARCHAR}, #{parentcode,jdbcType=VARCHAR}, 
+      #{delflag,jdbcType=INTEGER}, #{tsm1,jdbcType=VARCHAR}, #{tsm2,jdbcType=VARCHAR}, 
+      #{tsm3,jdbcType=VARCHAR}, #{tsm4,jdbcType=VARCHAR}, #{tsm5,jdbcType=VARCHAR}, #{tsm6,jdbcType=VARCHAR}, 
+      #{tsm7,jdbcType=VARCHAR}, #{tsm8,jdbcType=VARCHAR}, #{tsm9,jdbcType=VARCHAR}, #{createdate,jdbcType=VARCHAR}, 
+      #{modifydate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.leekoko.pojo.Template" >
+    insert into template
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="summary != null" >
+        summary,
+      </if>
+      <if test="tag != null" >
+        tag,
+      </if>
+      <if test="parentcode != null" >
+        parentCode,
+      </if>
+      <if test="delflag != null" >
+        delFlag,
+      </if>
+      <if test="tsm1 != null" >
+        tsm1,
+      </if>
+      <if test="tsm2 != null" >
+        tsm2,
+      </if>
+      <if test="tsm3 != null" >
+        tsm3,
+      </if>
+      <if test="tsm4 != null" >
+        tsm4,
+      </if>
+      <if test="tsm5 != null" >
+        tsm5,
+      </if>
+      <if test="tsm6 != null" >
+        tsm6,
+      </if>
+      <if test="tsm7 != null" >
+        tsm7,
+      </if>
+      <if test="tsm8 != null" >
+        tsm8,
+      </if>
+      <if test="tsm9 != null" >
+        tsm9,
+      </if>
+      <if test="createdate != null" >
+        createDate,
+      </if>
+      <if test="modifydate != null" >
+        modifyDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="summary != null" >
+        #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null" >
+        #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="parentcode != null" >
+        #{parentcode,jdbcType=VARCHAR},
+      </if>
+      <if test="delflag != null" >
+        #{delflag,jdbcType=INTEGER},
+      </if>
+      <if test="tsm1 != null" >
+        #{tsm1,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm2 != null" >
+        #{tsm2,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm3 != null" >
+        #{tsm3,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm4 != null" >
+        #{tsm4,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm5 != null" >
+        #{tsm5,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm6 != null" >
+        #{tsm6,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm7 != null" >
+        #{tsm7,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm8 != null" >
+        #{tsm8,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm9 != null" >
+        #{tsm9,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=VARCHAR},
+      </if>
+      <if test="modifydate != null" >
+        #{modifydate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.leekoko.pojo.TemplateExample" resultType="java.lang.Integer" >
+    select count(*) from template
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update template
+    <set >
+      <if test="record.code != null" >
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.content != null" >
+        content = #{record.content,jdbcType=VARCHAR},
+      </if>
+      <if test="record.summary != null" >
+        summary = #{record.summary,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tag != null" >
+        tag = #{record.tag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parentcode != null" >
+        parentCode = #{record.parentcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.delflag != null" >
+        delFlag = #{record.delflag,jdbcType=INTEGER},
+      </if>
+      <if test="record.tsm1 != null" >
+        tsm1 = #{record.tsm1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tsm2 != null" >
+        tsm2 = #{record.tsm2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tsm3 != null" >
+        tsm3 = #{record.tsm3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tsm4 != null" >
+        tsm4 = #{record.tsm4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tsm5 != null" >
+        tsm5 = #{record.tsm5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tsm6 != null" >
+        tsm6 = #{record.tsm6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tsm7 != null" >
+        tsm7 = #{record.tsm7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tsm8 != null" >
+        tsm8 = #{record.tsm8,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tsm9 != null" >
+        tsm9 = #{record.tsm9,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdate != null" >
+        createDate = #{record.createdate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.modifydate != null" >
+        modifyDate = #{record.modifydate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update template
+    set code = #{record.code,jdbcType=VARCHAR},
+      title = #{record.title,jdbcType=VARCHAR},
+      content = #{record.content,jdbcType=VARCHAR},
+      summary = #{record.summary,jdbcType=VARCHAR},
+      tag = #{record.tag,jdbcType=VARCHAR},
+      parentCode = #{record.parentcode,jdbcType=VARCHAR},
+      delFlag = #{record.delflag,jdbcType=INTEGER},
+      tsm1 = #{record.tsm1,jdbcType=VARCHAR},
+      tsm2 = #{record.tsm2,jdbcType=VARCHAR},
+      tsm3 = #{record.tsm3,jdbcType=VARCHAR},
+      tsm4 = #{record.tsm4,jdbcType=VARCHAR},
+      tsm5 = #{record.tsm5,jdbcType=VARCHAR},
+      tsm6 = #{record.tsm6,jdbcType=VARCHAR},
+      tsm7 = #{record.tsm7,jdbcType=VARCHAR},
+      tsm8 = #{record.tsm8,jdbcType=VARCHAR},
+      tsm9 = #{record.tsm9,jdbcType=VARCHAR},
+      createDate = #{record.createdate,jdbcType=VARCHAR},
+      modifyDate = #{record.modifydate,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.leekoko.pojo.Template" >
+    update template
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="summary != null" >
+        summary = #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null" >
+        tag = #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="parentcode != null" >
+        parentCode = #{parentcode,jdbcType=VARCHAR},
+      </if>
+      <if test="delflag != null" >
+        delFlag = #{delflag,jdbcType=INTEGER},
+      </if>
+      <if test="tsm1 != null" >
+        tsm1 = #{tsm1,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm2 != null" >
+        tsm2 = #{tsm2,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm3 != null" >
+        tsm3 = #{tsm3,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm4 != null" >
+        tsm4 = #{tsm4,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm5 != null" >
+        tsm5 = #{tsm5,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm6 != null" >
+        tsm6 = #{tsm6,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm7 != null" >
+        tsm7 = #{tsm7,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm8 != null" >
+        tsm8 = #{tsm8,jdbcType=VARCHAR},
+      </if>
+      <if test="tsm9 != null" >
+        tsm9 = #{tsm9,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        createDate = #{createdate,jdbcType=VARCHAR},
+      </if>
+      <if test="modifydate != null" >
+        modifyDate = #{modifydate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where code = #{code,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.leekoko.pojo.Template" >
+    update template
+    set title = #{title,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      summary = #{summary,jdbcType=VARCHAR},
+      tag = #{tag,jdbcType=VARCHAR},
+      parentCode = #{parentcode,jdbcType=VARCHAR},
+      delFlag = #{delflag,jdbcType=INTEGER},
+      tsm1 = #{tsm1,jdbcType=VARCHAR},
+      tsm2 = #{tsm2,jdbcType=VARCHAR},
+      tsm3 = #{tsm3,jdbcType=VARCHAR},
+      tsm4 = #{tsm4,jdbcType=VARCHAR},
+      tsm5 = #{tsm5,jdbcType=VARCHAR},
+      tsm6 = #{tsm6,jdbcType=VARCHAR},
+      tsm7 = #{tsm7,jdbcType=VARCHAR},
+      tsm8 = #{tsm8,jdbcType=VARCHAR},
+      tsm9 = #{tsm9,jdbcType=VARCHAR},
+      createDate = #{createdate,jdbcType=VARCHAR},
+      modifyDate = #{modifydate,jdbcType=VARCHAR}
+    where code = #{code,jdbcType=VARCHAR}
+  </update>
+</mapper>

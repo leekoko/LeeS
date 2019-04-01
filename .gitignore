@@ -1,40 +1,25 @@
-﻿# 忽略 HBuilder 创建的 .project 文件
+.DS_Store
+node_modules
+/dist
+package-lock.json
 
-.project
+/tests/e2e/reports/
+selenium-debug.log
 
+# local env files
+.env.local
+.env.*.local
 
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-
-# 忽略 eclipse创建的 .metadata/ 文件夹
-
-.metadata/
-
-.recommenders/
-
-
-# 忽略 eclipse创建的 RemoteSystemsTempFiles/ 文件夹
-
-RemoteSystemsTempFiles/
-
-
-
-
-# 忽略 eclipse创建的 Servers/ 文件夹
-
-Servers/
-
-# 忽略文件夹：
-
-.settings/
-
-target/
-
-# 忽略文件：
-
-*.project
-
-*.classpath
-
-apache-tomcat-8.0.30/
-
-.idea/
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
