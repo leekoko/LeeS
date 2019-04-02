@@ -25,7 +25,7 @@
   </modules>
   <!-- 配置插件 -->
   <!-- tomcat插件 -->
-  <build>
+<!--  <build>
 	  <plugins>
 	  	<plugin>
 			<groupId>org.apache.tomcat.maven</groupId>
@@ -36,5 +36,5 @@
 			</configuration>
 	  	</plugin>
 	  </plugins> 
-  </build>
+  </build>-->
 </project>

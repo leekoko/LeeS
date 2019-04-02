@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/lees-manager/lees-manager-controller" />
+    <file type="web" url="file://$PROJECT_DIR$/lees-manager/shiro-test" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -9,11 +10,16 @@
         <option value="$PROJECT_DIR$/lees-parent/pom.xml" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/pom.xml" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-service/pom.xml" />
-        <option value="$PROJECT_DIR$/lees-manager/pom.xml" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-pojo/pom.xml" />
         <option value="$PROJECT_DIR$/lees-common/pom.xml" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-mapper/pom.xml" />
+        <option value="$PROJECT_DIR$/lees-manager/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/lees-manager/shiro-test/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">

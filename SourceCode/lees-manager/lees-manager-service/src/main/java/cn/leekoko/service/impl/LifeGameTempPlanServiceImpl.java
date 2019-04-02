@@ -57,11 +57,10 @@ public class LifeGameTempPlanServiceImpl implements LifeGameTempPlanService {
      * @return
      */
     @Override
-    public List<LifegameTempplan> getTodayAllPlan(String userCode) {
+    public List<LifegameTempplan> getTodayAllPlan() {
         LifegameTempplanExample example = new LifegameTempplanExample();
         LifegameTempplanExample.Criteria criteria = example.createCriteria();
         criteria.andTsm1EqualTo(DateUtil.getDate());
-        criteria.andTsm2EqualTo(userCode);
         return lifegameTempPlanMapper.selectByExample(example);
     }
 
@@ -70,13 +69,12 @@ public class LifeGameTempPlanServiceImpl implements LifeGameTempPlanService {
      * @return
      */
     @Override
-    public List<LifegameTempplan> getTodayChosePlan(String userCode) {
+    public List<LifegameTempplan> getTodayChosePlan() {
         LifegameTempplanExample example = new LifegameTempplanExample();
         LifegameTempplanExample.Criteria criteria = example.createCriteria();
         //回显只显示明天执行的计划
         criteria.andTsm1EqualTo(DateUtil.addOneDay(DateUtil.getDate()));
         criteria.andTypeEqualTo("0");
-        criteria.andTsm2EqualTo(userCode);
         return lifegameTempPlanMapper.selectByExample(example);
     }
 
@@ -85,13 +83,12 @@ public class LifeGameTempPlanServiceImpl implements LifeGameTempPlanService {
      * @return
      */
     @Override
-    public List<LifegameTempplan> getTodayOldPlan(String userCode) {
+    public List<LifegameTempplan> getTodayOldPlan() {
         LifegameTempplanExample example = new LifegameTempplanExample();
         LifegameTempplanExample.Criteria criteria = example.createCriteria();
         //回显只显示明天执行的计划
         criteria.andTsm1EqualTo(DateUtil.getDate());
         criteria.andFinishEqualTo("1");
-        criteria.andTsm2EqualTo(userCode);
         return lifegameTempPlanMapper.selectByExample(example);
     }
 

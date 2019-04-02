@@ -45,10 +45,9 @@ public class ConsumeTypeServiceImpl implements ConsumeTypeService {
     }
 
     @Override
-    public List<LifegameConsumeType> findList(String userCode) {
+    public List<LifegameConsumeType> findList() {
         LifegameConsumeTypeExample example = new LifegameConsumeTypeExample();
         LifegameConsumeTypeExample.Criteria criteria = example.createCriteria();
-        criteria.andTsm2EqualTo(userCode);
         return lifegameConsumeTypeMapper.selectByExample(example);
     }
 

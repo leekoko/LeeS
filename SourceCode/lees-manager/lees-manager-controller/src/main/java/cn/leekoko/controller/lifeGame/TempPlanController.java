@@ -33,12 +33,11 @@ public class TempPlanController {
      */
     @RequestMapping("/toDoList")
     public String toDoList(Model model, HttpServletRequest request){
-        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
-        if(DateUtil.getDate().equals(user.getPlanDay())){
+        if(DateUtil.getDate().equals(lifeGameUserService.get("leekoko").getPlanDay())){
             //今日计划匹配才进入该页面
             return "lifeGame/startDoPage";
         }else{
-            model.addAttribute("planList",lifeGameTempPlanService.getTodayAllPlan(user.getCode()));
+            model.addAttribute("planList",lifeGameTempPlanService.getTodayAllPlan());
             return "lifeGame/toDoList";
         }
     }
@@ -69,12 +68,10 @@ public class TempPlanController {
     @RequestMapping("/saveTempPlan")
     @ResponseBody
     public HashMap<String, Object> saveTempPlan(HttpServletRequest request, String plan,String planCode,Integer planMoney,boolean isToday){
-        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
         LifegameTempplan lifegameTempplan = new LifegameTempplan();
         lifegameTempplan.setPlanName(plan);
         lifegameTempplan.setMoney(planMoney);
         //存储用户Code
-        lifegameTempplan.setTsm2(user.getCode());
         if(StringUtils.isNoneEmpty(planCode)){
             //设置plan的Code
             lifegameTempplan.setParentcode(planCode);
@@ -84,7 +81,7 @@ public class TempPlanController {
         }
         if(!isToday){
             //逾期发起，金额-20
-            lifeGameUserService.changeMoney(-10,user.getUserName());
+            lifeGameUserService.changeMoney(-10,"leekoko");
         }
         return lifeGameTempPlanService.save(lifegameTempplan,isToday);
     }
@@ -96,8 +93,7 @@ public class TempPlanController {
     @RequestMapping("getTodayChosePlan")
     @ResponseBody
     public List<LifegameTempplan> getTodayChosePlan(HttpServletRequest request){
-        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
-        return lifeGameTempPlanService.getTodayChosePlan(user.getCode());
+        return lifeGameTempPlanService.getTodayChosePlan();
     }
 
     /**
@@ -107,8 +103,7 @@ public class TempPlanController {
     @RequestMapping("getTodayOldPlan")
     @ResponseBody
     public List<LifegameTempplan> getTodayOldPlan(HttpServletRequest request){
-        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
-        return lifeGameTempPlanService.getTodayOldPlan(user.getCode());
+        return lifeGameTempPlanService.getTodayOldPlan();
     }
 
     /**
@@ -118,13 +113,12 @@ public class TempPlanController {
     @RequestMapping("startNewDay")
     @ResponseBody
     public boolean startNewDay(HttpServletRequest request){
-        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
         //归档所有旧的计划，设置del_flag为1
         lifeGameTempPlanService.backUpOldPlan();
         //插入固定plan到临时计划表中
         lifeGameTempPlanService.insertNewPlan();
         //更新计划day +1
-        lifeGameUserService.changePlanDay(user.getUserName());
+        lifeGameUserService.changePlanDay();
         return true;
     }
 

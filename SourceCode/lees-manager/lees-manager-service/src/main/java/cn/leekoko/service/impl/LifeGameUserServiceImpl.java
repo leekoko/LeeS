@@ -39,9 +39,9 @@ public class LifeGameUserServiceImpl implements LifeGameUserService {
      * @return
      */
     @Override
-    public boolean changePlanDay(String userName) {
+    public boolean changePlanDay() {
         boolean flag = false;
-        LifegameUser user = this.get(userName);
+        LifegameUser user = this.get("leekoko");
         String newDate = DateUtil.addOneDay(user.getPlanDay());
         user.setPlanDay(newDate);
         int inNum = lifegameUserMapper.updateByPrimaryKey(user);
@@ -56,8 +56,8 @@ public class LifeGameUserServiceImpl implements LifeGameUserService {
      * @return
      */
     @Override
-    public Integer getCurMoney(String userName) {
-        LifegameUser user = this.get(userName);
+    public Integer getCurMoney() {
+        LifegameUser user = this.get("leekoko");
         return user.getAllMoney();
     }
 

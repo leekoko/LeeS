@@ -38,7 +38,7 @@ public class ContentController {
 		}
 	}
 	/**
-	 * 上传加载MD文件
+	 * 涓婁紶鍔犺浇MD鏂囦欢
 	 * @param request
 	 * @param response
 	 */
@@ -47,7 +47,7 @@ public class ContentController {
 		String filePath = "\\LeesAttach";
 		String path = attachmentService.uploadFile(request, response, filePath);
 		List<String> list = MDUtil.getFile(path);
-		//将数据存入到数据库中
+		//灏嗘暟鎹瓨鍏ュ埌鏁版嵁搴撲腑
 		Onlinecontent onlinecontent = new Onlinecontent();
 		for (int i = list.size()-1; i >= 0 ; i--) {
 			onlinecontent.setContent(list.get(i));

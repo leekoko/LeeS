@@ -11,6 +11,8 @@
         <module name="lees-manager-mapper" />
         <module name="lees-manager-pojo" />
         <module name="lees-manager-service" />
+        <module name="shiro-test" />
+        <module name="testshiro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +23,9 @@
       <module name="lees-manager-pojo" target="1.5" />
       <module name="lees-manager-service" target="1.5" />
       <module name="lees-parent" target="1.5" />
+      <module name="shiro-test" target="1.5" />
+      <module name="shirotest" target="1.5" />
+      <module name="testshiro" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

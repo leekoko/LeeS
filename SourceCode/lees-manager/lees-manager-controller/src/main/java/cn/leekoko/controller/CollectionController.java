@@ -49,7 +49,7 @@ public class CollectionController {
 	}
 
 	/**
-	 * ÉÏ´«¼ÓÔØMDÎÄ¼ş
+	 * ä¸Šä¼ åŠ è½½MDæ–‡ä»¶
 	 * @param request
 	 * @param response
 	 */
@@ -59,7 +59,7 @@ public class CollectionController {
 			String imgPath = "//images";
 			Collectioncontent collectioncontent = new Collectioncontent();
 			String imgUrl = attachmentController.uploadFile(request, response, imgPath);
-			String fileName = imgUrl.substring(imgUrl.lastIndexOf("\\"));   //½ØÈ¡×îºóÒ»¸öÄ¿Â¼
+			String fileName = imgUrl.substring(imgUrl.lastIndexOf("\\"));   //æˆªå–æœ€åä¸€ä¸ªç›®å½•
 			collectioncontent.setImgurl("images"+fileName);
 			collectioncontent.setId(id);
 			collectioncontentService.insertSelective(collectioncontent);
@@ -103,7 +103,7 @@ public class CollectionController {
 		return map;
 	}
 	/**
-	 * ¸üĞÂµã»÷Ê±¼ä
+	 * æ›´æ–°ç‚¹å‡»æ—¶é—´
 	 * @param id
 	 */
 	@RequestMapping("/updateClickDate")

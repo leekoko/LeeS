@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ConsumeTypeService {
 	HashMap<String, Object> save(LifegameConsumeType lifegameConsumeType);
-	List<LifegameConsumeType> findList(String userCode);
+	List<LifegameConsumeType> findList();
 	boolean delType(String code);
 }

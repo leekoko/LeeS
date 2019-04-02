@@ -36,8 +36,7 @@ public class ConsumeController {
      */
     @RequestMapping("/consumeType")
     public String editPlan(Model model ,HttpServletRequest request){
-        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
-        model.addAttribute("typeList",consumeTypeService.findList(user.getCode()));
+        model.addAttribute("typeList",consumeTypeService.findList());
         return "lifeGame/consumeType";
     }
     /**
@@ -47,8 +46,7 @@ public class ConsumeController {
     @RequestMapping("/getTypeList")
     @ResponseBody
     public List<LifegameConsumeType> getTypeList(HttpServletRequest request){
-        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
-        return consumeTypeService.findList(user.getCode());
+        return consumeTypeService.findList();
     }
 
 
@@ -60,8 +58,7 @@ public class ConsumeController {
      */
     @RequestMapping("/consumeRecord")
     public String consumeRecord(Model model, HttpServletRequest request){
-        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
-        model.addAttribute("curMoney",lifeGameUserService.getCurMoney(user.getUserName()));
+        model.addAttribute("curMoney",lifeGameUserService.getCurMoney());
         return "lifeGame/consumeRecord";
     }
 
@@ -82,11 +79,9 @@ public class ConsumeController {
     @RequestMapping("/saveConsume")
     @ResponseBody
     public boolean saveConsume(LifegameConsume lifegameConsume,HttpServletRequest request){
-        LifegameUser user = (LifegameUser) request.getSession().getAttribute("user");
         //减去消费金额
-        boolean flag = lifeGameUserService.changeMoney(-(lifegameConsume.getMoney()),user.getUserName());
+        boolean flag = lifeGameUserService.changeMoney(-(lifegameConsume.getMoney()),"leekoko");
         if(flag){
-            lifegameConsume.setTsm2(user.getCode());
             flag = consumeService.save(lifegameConsume);
         }
         return flag;
