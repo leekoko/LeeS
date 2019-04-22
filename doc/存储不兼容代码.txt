@@ -1,0 +1,193 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <%@ include file="/WEB-INF/views/common/tags/taglib.jsp"%>
+    <%@ include file="/WEB-INF/views/common/header.jsp"%>
+    <%@ include file="/WEB-INF/views/common/footer.jsp" %>
+    <%
+        pageContext.setAttribute("ctxp", request.getContextPath());
+    %>
+    <link href="${uiPath}/components/sweetalert/sweetalert.css" rel="stylesheet">
+    <script src="${uiPath}/components/sweetalert/sweetalert.min.js"></script>
+
+    <link href="${uiPath}/components/layer/laydate/skins/default/laydate.css" rel="stylesheet">
+    <script src="${uiPath}/components/layer/laydate/laydate.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/static/bd/eda/js/formValicate.js?v=${_version}"></script>
+    <link href="${ctxStatic}/bd/eda/css/formValicate.css?v=${_version}" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bd/eda/css/tc.css" />
+</head>
+<body style="width: 100%;height: auto;">
+<form class="form-horizontal" id="dataForm">
+    <div class="ibox-content">
+        <!--公共参数-->
+        <input type="hidden" value="${~m~.code}" id="code" name="code"/>
+        <input type="hidden" value="${~m~.parentCode}" id="parentCode" name="parentCode"/>
+        <input type="hidden" value="${~m~.entpVersion}" id="entpVersion" name="entpVersion"/>
+
+        <table class="table table-bordered valicate-tip">
+        	<tbody>
+				<tr class="table-striped table-bordered" >
+					<td class="td-title"><span style="color:red">*</span>申请事项名称</td>
+					<td class="td-content" colspan="5">
+						<input id="proName" name="proName" datatype="*" class="form-control" type="text" value="${~m~.proName}">
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>申请人</td>
+					<td class="td-content" colspan="2">
+						<input id="applyName" name="applyName" datatype="*" class="form-control" type="text" value="${~m~.applyName}">
+					</td>
+					<td class="td-title"><span style="color:red">*</span>统一社会信用代码（机构代码）</td>
+					<td class="td-content" colspan="2">
+						<input id="comCode" name="comCode" datatype="c18" class="form-control" type="text" value="${~m~.comCode}">
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>注册地址</td>
+					<td class="td-content" colspan="5">
+						<input id="regAddress" name="regAddress" datatype="*" class="form-control" type="text" value="${~m~.regAddress}">
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>经营地址</td>
+					<td class="td-content" colspan="5">
+						<input id="localAddress" name="localAddress" datatype="*" class="form-control" type="text" value="${~m~.localAddress}">
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>基本户银行</td>
+					<td class="td-content" colspan="2">
+						<input id="bank" name="bank" datatype="*" class="form-control" type="text" value="${~m~.bank}">
+					</td>
+					<td class="td-title"><span style="color:red">*</span>基本户账号</td>
+					<td class="td-content" colspan="2">
+						<input id="bankAccount" name="bankAccount" datatype="*" class="form-control" type="text" value="${~m~.bankAccount}">
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>注册资本</td>
+					<td class="td-content" colspan="2">
+						<input id="regPay" name="regPay" datatype="*" class="form-control" type="text" value="${~m~.regPay}">
+					</td>
+					<td class="td-title"><span style="color:red">*</span>注册时间</td>
+					<td class="td-content" colspan="2">
+						<div class="input-group date">
+							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+							<input id="regDate" name="regDate" datatype="*"  class="form-control layer-date" type="text" value="<fmt:formatDate pattern="yyyy-MM-dd" value="${~m~.regDate}"/>" readonly>
+						</div>
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>经办人</td>
+					<td class="td-content" colspan="5">
+						<input id="linkMan" name="linkMan" datatype="*" class="form-control" type="text" value="${~m~.linkMan}">
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>手机</td>
+					<td class="td-content" colspan="2">
+						<input id="tel" name="tel" datatype="m" class="form-control" type="text" value="${~m~.tel}">
+					</td>
+					<td class="td-title"><span style="color:red">*</span>办公电话</td>
+					<td class="td-content" colspan="2">
+						<input id="phone" name="phone" datatype="*" class="form-control" type="text" value="${~m~.phone}">
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>email</td>
+					<td class="td-content" colspan="2">
+						<input id="email" name="email" datatype="e" class="form-control" type="text" value="${~m~.email}">
+					</td>
+					<td class="td-title"><span style="color:red">*</span>qq</td>
+					<td class="td-content" colspan="2">
+						<input id="qq" name="qq" datatype="*" class="form-control" type="text" value="${~m~.qq}">
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>业务主管部门</td>
+					<td class="td-content" colspan="5">
+						<input id="zgDept" name="zgDept" datatype="*" class="form-control" type="text" value="${~m~.zgDept}">
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>政策依据</td>
+					<td class="td-content" colspan="5">
+						<textarea id="policyDe" name="policyDe" class="form-control" datatype="*"   style="resize:none; height:80px;">${~m~.policyDe}</textarea>
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>资助标准</td>
+					<td class="td-content" colspan="5">
+						<textarea id="zzBz" name="zzBz" class="form-control" datatype="*"   style="resize:none; height:80px;">${~m~.zzBz}</textarea>
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>申请金额（元）</td>
+					<td class="td-content" colspan="5">
+						<input id="applyPay" name="applyPay" datatype="n" class="form-control" type="text" value="${~m~.applyPay}">
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>兑现事项情况说明</td>
+					<td class="td-content" colspan="5">
+						<textarea id="presentation" name="presentation" class="form-control" datatype="*"   style="resize:none; height:80px;">${~m~.presentation}</textarea>
+					</td>
+				</tr>
+				<tr class="table-striped table-bordered">
+					<td class="td-title"><span style="color:red">*</span>申请人承诺</td>
+					<td class="td-content" colspan="5">
+						<textarea id="applyPromise" name="applyPromise" class="form-control" datatype="*"   style="resize:none; height:80px;">${~m~.applyPromise}</textarea>
+					</td>
+				</tr>	
+			</tbody>
+	    </table>
+    </div>
+</form>
+</body>
+
+<script>
+	$(function(){
+		if("${type}"=="view"){
+			$("form input").attr("disabled","disabled");
+			$("form select").attr("disabled","disabled");
+			$("form textArea").attr("disabled","disabled");
+		}
+		
+		laydate({
+	        elem: '#regDate',
+	        event: 'focus'
+	    }); 
+		
+		
+		//校验
+		$('#dataForm').valiOaForm();
+	})       
+
+	
+	function saveFlow(stepInco){
+    	var success = false;
+        $.ajax({
+            type:"post",
+            async:false,
+            url: projectPath + "/~m~/save?extendId=${extendId}&flowInid=${flowInid}&stepInco="+stepInco,
+            data: $("#dataForm").serialize(),
+            success : function(data) {
+            	if(data.result == true){
+            		success = true;
+                }else{
+                    success = false;
+                }
+            }
+        });
+        return success;
+    }
+	
+	function checkFormData(){
+	
+		return $('#dataForm').tollgate();
+	}
+    
+	
+</script>
+	

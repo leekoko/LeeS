@@ -41,7 +41,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>shiroFilter</filter-name>
-		<url-pattern>/*/lifrgame</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</filter-mapping>-->
 
 	<!-- springmvc的前端控制器 -->

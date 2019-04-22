@@ -41,32 +41,32 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="TempPlanController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/TempPlanController.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="39" column="52" lean-forward="false" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LifeGameUserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/LifeGameUserService.java">
+      <file leaf-file-name="lifeGameIndex.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/lifeGameIndex.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+            <state relative-caret-position="-574">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LifeGameUserServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/impl/LifeGameUserServiceImpl.java">
+      <file leaf-file-name="loginPage.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/loginPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="44" column="43" lean-forward="false" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="43" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -82,61 +82,63 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LifeGameController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/LifeGameController.java">
+      <file leaf-file-name="toDoList.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/toDoList.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="62" column="43" lean-forward="false" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+            <state relative-caret-position="92">
+              <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConsumeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/ConsumeController.java">
+      <file leaf-file-name="consumeType.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/consumeType.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="84" column="36" lean-forward="false" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
+            <state relative-caret-position="-276">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LifeGameTempPlanService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/LifeGameTempPlanService.java">
+      <file leaf-file-name="diary.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/diary.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+            <state relative-caret-position="-3243">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1553616413320" expanded="true" signature="7699:7744" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editPlan.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/editPlan.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-345">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LifeGameTempPlanServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/impl/LifeGameTempPlanServiceImpl.java">
+      <file leaf-file-name="chosePlan.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/chosePlan.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2116">
-              <caret line="103" column="46" lean-forward="true" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContentController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/ContentController.java">
+      <file leaf-file-name="consumeRecord.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/consumeRecord.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="40" column="15" lean-forward="false" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConsumeTypeServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/impl/ConsumeTypeServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+            <state relative-caret-position="-1311">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -148,19 +150,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
         <option value="spring-beans.schema" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>window.location.href=&quot;${pageContext.request.contextPath}/lifeGame/lifeGameIndex&quot;</find>
-      <find>loginUser</find>
-      <find>生成</find>
-      <find>getTodayOldPlan</find>
-      <find>saveTempPlan</find>
       <find>editPlan</find>
       <find>saveConsume</find>
       <find>consumeType</find>
@@ -186,6 +183,11 @@
       <find>startDoPage</find>
       <find>tempPlan</find>
       <find>startNewDay</find>
+      <find>subLogin</find>
+      <find>springmvc.xml</find>
+      <find>jdbc.username</find>
+      <find>mysql.</find>
+      <find>druid</find>
     </findStrings>
     <replaceStrings>
       <replace>col-md-3 col-lg-3</replace>
@@ -204,11 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/modelFlowChosePage.jsp" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/TemplateService.java" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/TemplateController.java" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/index.jsp" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/Index.jsp" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/LifeGameService.java" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/impl/TemplateServiceImpl.java" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/modelChosePage.jsp" />
@@ -229,18 +226,10 @@
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/loginPage.jsp" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-pojo/src/main/java/cn/leekoko/pojo/LifegameTempplan.java" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/AuthorizationInterceptor.java" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/modelPage.jsp" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/pom.xml" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/shiro/CustomRealm.java" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/test/java/cn/leekoko/controller/shiro/CustomRealmTest.java" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/403.html" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/login.html" />
         <option value="$PROJECT_DIR$/lees-manager/shiro-test/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/lees-manager/shiro-test/src/main/resources/spring/springmvc.xml" />
         <option value="$PROJECT_DIR$/lees-manager/shiro-test/pom.xml" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/resources/spring/springmvc.xml" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/AuthorController.java" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/impl/ConsumeTypeServiceImpl.java" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/ConsumeTypeService.java" />
@@ -255,6 +244,19 @@
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/impl/LifeGameTempPlanServiceImpl.java" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/TempPlanController.java" />
         <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/PageController.java" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/shiro/CustomRealm.java" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/pom.xml" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/login.html" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-pojo/src/main/java/cn/leekoko/pojo/User.java" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/resources/spring/springmvc.xml" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/test/java/cn/leekoko/controller/shiro/CustomRealmTest.java" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/modelPage.jsp" />
+        <option value="$PROJECT_DIR$/lees-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/resources/spring/applicationContext-dao.xml" />
+        <option value="$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/resources/resource/db.properties" />
       </list>
     </option>
   </component>
@@ -283,34 +285,15 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="lees-manager-controller" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="lees-manager-controller" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="lees-manager-service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="lees-manager-service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
+      <expand />
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="360" />
-    <option name="y" value="258" />
-    <option name="width" value="1942" />
-    <option name="height" value="1047" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -327,8 +310,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -336,32 +320,6 @@
             <path>
               <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="lees-common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lees-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lees-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lees-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lees-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
@@ -417,36 +375,57 @@
               <item name="lees-manager" type="462c0819:PsiDirectoryNode" />
               <item name="lees-manager-controller" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lees-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="lees-manager-controller" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lees-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="lees-manager-controller" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="shiro" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="lees-manager" type="462c0819:PsiDirectoryNode" />
               <item name="lees-manager-controller" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lees-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="lees-manager-controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lees-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="lees-manager-controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lees-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="lees-manager-controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="lifeGame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SourceCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lees-parent" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -456,11 +435,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="public" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../minstone_place/workB01_tech/eda-unify-microservice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.3226103" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
   </component>
@@ -780,8 +759,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CustomRealmTest.testAuth" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CustomRealmTest.testJunit" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CustomRealmTest.testJunit" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CustomRealmTest.testAuth" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.TempPlanControllerTest.test" />
       </list>
     </recent_temporary>
@@ -923,43 +902,53 @@
       <workItem from="1554140437403" duration="49000" />
       <workItem from="1554168200642" duration="1450000" />
       <workItem from="1554175657774" duration="36000" />
+      <workItem from="1554795640874" duration="31000" />
+      <workItem from="1555337235069" duration="5072000" />
+      <workItem from="1555379431497" duration="54000" />
+      <workItem from="1555382599697" duration="3130000" />
+      <workItem from="1555396456897" duration="85000" />
+      <workItem from="1555424303303" duration="672000" />
+      <workItem from="1555425512887" duration="6796000" />
+      <workItem from="1555434957572" duration="468000" />
+      <workItem from="1555463820781" duration="4131000" />
+      <workItem from="1555862561263" duration="230000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CustomRealmTest_testAuth - 2019.04.01 at 23h 09m 17s.xml">
+    <history-entry file="CustomRealmTest_testAuth - 2019.04.16 at 01h 00m 14s.xml">
       <configuration name="CustomRealmTest.testAuth" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomRealmTest_testAuth - 2019.04.01 at 23h 09m 33s.xml">
+    <history-entry file="CustomRealmTest_testAuth - 2019.04.16 at 01h 00m 28s.xml">
       <configuration name="CustomRealmTest.testAuth" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomRealmTest_testAuth - 2019.04.01 at 23h 10m 30s.xml">
+    <history-entry file="CustomRealmTest_testAuth - 2019.04.16 at 01h 02m 48s.xml">
       <configuration name="CustomRealmTest.testAuth" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomRealmTest_testAuth - 2019.04.01 at 23h 15m 39s.xml">
-      <configuration name="CustomRealmTest.testAuth" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomRealmTest_testAuth - 2019.04.01 at 23h 28m 01s.xml">
-      <configuration name="CustomRealmTest.testAuth" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomRealmTest_testAuth - 2019.04.01 at 23h 28m 16s.xml">
-      <configuration name="CustomRealmTest.testAuth" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomRealmTest_testAuth - 2019.04.01 at 23h 33m 24s.xml">
-      <configuration name="CustomRealmTest.testAuth" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomRealmTest_testJunit - 2019.04.01 at 23h 03m 30s.xml">
+    <history-entry file="CustomRealmTest_testJunit - 2019.04.16 at 00h 16m 55s.xml">
       <configuration name="CustomRealmTest.testJunit" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomRealmTest_testJunit - 2019.04.01 at 23h 09m 12s.xml">
+    <history-entry file="CustomRealmTest_testJunit - 2019.04.16 at 00h 17m 00s.xml">
       <configuration name="CustomRealmTest.testJunit" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomRealmTest_testJunit - 2019.04.01 at 23h 09m 47s.xml">
+    <history-entry file="CustomRealmTest_testJunit - 2019.04.16 at 00h 59m 37s.xml">
+      <configuration name="CustomRealmTest.testJunit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomRealmTest_testJunit - 2019.04.16 at 00h 59m 59s.xml">
+      <configuration name="CustomRealmTest.testJunit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomRealmTest_testJunit - 2019.04.17 at 00h 59m 02s.xml">
+      <configuration name="CustomRealmTest.testJunit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomRealmTest_testJunit - 2019.04.17 at 01h 16m 16s.xml">
+      <configuration name="CustomRealmTest.testJunit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomRealmTest_testJunit - 2019.04.17 at 01h 22m 08s.xml">
       <configuration name="CustomRealmTest.testJunit" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="331819000" />
+    <option name="totallyTimeSpent" value="352488000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -972,44 +961,46 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22596964" sideWeight="0.49550226" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29308453" sideWeight="0.20625" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33369923" sideWeight="0.26510417" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24789207" sideWeight="0.44227886" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23385416" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29308453" sideWeight="0.79375" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.49925038" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6103183" sideWeight="0.26510417" order="15" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1609375" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25416666" sideWeight="0.49019608" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2613391" sideWeight="0.50496453" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24981245" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962519" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22502744" sideWeight="0.7348958" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22596964" sideWeight="0.49550226" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3677278" sideWeight="0.77654725" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22428331" sideWeight="0.49925038" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.49925038" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="MyBatis Sql Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25364584" sideWeight="0.49019608" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2613391" sideWeight="0.50496453" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27361318" sideWeight="0.50980395" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42041713" sideWeight="0.6723958" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15442279" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27113062" sideWeight="0.6296875" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2711223" sideWeight="0.62410426" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22428331" sideWeight="0.49925038" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27361318" sideWeight="0.50980395" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2766191" sideWeight="0.49583334" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1078,161 +1069,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/loginPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133">
-          <caret line="20" column="84" lean-forward="false" selection-start-line="20" selection-start-column="84" selection-end-line="20" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/target/classes/cn/leekoko/controller/lifeGame/TempPlanController.class" />
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-pojo/src/main/java/cn/leekoko/pojo/LifegameTempplan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/consumeType.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="52" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-pojo/src/main/java/cn/leekoko/pojo/LifegameTempplanExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27854">
-          <caret line="1487" column="0" lean-forward="false" selection-start-line="1487" selection-start-column="0" selection-end-line="1487" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/taotaoRepository/org/springframework/spring-web/4.1.3.RELEASE/spring-web-4.1.3.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class" />
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/editPlan.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2166">
-          <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/diary.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1672">
-          <caret line="88" column="99" lean-forward="false" selection-start-line="88" selection-start-column="90" selection-end-line="88" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/toDoList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/consumeRecord.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="87" column="73" lean-forward="false" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/impl/TemplateFlowServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="49" column="30" lean-forward="false" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/modelFlowChosePage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/modelPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10787">
-          <caret line="469" column="20" lean-forward="false" selection-start-line="469" selection-start-column="20" selection-end-line="469" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/AuthorizationInterceptor.java" />
-    <entry file="jar://D:/system-data/SOArepository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/subject/Subject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/TemplateFlowService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/index.html" />
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/test/java/cn/leekoko/controller/shiro/CustomRealmTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-parent/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-483">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/shirotest.iml" />
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/shiro/CustomRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="32" column="48" lean-forward="false" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/shiro-test/src/main/resources/spring/spring.xml" />
-    <entry file="file://$PROJECT_DIR$/lees-manager/shiro-test/src/main/resources/spring/springmvc.xml" />
     <entry file="file://$PROJECT_DIR$/lees-manager/shiro-test/pom.xml" />
     <entry file="file://$PROJECT_DIR$/lees-manager/shiro-test/src/main/java/cn/leekoko/controller/shiro/CustomRealm.java" />
     <entry file="file://$PROJECT_DIR$/lees-manager/shiro-test/src/main/webapp/WEB-INF/web.xml" />
     <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/403.html" />
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/login.html" />
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="44" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/resources/spring/springmvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/AttachmentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/AuthorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding>
-            <element signature="e#853#854#0" expanded="false" />
-            <element signature="e#896#897#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1264,27 +1108,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="27" column="40" lean-forward="false" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/CollectionController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
           <caret line="51" column="14" lean-forward="false" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1292,7 +1119,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="40" column="15" lean-forward="false" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1300,7 +1126,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1308,23 +1133,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lees-common/src/main/java/cn/leekoko/common/utils/DateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-service/src/main/java/cn/leekoko/service/impl/LifeGameTempPlanServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2116">
-          <caret line="103" column="46" lean-forward="true" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
-          <folding />
+          <caret line="103" column="46" lean-forward="false" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -1332,7 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1311">
           <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1340,7 +1154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1564">
           <caret line="84" column="36" lean-forward="false" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1348,7 +1161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1356,6 +1168,256 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
           <caret line="44" column="43" lean-forward="false" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/LifeGameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="62" column="43" lean-forward="false" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-common/src/main/java/cn/leekoko/common/utils/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/shiro/CustomRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/TemplateFlowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-pojo/src/main/java/cn/leekoko/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/resources/spring/springmvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/resources/resource/resource.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/resources/mybatis/SqlMapConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/system-data/SOArepository/mysql/mysql-connector-java/5.1.32/mysql-connector-java-5.1.32.jar!/com/mysql/jdbc/ConnectionImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="1559" column="45" lean-forward="false" selection-start-line="1559" selection-start-column="45" selection-end-line="1559" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/system-data/SOArepository/mysql/mysql-connector-java/5.1.32/mysql-connector-java-5.1.32.jar!/com/mysql/jdbc/MysqlIO.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="838" column="0" lean-forward="false" selection-start-line="838" selection-start-column="0" selection-end-line="838" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-parent/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="45" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/AuthorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/resources/spring/applicationContext-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="71" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/resources/resource/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/modelPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1823">
+          <caret line="43" column="70" lean-forward="false" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
+          <folding>
+            <marker date="1555464132250" expanded="true" signature="6297:6309" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="6452:6480" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="6588:6616" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="6672:6760" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="6814:6902" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="6973:6985" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="7145:7159" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="7258:7286" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="7632:7644" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="7787:7815" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="7923:7951" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="8007:8095" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="8149:8237" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="8308:8320" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="8480:8494" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="8593:8621" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="12027:12039" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="12190:12218" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="12326:12354" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="12410:12498" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="12552:12640" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="12711:12723" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="12910:12924" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="13034:13062" ph="..." />
+            <marker date="1555464132250" expanded="true" signature="16028:16066" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="49" column="41" lean-forward="false" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/test/java/cn/leekoko/controller/shiro/CustomRealmTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/TempPlanController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="35" column="24" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/chosePlan.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/consumeRecord.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1311">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/consumeType.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/editPlan.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/toDoList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1368,19 +1430,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/LifeGameController.java">
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/loginPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="62" column="43" lean-forward="false" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/java/cn/leekoko/controller/lifeGame/TempPlanController.java">
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/lifeGameIndex.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="39" column="52" lean-forward="false" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+        <state relative-caret-position="-574">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lees-manager/lees-manager-controller/src/main/webapp/WEB-INF/jsp/lifeGame/diary.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3243">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1553616413320" expanded="true" signature="7699:7744" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1394,8 +1466,8 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
-                <option value="0.44712645" />
+                <option value="0.3226103" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

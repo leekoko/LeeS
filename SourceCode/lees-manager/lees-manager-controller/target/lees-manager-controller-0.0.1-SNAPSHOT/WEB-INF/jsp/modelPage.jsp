@@ -41,9 +41,11 @@
 	<div>
 		<button type="button" class="btn btn-info" onclick="addOnePrepend();">前面新增行</button>
 		<button type="button" class="btn btn-info" onclick="addOneAppend();">后面新增行</button>
+		<button type="button" class="btn btn-info" data-toggle="modal1" data-target="#myModal1">模板生成</button>
 		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">选择模板</button>
 		<button type="button" class="btn btn-success" onclick="creatVar();">变量框生成</button>
 		<button type="button" class="btn btn-success" onclick="startVar();">变量生成</button>
+
 
 		<button type="button" class="btn btn-warning pull-right" data-toggle="modal" data-target="#modelFlow">保存流程</button>
 		<button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#modelFlowList">选择流程</button>
