@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="cn.leekoko.controller.shiro.CustomRealmTest" time="0.171" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="cn.leekoko.controller.shiro.CustomRealmTest" time="0.203" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2017.3.6"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -30,7 +30,7 @@
     <property name="os.name" value="Windows 10"/>
     <property name="classworlds.conf" value="D:\soft-program\idea\IntelliJ IDEA 2017.3.2\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="GBK"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;&quot;C:\Program Files\Java\jdk1.8.0_92\bin;&quot;;&quot;C:\Program Files\Java\jdk1.8.0_92\jre\bin;&quot;;D:\soft-program\Git\cmd;D:\soft-program\TortoiseGit\bin;D:\soft-program\nodejs\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\liyb\AppData\Local\Microsoft\WindowsApps;C:\Users\liyb\AppData\Roaming\npm;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;&quot;C:\Program Files\Java\jdk1.8.0_92\bin;&quot;;&quot;C:\Program Files\Java\jdk1.8.0_92\jre\bin;&quot;;D:\soft-program\Git\cmd;D:\soft-program\TortoiseGit\bin;D:\soft-program\nodejs\;C:\Program Files\MySQL\MySQL Server 8.0\bin;D:\soft-program\idea\IntelliJ IDEA 2017.3.2\plugins\maven\lib\maven3\bin;C:\Users\liyb\AppData\Local\Microsoft\WindowsApps;C:\Users\liyb\AppData\Roaming\npm;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -62,6 +62,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="cn.leekoko.controller.shiro.CustomRealmTest" name="testJunit" time="0.015"/>
-  <testcase classname="cn.leekoko.controller.shiro.CustomRealmTest" name="testAuth" time="0.156"/>
+  <testcase classname="cn.leekoko.controller.shiro.CustomRealmTest" name="testAuth" time="0.203"/>
+  <testcase classname="cn.leekoko.controller.shiro.CustomRealmTest" name="testJunit" time="0"/>
 </testsuite>
